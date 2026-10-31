@@ -1,0 +1,167 @@
+/* ==========================================================================
+   VIT SMART CAMPUS – RESPONSIVE STYLESHEET (responsive.css)
+   Media queries, mobile drawer navigation, responsive grids & layout shifts
+   ========================================================================== */
+
+/* Large Tablets & Small Laptops (<= 1024px) */
+@media (max-width: 1024px) {
+  .hero-heading {
+    font-size: 38px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  
+  .footer-brand {
+    grid-column: span 2;
+  }
+
+  .newspaper-layout {
+    column-count: 2;
+    column-gap: 28px;
+  }
+
+  .dashboard-wrapper {
+    grid-template-columns: 220px 1fr;
+  }
+}
+
+/* Tablets (<= 768px) */
+@media (max-width: 768px) {
+  .primary-nav {
+    display: none;
+  }
+
+  .primary-nav.is-open {
+    display: flex;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 24px;
+    overflow-y: auto;
+    z-index: 999;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .primary-nav.is-open .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .primary-nav.is-open .nav-link {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .hero-banner {
+    padding: 60px 0 50px 0;
+  }
+
+  .hero-heading {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .section-py {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row-2, .form-row-3 {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Dashboard Reflow on Tablets */
+  .dashboard-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-sidebar {
+    display: flex;
+    overflow-x: auto;
+    padding: 12px;
+    white-space: nowrap;
+  }
+
+  .newspaper-layout {
+    column-count: 1;
+    column-rule: none;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand {
+    grid-column: span 1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .checkout-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Mobile Devices (<= 480px) */
+@media (max-width: 480px) {
+  .hero-heading {
+    font-size: 26px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .stat-num {
+    font-size: 24px;
+  }
+
+  .card-header, .card-body, .card-footer {
+    padding: 16px;
+  }
+
+  .nav-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 4px;
+  }
+
+  .tab-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+

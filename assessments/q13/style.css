@@ -1,0 +1,219 @@
+/* E-Commerce Header Styling (Q13) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Header Container: Arranged in a Single Horizontal Row */
+.ecommerce-header {
+  background-color: #131921;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 1. Logo */
+.header-logo .logo-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.logo-accent {
+  color: #f59e0b;
+}
+
+/* 2. Delivery Location */
+.delivery-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.delivery-location:hover {
+  border-color: #ffffff;
+}
+
+.location-icon {
+  color: #ffffff;
+}
+
+.delivery-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-label {
+  font-size: 11px;
+  color: #cbd5e1;
+  line-height: 1.2;
+}
+
+.main-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* 3. Center Search Bar */
+.search-bar-center {
+  flex: 1;
+  max-width: 700px;
+  display: flex;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.category-dropdown {
+  background-color: #e2e8f0;
+  color: #1e293b;
+  border: none;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  border-right: 1px solid #cbd5e1;
+}
+
+.category-dropdown:hover {
+  background-color: #cbd5e1;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.search-button {
+  background-color: #f59e0b;
+  color: #131921;
+  border: none;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background-color: #d97706;
+}
+
+/* 4 & 5. Accounts and Orders */
+.header-account, .header-orders {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.header-account:hover, .header-orders:hover {
+  border-color: #ffffff;
+}
+
+/* 6. Shopping Cart */
+.header-cart {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.header-cart:hover {
+  border-color: #ffffff;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #f59e0b;
+  color: #131921;
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Showcase Body */
+.showcase-content {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-teaser {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.hero-teaser h2 {
+  font-size: 24px;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.hero-teaser p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.author-tag {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #0284c7;
+  font-weight: 600;
+}
+

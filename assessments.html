@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All 42 Assessments | CSI3029 Front End Design & Testing</title>
+  <meta name="description" content="Browse, search, and filter all 42 laboratory assessment projects for CSI3029 at VIT Vellore." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="./css/themes.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+
+  <style>
+    .browse-header {
+      padding: 3rem 0 2rem;
+    }
+    .filters-bar {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .filters-row-primary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .search-box-wrapper {
+      flex: 1;
+      min-width: 260px;
+      position: relative;
+    }
+    .search-box-input {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 0.65rem 1rem 0.65rem 2.5rem;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      transition: all var(--transition-fast);
+    }
+    .search-box-input:focus {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    }
+    .search-box-icon {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+    .view-toggle-btns {
+      display: flex;
+      align-items: center;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 3px;
+    }
+    .view-btn {
+      padding: 0.45rem 0.75rem;
+      font-size: 0.8rem;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .view-btn.active {
+      background: var(--bg-surface-solid);
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+    }
+    .unit-pill-filters {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.35rem;
+      scrollbar-width: thin;
+    }
+    .filter-chip {
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--bg-tag);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .filter-chip:hover {
+      border-color: var(--border-medium);
+      color: var(--text-primary);
+    }
+    .filter-chip.active {
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+      color: #FFFFFF;
+    }
+    .tag-pill-filters {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .tag-chip {
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      background: var(--bg-tag);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    .tag-chip.active {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+    }
+
+    /* Assessment Grid View */
+    .assessments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    .card-assessment {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+      position: relative;
+    }
+    .card-assessment:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow-md);
+    }
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card-q-badge {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface-elevated);
+    }
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.5;
+    }
+    .card-tags {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+    .card-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Assessment Table View */
+    .assessments-table-wrapper {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow-x: auto;
+      margin-bottom: 4rem;
+    }
+    .assessments-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+    .assessments-table th {
+      padding: 1rem 1.25rem;
+      background: var(--bg-surface-elevated);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .assessments-table td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+    }
+    .assessments-table tr:hover td {
+      background: var(--bg-tag);
+    }
+    .assessments-table tr:last-child td {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Sticky Navbar -->
+  <header class="site-navbar" role="banner">
+    <div class="container nav-container">
+      <a href="./index.html" class="brand-logo" aria-label="Portfolio Home">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="brand-info">
+          <span>CSI3029 Portfolio</span>
+          <span class="brand-sub">Shaik Zabiullah · 23MIC0007</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="./index.html" class="nav-link">Home</a></li>
+          <li><a href="./assessments.html" class="nav-link active">Assessments (42)</a></li>
+          <li><a href="./about.html" class="nav-link">About & Tech</a></li>
+          <li><a href="./docs/README.md" class="nav-link" target="_blank">Docs</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-trigger" aria-label="Search assessments (Press Ctrl+K)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span>Search...</span>
+          <span class="kbd-shortcut">Ctrl K</span>
+        </button>
+        <button class="btn-icon theme-toggle-btn" aria-label="Toggle theme"></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="browse-header">
+      <h1 style="font-size: 2.4rem; margin-bottom: 0.5rem;">Browse All Assessments</h1>
+      <p style="color: var(--text-secondary);">Filter and launch any of the 42 standalone laboratory tasks. Real-time filtering with URL sync.</p>
+    </div>
+
+    <!-- Filters & Controls Bar -->
+    <div class="filters-bar">
+      <div class="filters-row-primary">
+        <div class="search-box-wrapper">
+          <svg class="search-box-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="filter-search-input" class="search-box-input" placeholder="Search by Q#, keyword, tag, or topic..." />
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <span id="results-count-text" style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);">Showing 42 of 42</span>
+          
+          <div class="view-toggle-btns" role="group" aria-label="View toggle">
+            <button class="view-btn active" id="btn-view-grid" title="Card Grid View">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              <span>Grid</span>
+            </button>
+            <button class="view-btn" id="btn-view-table" title="Compact Table View">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              <span>Table</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unit Pills -->
+      <div class="unit-pill-filters" id="unit-pills-container">
+        <!-- Rendered by script -->
+      </div>
+
+      <!-- Tag Filters -->
+      <div class="tag-pill-filters" id="tag-pills-container">
+        <!-- Rendered by script -->
+      </div>
+    </div>
+
+    <!-- Container for Rendered View (Grid or Table) -->
+    <div id="assessments-view-container"></div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-bottom">
+      <span>© 2026 Shaik Zabiullah (23MIC0007). CSI3029 Front End Design and Testing (Lab), VIT Vellore.</span>
+      <span>Double-click offline ready · Zero NPM build step</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./data/assessments.js"></script>
+  <script src="./js/theme.js"></script>
+  <script src="./js/command-palette.js"></script>
+  <script src="./js/app.js"></script>
+  <script>
+    (function () {
+      let currentUnit = 'all';
+      let currentTag = 'all';
+      let currentSearch = '';
+      let currentView = 'grid'; // 'grid' or 'table'
+
+      const tagsList = ['HTML', 'CSS', 'Layout', 'Forms', 'Media', 'JavaScript', 'Regex', 'Mouse Events', 'Keyboard Events', 'Multi-page'];
+
+      function parseHash() {
+        const hash = window.location.hash.substring(1);
+        if (!hash) return;
+        const params = new URLSearchParams(hash);
+        if (params.has('unit')) currentUnit = params.get('unit');
+        if (params.has('tag')) currentTag = params.get('tag');
+        if (params.has('view')) currentView = params.get('view');
+        if (params.has('q')) currentSearch = params.get('q');
+      }
+
+      function updateHash() {
+        const params = new URLSearchParams();
+        if (currentUnit !== 'all') params.set('unit', currentUnit);
+        if (currentTag !== 'all') params.set('tag', currentTag);
+        if (currentView !== 'grid') params.set('view', currentView);
+        if (currentSearch) params.set('q', currentSearch);
+        window.location.hash = params.toString() ? '#' + params.toString() : '';
+      }
+
+      function renderFilters() {
+        // Unit pills
+        const unitContainer = document.getElementById('unit-pills-container');
+        let unitHtml = `<button class="filter-chip ${currentUnit === 'all' ? 'active' : ''}" data-unit="all">All Units (8)</button>`;
+        window.UNITS.forEach(u => {
+          const isActive = currentUnit === u.id.toString();
+          unitHtml += `<button class="filter-chip ${isActive ? 'active' : ''}" data-unit="${u.id}" style="${isActive ? 'background:'+u.accent+';border-color:'+u.accent+';color:#fff' : ''}">${u.name.split(':')[0]}: ${u.name.split(':')[1]}</button>`;
+        });
+        unitContainer.innerHTML = unitHtml;
+
+        unitContainer.querySelectorAll('.filter-chip').forEach(btn => {
+          btn.addEventListener('click', () => {
+            currentUnit = btn.getAttribute('data-unit');
+            updateHash();
+            renderFilters();
+            renderContent();
+          });
+        });
+
+        // Tag pills
+        const tagContainer = document.getElementById('tag-pills-container');
+        let tagHtml = `<span style="font-size:0.75rem;color:var(--text-muted);margin-right:0.4rem;font-family:var(--font-mono)">Tags:</span>`;
+        tagHtml += `<button class="tag-chip ${currentTag === 'all' ? 'active' : ''}" data-tag="all">All</button>`;
+        tagsList.forEach(t => {
+          const isActive = currentTag.toLowerCase() === t.toLowerCase();
+          tagHtml += `<button class="tag-chip ${isActive ? 'active' : ''}" data-tag="${t}">${t}</button>`;
+        });
+        tagContainer.innerHTML = tagHtml;
+
+        tagContainer.querySelectorAll('.tag-chip').forEach(btn => {
+          btn.addEventListener('click', () => {
+            currentTag = btn.getAttribute('data-tag');
+            updateHash();
+            renderFilters();
+            renderContent();
+          });
+        });
+
+        // Search input sync
+        const searchInput = document.getElementById('filter-search-input');
+        searchInput.value = currentSearch;
+      }
+
+      function getFilteredAssessments() {
+        if (!window.ASSESSMENTS) return [];
+        return window.ASSESSMENTS.filter(item => {
+          // Unit filter
+          if (currentUnit !== 'all' && item.unitId.toString() !== currentUnit) {
+            return false;
+          }
+          // Tag filter
+          if (currentTag !== 'all') {
+            const hasTag = item.tags.some(t => t.toLowerCase() === currentTag.toLowerCase());
+            if (!hasTag) return false;
+          }
+          // Search filter
+          if (currentSearch.trim()) {
+            const q = currentSearch.toLowerCase();
+            const numStr = item.q.toString();
+            const slug = item.slug.toLowerCase();
+            const title = item.title.toLowerCase();
+            const question = item.question.toLowerCase();
+            const tags = item.tags.join(' ').toLowerCase();
+            if (!numStr.includes(q) && !slug.includes(q) && !title.includes(q) && !question.includes(q) && !tags.includes(q)) {
+              return false;
+            }
+          }
+          return true;
+        });
+      }
+
+      function renderContent() {
+        const list = getFilteredAssessments();
+        const container = document.getElementById('assessments-view-container');
+        const countText = document.getElementById('results-count-text');
+
+        countText.textContent = `Showing ${list.length} of ${window.ASSESSMENTS.length} assessments`;
+
+        if (list.length === 0) {
+          container.innerHTML = `
+            <div class="glass-panel" style="padding: 4rem; text-align: center; margin: 2rem 0;">
+              <h3 style="margin-bottom: 0.5rem;">No assessments found</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Try adjusting your unit filters, tags, or search terms.</p>
+              <button class="btn btn-secondary" id="btn-clear-filters">Reset All Filters</button>
+            </div>
+          `;
+          document.getElementById('btn-clear-filters').addEventListener('click', () => {
+            currentUnit = 'all';
+            currentTag = 'all';
+            currentSearch = '';
+            updateHash();
+            renderFilters();
+            renderContent();
+          });
+          return;
+        }
+
+        if (currentView === 'grid') {
+          container.innerHTML = `
+            <div class="assessments-grid">
+              ${list.map(item => `
+                <div class="card-assessment" style="border-top: 3px solid var(--unit-${item.unitId});">
+                  <div class="card-top">
+                    <span class="card-q-badge" style="color: var(--unit-${item.unitId});">Q${item.q < 10 ? '0' + item.q : item.q}</span>
+                    <span class="chip chip-unit" style="color: var(--unit-${item.unitId});">${item.unit.split(':')[0]}</span>
+                  </div>
+                  <div>
+                    <h3 class="card-title">${item.title}</h3>
+                    <p class="card-desc" style="margin-top: 0.4rem;">${item.question}</p>
+                  </div>
+                  <div class="card-tags">
+                    ${item.tags.map(t => `<span class="chip">${t}</span>`).join('')}
+                  </div>
+                  <div class="card-actions">
+                    <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">${item.files.length} File${item.files.length > 1 ? 's' : ''}</span>
+                    <a href="./assessment.html?q=${item.q}" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.4rem 0.85rem;">
+                      <span>Open Workspace</span>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          `;
+        } else {
+          container.innerHTML = `
+            <div class="assessments-table-wrapper">
+              <table class="assessments-table">
+                <thead>
+                  <tr>
+                    <th>Q#</th>
+                    <th>Assessment Title</th>
+                    <th>Unit</th>
+                    <th>Tags</th>
+                    <th>Files</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${list.map(item => `
+                    <tr>
+                      <td style="font-family: var(--font-mono); font-weight: 700; color: var(--unit-${item.unitId});">Q${item.q < 10 ? '0' + item.q : item.q}</td>
+                      <td>
+                        <strong style="color: var(--text-primary); display: block;">${item.title}</strong>
+                        <span style="font-size: 0.78rem; color: var(--text-muted);">${item.question.substring(0, 75)}...</span>
+                      </td>
+                      <td><span class="chip chip-unit" style="color: var(--unit-${item.unitId});">${item.unit.split(':')[0]}</span></td>
+                      <td>
+                        <div style="display: flex; gap: 0.25rem; flex-wrap: wrap;">
+                          ${item.tags.slice(0, 3).map(t => `<span class="chip" style="font-size:0.7rem">${t}</span>`).join('')}
+                        </div>
+                      </td>
+                      <td style="font-family: var(--font-mono); font-size: 0.75rem;">${item.files.join(', ')}</td>
+                      <td>
+                        <a href="./assessment.html?q=${item.q}" class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.35rem 0.7rem;">
+                          <span>Launch</span>
+                        </a>
+                      </td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          `;
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        parseHash();
+        renderFilters();
+        renderContent();
+
+        // Search input listener
+        document.getElementById('filter-search-input').addEventListener('input', (e) => {
+          currentSearch = e.target.value;
+          updateHash();
+          renderContent();
+        });
+
+        // View toggle listeners
+        const btnGrid = document.getElementById('btn-view-grid');
+        const btnTable = document.getElementById('btn-view-table');
+
+        btnGrid.addEventListener('click', () => {
+          currentView = 'grid';
+          btnGrid.classList.add('active');
+          btnTable.classList.remove('active');
+          updateHash();
+          renderContent();
+        });
+
+        btnTable.addEventListener('click', () => {
+          currentView = 'table';
+          btnTable.classList.add('active');
+          btnGrid.classList.remove('active');
+          updateHash();
+          renderContent();
+        });
+
+        if (currentView === 'table') {
+          btnTable.classList.add('active');
+          btnGrid.classList.remove('active');
+        }
+
+        window.addEventListener('hashchange', () => {
+          parseHash();
+          renderFilters();
+          renderContent();
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Traffic Signal Simulation - Mouse Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="simulation-container">
+    <div class="simulation-card">
+      
+      <header class="card-header">
+        <div class="badge">UNIT VII · REAL-TIME DOM MOUSE EVENTS</div>
+        <h1>Interactive Traffic Signal</h1>
+        <p class="subtitle">Hover mouse over each signal light to trigger illumination and dynamic action prompts.</p>
+      </header>
+
+      <!-- Traffic Signal Rig -->
+      <div class="signal-rig">
+        <div class="signal-housing">
+          <div class="visor-hood"></div>
+
+          <!-- Red Light (STOP) -->
+          <div class="lamp-bracket">
+            <div id="redLight" class="signal-bulb bulb-red" data-action="STOP" data-desc="Vehicles must come to a complete halt behind the stop line." role="button" aria-label="Red Traffic Light">
+              <span class="bulb-reflection"></span>
+            </div>
+            <span class="lamp-label">RED</span>
+          </div>
+
+          <!-- Yellow Light (READY) -->
+          <div class="lamp-bracket">
+            <div id="yellowLight" class="signal-bulb bulb-yellow" data-action="READY" data-desc="Prepare to proceed; yield if safe or prepare to stop." role="button" aria-label="Yellow Traffic Light">
+              <span class="bulb-reflection"></span>
+            </div>
+            <span class="lamp-label">YELLOW</span>
+          </div>
+
+          <!-- Green Light (GO) -->
+          <div class="lamp-bracket">
+            <div id="greenLight" class="signal-bulb bulb-green" data-action="GO" data-desc="Proceed through the intersection safely." role="button" aria-label="Green Traffic Light">
+              <span class="bulb-reflection"></span>
+            </div>
+            <span class="lamp-label">GREEN</span>
+          </div>
+
+        </div>
+        <div class="signal-pole"></div>
+      </div>
+
+      <!-- Action Display Board (Updated dynamically by mouse events) -->
+      <div class="action-board">
+        <div class="board-header">SIGNAL ACTION INSTRUCTION</div>
+        <div id="actionHeading" class="action-heading idle">HOVER OVER A LIGHT</div>
+        <div id="actionDesc" class="action-desc">Move cursor over any traffic lamp to activate the instruction.</div>
+      </div>
+
+    </div>
+
+    <footer class="page-footer">
+      CSI3029 Assessment Q36 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

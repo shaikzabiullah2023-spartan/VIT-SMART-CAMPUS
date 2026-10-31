@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 500" width="100%" height="100%">
+  <rect width="850" height="500" fill="#0B1120"/>
+  <!-- Card Mockup -->
+  <rect x="40" y="25" width="770" height="450" rx="12" fill="#1E293B" stroke="#334155"/>
+
+  <text x="425" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="22" fill="#FFFFFF">National Technical Symposium Registration Portal</text>
+  <text x="425" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#FBBF24">Input Types, Regex Constraints, Video Teaser &amp; Audio Briefing</text>
+
+  <!-- Media elements split -->
+  <!-- Video box -->
+  <rect x="70" y="110" width="330" height="110" rx="6" fill="#0F172A" stroke="#334155"/>
+  <circle cx="235" cy="165" r="22" fill="#D97706"/>
+  <polygon points="228,155 248,165 228,175" fill="#FFFFFF"/>
+  <text x="235" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#CBD5E1">&lt;video controls&gt; Teaser</text>
+
+  <!-- Audio box -->
+  <rect x="430" y="110" width="350" height="110" rx="6" fill="#0F172A" stroke="#334155"/>
+  <text x="450" y="140" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#F8FAFC">Dean's Audio Welcome Message</text>
+  <rect x="450" y="160" width="310" height="32" rx="16" fill="#1E293B" stroke="#475569"/>
+  <circle cx="470" cy="176" r="10" fill="#D97706"/>
+  <text x="610" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8">&lt;audio controls&gt;</text>
+
+  <!-- Form elements representation -->
+  <rect x="70" y="240" width="330" height="28" rx="4" fill="#0F172A" stroke="#475569"/>
+  <text x="80" y="258" font-family="Arial, sans-serif" font-size="11" fill="#94A3B8">Participant Name (pattern="^[A-Za-z ]+$")</text>
+
+  <rect x="430" y="240" width="350" height="28" rx="4" fill="#0F172A" stroke="#475569"/>
+  <text x="440" y="258" font-family="Arial, sans-serif" font-size="11" fill="#94A3B8">Register Number (pattern="^REG\d{6}$")</text>
+
+  <rect x="70" y="280" width="330" height="28" rx="4" fill="#0F172A" stroke="#475569"/>
+  <text x="80" y="298" font-family="Arial, sans-serif" font-size="11" fill="#94A3B8">Email ID (HTML5 valid email)</text>
+
+  <rect x="430" y="280" width="350" height="28" rx="4" fill="#0F172A" stroke="#475569"/>
+  <text x="440" y="298" font-family="Arial, sans-serif" font-size="11" fill="#94A3B8">Mobile Number (pattern="^\d{10}$")</text>
+
+  <!-- Checkboxes row -->
+  <rect x="70" y="325" width="710" height="35" rx="4" fill="#0F172A"/>
+  <text x="85" y="347" font-family="Arial, sans-serif" font-size="11" fill="#CBD5E1">Tracks: [x] Web Dev  [x] AI  [ ] Cyber Security  [x] Cloud | File: ID Card Upload</text>
+
+  <!-- Buttons -->
+  <rect x="70" y="380" width="170" height="34" rx="4" fill="#D97706"/>
+  <text x="155" y="402" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#FFFFFF">Register for Symposium</text>
+
+  <rect x="255" y="380" width="100" height="34" rx="4" fill="#334155"/>
+  <text x="305" y="402" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#CBD5E1">Reset</text>
+
+  <text x="425" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748B">CSI3029 Assessment Q25 · Shaik Zabiullah (23MIC0007)</text>
+</svg>
+

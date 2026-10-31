@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #153D2B;
+  --color-forest-dark: #0D261B;
+  --color-forest-light: #1D543B;
+  
+  --color-sage: #A8B99A;
+  --color-sage-light: #C7D4BD;
+  --color-sage-dark: #7A8E6B;
+  
+  --color-cream: #F6F4EA;
+  --color-cream-light: #FCFBF7;
+  --color-cream-dark: #E9E6D5;
+  
+  --color-earth: #92765A;
+  --color-earth-dark: #6E5740;
+  --color-earth-light: #B49A80;
+  
+  --color-charcoal: #252B26;
+  --color-charcoal-light: #3C453E;
+  --color-charcoal-muted: #5D6B60;
+
+  --font-serif: "Playfair Display", Georgia, Cambria, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F6F4EA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A8B99A;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7A8E6B;
+}
+
+/* Glassmorphism & Micro-animations */
+.glass-nav {
+  background-color: rgba(246, 244, 234, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(168, 185, 154, 0.25);
+}

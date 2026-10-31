@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>National Technical Symposium Registration Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="symposium-container">
+    
+    <!-- Portal Header -->
+    <header class="symposium-header">
+      <div class="header-badge">ANNUAL NATIONAL CONCLAVE · TECHFEST 2026</div>
+      <h1>National Technical Symposium Registration</h1>
+      <p>Register to compete in hackathons, algorithm sprints, and robotic exhibitions.</p>
+    </header>
+
+    <!-- Media Highlights: Embedded Video & Audio Elements -->
+    <div class="media-deck">
+      
+      <!-- 1. Embedded Promotional Video with Playback Controls -->
+      <div class="media-box video-box">
+        <h3>Promotional Event Teaser</h3>
+        <video controls poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='220' viewBox='0 0 400 220'><rect width='400' height='220' fill='%230f172a'/><circle cx='200' cy='110' r='30' fill='%23d97706'/><polygon points='192,98 215,110 192,122' fill='%23ffffff'/><text x='200' y='170' text-anchor='middle' font-family='Arial' font-size='12' fill='%23cbd5e1'>Play Symposium Promo</text></svg>">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          <p>Your browser does not support the HTML5 video element.</p>
+        </video>
+      </div>
+
+      <!-- 2. Embedded Audio Welcome Message with Playback Controls -->
+      <div class="media-box audio-box">
+        <h3>Welcome Message from Dean &amp; Convenor</h3>
+        <p class="audio-desc">Listen to keynote instructions, event guidelines, and registration briefing.</p>
+        <audio controls class="symposium-audio">
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+          <p>Your browser does not support the audio element.</p>
+        </audio>
+      </div>
+
+    </div>
+
+    <!-- Registration Form with Complete HTML5 Validation Attributes -->
+    <form class="symposium-form" onsubmit="event.preventDefault(); alert('Symposium Registration Submitted Successfully!\nParticipant: ' + document.getElementById('partName').value);">
+      
+      <div class="form-grid">
+        
+        <!-- Participant Name -->
+        <div class="form-group">
+          <label for="partName">Participant Full Name <span class="required">*</span></label>
+          <input 
+            type="text" 
+            id="partName" 
+            name="participantName" 
+            placeholder="Only alphabets and spaces" 
+            required 
+            pattern="^[A-Za-z ]+$" 
+            minlength="3" 
+            maxlength="50"
+            title="Name must contain only alphabets and spaces"
+          />
+        </div>
+
+        <!-- Register Number -->
+        <div class="form-group">
+          <label for="regNumber">Register Number <span class="required">*</span></label>
+          <input 
+            type="text" 
+            id="regNumber" 
+            name="registerNumber" 
+            placeholder="e.g. REG123456" 
+            required 
+            pattern="^REG[0-9]{6}$" 
+            title="Register number must begin with REG followed by exactly six digits (e.g. REG123456)"
+          />
+        </div>
+
+        <!-- College Name -->
+        <div class="form-group">
+          <label for="collegeName">College / University Name <span class="required">*</span></label>
+          <input 
+            type="text" 
+            id="collegeName" 
+            name="college" 
+            placeholder="e.g. Vellore Institute of Technology" 
+            required 
+            minlength="3"
+          />
+        </div>
+
+        <!-- Email ID -->
+        <div class="form-group">
+          <label for="partEmail">Email ID <span class="required">*</span></label>
+          <input 
+            type="email" 
+            id="partEmail" 
+            name="email" 
+            placeholder="participant@domain.edu" 
+            required 
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+          />
+        </div>
+
+        <!-- Mobile Number -->
+        <div class="form-group">
+          <label for="partMobile">Mobile Number <span class="required">*</span></label>
+          <input 
+            type="tel" 
+            id="partMobile" 
+            name="mobile" 
+            placeholder="10-digit mobile number" 
+            required 
+            pattern="^[0-9]{10}$"
+            maxlength="10"
+            title="Mobile number must contain exactly 10 digits"
+          />
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="form-group">
+          <label for="dob">Date of Birth <span class="required">*</span></label>
+          <input 
+            type="date" 
+            id="dob" 
+            name="dob" 
+            required 
+            max="2010-01-01"
+          />
+        </div>
+
+        <!-- Event Date -->
+        <div class="form-group">
+          <label for="eventDate">Preferred Event Date <span class="required">*</span></label>
+          <input 
+            type="date" 
+            id="eventDate" 
+            name="eventDate" 
+            required 
+            min="2026-11-01"
+          />
+        </div>
+
+        <!-- Department Dropdown -->
+        <div class="form-group">
+          <label for="department">Department <span class="required">*</span></label>
+          <select id="department" name="department" required>
+            <option value="">-- Choose Academic Department --</option>
+            <option value="Computer Science">Computer Science &amp; Engineering</option>
+            <option value="Information Tech">Information Technology</option>
+            <option value="Electronics">Electronics &amp; Communication</option>
+            <option value="Data Science">Artificial Intelligence &amp; Data Science</option>
+            <option value="Electrical">Electrical &amp; Electronics Engineering</option>
+          </select>
+        </div>
+
+        <!-- Gender (Radio Buttons) -->
+        <div class="form-group full-width">
+          <label>Gender <span class="required">*</span></label>
+          <div class="radio-row">
+            <label class="radio-chip"><input type="radio" name="gender" value="Male" required /> Male</label>
+            <label class="radio-chip"><input type="radio" name="gender" value="Female" /> Female</label>
+            <label class="radio-chip"><input type="radio" name="gender" value="Other" /> Other</label>
+          </div>
+        </div>
+
+        <!-- Technical Skills (Checkboxes) -->
+        <div class="form-group full-width">
+          <label>Technical Skills &amp; Event Tracks (Select all that apply)</label>
+          <div class="skills-checkbox-grid">
+            <label class="skill-checkbox"><input type="checkbox" name="skills" value="Web Development" /> Web Development</label>
+            <label class="skill-checkbox"><input type="checkbox" name="skills" value="Artificial Intelligence" /> Artificial Intelligence</label>
+            <label class="skill-checkbox"><input type="checkbox" name="skills" value="Cyber Security" /> Cyber Security</label>
+            <label class="skill-checkbox"><input type="checkbox" name="skills" value="Cloud Computing" /> Cloud Computing</label>
+            <label class="skill-checkbox"><input type="checkbox" name="skills" value="Mobile App Dev" /> Mobile App Dev</label>
+            <label class="skill-checkbox"><input type="checkbox" name="skills" value="Competitive Coding" /> Competitive Coding</label>
+          </div>
+        </div>
+
+        <!-- Upload Student ID Card (File) -->
+        <div class="form-group full-width">
+          <label for="studentIdFile">Upload Student ID Card <span class="required">*</span></label>
+          <input 
+            type="file" 
+            id="studentIdFile" 
+            name="idCard" 
+            accept="image/*,.pdf" 
+            required 
+          />
+          <small class="hint-text">Upload institutional ID card for entry pass verification (PDF / PNG / JPG).</small>
+        </div>
+
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="form-action-bar">
+        <button type="submit" class="btn-register">Register for Symposium</button>
+        <button type="reset" class="btn-reset">Reset Form</button>
+      </div>
+
+    </form>
+
+    <footer class="symposium-footer">
+      CSI3029 Lab Assessment Q25 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+
+  </div>
+
+</body>
+</html>
+

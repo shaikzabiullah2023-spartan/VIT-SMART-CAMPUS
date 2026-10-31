@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Student Marks Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="calculator-container">
+    
+    <header class="calc-header">
+      <span class="calc-badge">SCHOOL ASSESSMENT PORTAL</span>
+      <h1>Teacher Subject Marks Calculator</h1>
+      <p>Enter student marks for three core subjects to compute total, average, and performance grade.</p>
+    </header>
+
+    <!-- Marks Entry Form -->
+    <form id="marksForm" class="marks-form" onsubmit="event.preventDefault(); calculateMarks();">
+      
+      <div class="subject-row">
+        <label for="sub1">Subject 1 (e.g. Mathematics) <span class="required">*</span></label>
+        <input 
+          type="number" 
+          id="sub1" 
+          name="subject1" 
+          placeholder="Enter marks (0 - 100)" 
+          min="0" 
+          max="100" 
+          step="any"
+          required 
+        />
+      </div>
+
+      <div class="subject-row">
+        <label for="sub2">Subject 2 (e.g. Physics / Web Design) <span class="required">*</span></label>
+        <input 
+          type="number" 
+          id="sub2" 
+          name="subject2" 
+          placeholder="Enter marks (0 - 100)" 
+          min="0" 
+          max="100" 
+          step="any"
+          required 
+        />
+      </div>
+
+      <div class="subject-row">
+        <label for="sub3">Subject 3 (e.g. Computer Science) <span class="required">*</span></label>
+        <input 
+          type="number" 
+          id="sub3" 
+          name="subject3" 
+          placeholder="Enter marks (0 - 100)" 
+          min="0" 
+          max="100" 
+          step="any"
+          required 
+        />
+      </div>
+
+      <div class="calc-actions">
+        <!-- Calculate Button -->
+        <button type="submit" id="btnCalculate" class="btn-calculate">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><line x1="8" y1="10" x2="16" y2="10"></line></svg>
+          <span>Calculate Results</span>
+        </button>
+        <button type="button" class="btn-reset-calc" onclick="resetForm();">Clear</button>
+      </div>
+
+    </form>
+
+    <!-- Dynamic In-Place Results Display on the Same Page -->
+    <div id="resultsCard" class="results-card" style="display: none;">
+      <h3 class="results-title">Assessment Performance Report</h3>
+      
+      <div class="stat-boxes-grid">
+        <div class="stat-box">
+          <div class="stat-title">TOTAL MARKS</div>
+          <div id="totalMarksVal" class="stat-number">0 / 300</div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-title">AVERAGE PERCENTAGE</div>
+          <div id="averageMarksVal" class="stat-number">0.00%</div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-title">RESULT STATUS</div>
+          <div id="gradeStatusVal" class="stat-number">Pass</div>
+        </div>
+      </div>
+
+      <!-- Performance Feedback -->
+      <div id="feedbackText" class="feedback-banner"></div>
+    </div>
+
+    <footer class="calc-footer">
+      CSI3029 Assessment Q28 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

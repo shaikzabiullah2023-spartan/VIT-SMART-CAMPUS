@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIT Campus Store & Checkout | VIT Smart Campus</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <style>
+    .store-subbar {
+      background: #1e293b;
+      color: #fff;
+      padding: 10px 0;
+      font-size: 13px;
+    }
+    .store-subbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .store-category-pill {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary-navy);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .store-category-pill:hover, .store-category-pill.active {
+      background: var(--accent-blue);
+      color: #fff;
+      border-color: var(--accent-blue);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo">
+        <div class="logo-badge" style="background: linear-gradient(135deg, #7c3aed, #9333ea);">🛍️</div>
+        <div class="brand-text">
+          <span class="uni-name" style="color: #9333ea;">Campus Mart</span>
+          <span class="portal-name">VIT Campus Store</span>
+        </div>
+      </a>
+
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="./about.html" class="nav-link">About</a></li>
+          <li><a href="./academics.html" class="nav-link">Academics</a></li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#" class="nav-link active">
+              <span>Student Services</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="./dashboard.html" class="dropdown-link">📊 Student Dashboard</a></li>
+              <li><a href="./hospital.html" class="dropdown-link">🏥 Campus Hospital</a></li>
+              <li><a href="./store.html" class="dropdown-link active">🛍️ Campus Store</a></li>
+              <li><a href="./learning.html" class="dropdown-link">💻 LearnSphere Academy</a></li>
+              <li><a href="./gamezone.html" class="dropdown-link">🎮 GameZone Arena</a></li>
+              <li><a href="./news.html" class="dropdown-link">📰 Campus Times Newspaper</a></li>
+            </ul>
+          </li>
+
+          <li><a href="./events.html" class="nav-link">Events</a></li>
+          <li><a href="./gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="./javascript-lab.html" class="nav-link" style="color: var(--brand-cyan);">⚡ JS Lab</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="cart-icon-btn" onclick="openCartModal()" aria-label="Open Cart">
+          <span>🛒</span>
+          <span class="cart-badge">0</span>
+        </button>
+        <a href="#checkoutSection" class="btn btn-primary btn-sm">Instant Checkout</a>
+        <button type="button" class="hamburger-btn" aria-label="Toggle Mobile Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Store Specific Secondary Bar (Q13) -->
+  <div class="store-subbar">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span>📍 Deliver to:</span>
+        <strong style="color: var(--accent-cyan);">Mens Hostel Block L, Room 412, VIT Vellore (632014)</strong>
+      </div>
+      <div style="display: flex; gap: 20px; align-items: center;">
+        <a href="#" onclick="alert('Account active: Shaik Zabiullah (23MIC0007)'); return false;" style="color: #cbd5e1;">Your Account</a>
+        <a href="#" onclick="alert('You have 0 pending returns. Last order delivered.'); return false;" style="color: #cbd5e1;">Returns &amp; Orders</a>
+        <span class="badge badge-emerald">Free Campus Express Delivery</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Store Hero Banner -->
+  <section style="background: linear-gradient(135deg, #3b0764, #581c87); color: #fff; padding: 50px 0 40px 0;">
+    <div class="container" style="text-align: center; max-width: 760px;">
+      <span class="badge badge-amber" style="margin-bottom: 12px;">OFFICIAL CO-OPERATIVE STORE</span>
+      <h1 style="font-family: var(--font-heading); font-size: 38px; font-weight: 800; margin-bottom: 12px;">
+        VIT University Campus Store
+      </h1>
+      <p style="font-size: 15px; color: #e9d5ff; margin-bottom: 24px;">
+        Authoritative semester engineering textbooks, university varsity hoodies, precision drafting supplies, and computer accessories with student subsidies.
+      </p>
+
+      <!-- Category Filter Pills (Q13) -->
+      <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <button type="button" class="store-category-pill active" onclick="filterCategoryPills(this, 'All')">All Categories</button>
+        <button type="button" class="store-category-pill" onclick="filterCategoryPills(this, 'Books')">📚 Books</button>
+        <button type="button" class="store-category-pill" onclick="filterCategoryPills(this, 'Electronics')">💻 Electronics</button>
+        <button type="button" class="store-category-pill" onclick="filterCategoryPills(this, 'Clothing')">👕 Clothing &amp; Varsity</button>
+        <button type="button" class="store-category-pill" onclick="filterCategoryPills(this, 'Stationery')">🖊️ Stationery</button>
+        <button type="button" class="store-category-pill" onclick="filterCategoryPills(this, 'Accessories')">🍶 Accessories</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Catalog Grid -->
+  <main class="section-py">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <h2 style="font-size: 22px; font-weight: 800; color: var(--primary-navy);">Featured Campus Essentials</h2>
+        <span style="font-size: 13px; color: var(--text-muted); font-weight: 600;">All prices in INR (₹)</span>
+      </div>
+
+      <div class="bento-grid" id="productGrid">
+        <!-- Injected via shopping.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       MULTI-STEP CHECKOUT FLOW (Q27)
+       Part A: Customer & Delivery Details
+       Part B: Payment Details (Dummy simulation)
+       Part C: Cart Summary & Order Placement
+       ========================================================================== -->
+  <section id="checkoutSection" class="section-py" style="background: #f1f5f9; border-top: 1px solid var(--border-light);">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-kicker">Unified Checkout</span>
+        <h2 class="section-title">Campus Store Checkout Wizard</h2>
+        <p class="section-desc">Three-stage linked order processing covering delivery allocation, simulated payment authorization, and live cart summary.</p>
+      </div>
+
+      <form id="checkoutForm">
+        <div class="checkout-grid" style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: start;">
+          
+          <!-- Left Column: Part A & Part B -->
+          <div style="display: flex; flex-direction: column; gap: 24px;">
+            
+            <!-- PART A: CUSTOMER & DELIVERY DETAILS (Q27) -->
+            <div class="card" style="box-shadow: var(--shadow-md);">
+              <div class="card-header" style="background: #eff6ff;">
+                <h3 style="font-size: 16px; font-weight: 700; color: #1e3a8a;">Part A – Customer &amp; Delivery Details</h3>
+                <span class="badge badge-blue">STEP 1 OF 3</span>
+              </div>
+              <div class="card-body">
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label class="form-label" for="custName">Customer Full Name <span class="req">*</span></label>
+                    <input type="text" id="custName" class="form-control" value="Shaik Zabiullah" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="custEmail">Email Address <span class="req">*</span></label>
+                    <input type="email" id="custEmail" class="form-control" value="zabiullah.shaik2023@vitstudent.ac.in" required>
+                  </div>
+                </div>
+
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label class="form-label" for="custMobile">Mobile Number <span class="req">*</span></label>
+                    <input type="tel" id="custMobile" class="form-control" value="9876543210" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="custDate">Expected Delivery Date <span class="req">*</span></label>
+                    <input type="date" id="custDate" class="form-control" value="2026-11-03" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="custAddress">Campus Delivery Address <span class="req">*</span></label>
+                  <input type="text" id="custAddress" class="form-control" value="Room 412, Mens Hostel Block L, Main Campus" required>
+                </div>
+
+                <div class="form-row-3">
+                  <div class="form-group">
+                    <label class="form-label" for="custCity">City</label>
+                    <input type="text" id="custCity" class="form-control" value="Vellore" readonly>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="custState">State</label>
+                    <input type="text" id="custState" class="form-control" value="Tamil Nadu" readonly>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="custPin">PIN Code</label>
+                    <input type="text" id="custPin" class="form-control" value="632014" readonly>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PART B: PAYMENT DETAILS (Q27) -->
+            <div class="card" style="box-shadow: var(--shadow-md);">
+              <div class="card-header" style="background: #ecfeff;">
+                <h3 style="font-size: 16px; font-weight: 700; color: #0891b2;">Part B – Simulated Payment Authorization</h3>
+                <span class="badge badge-cyan">STEP 2 OF 3</span>
+              </div>
+              <div class="card-body">
+                <div class="alert alert-info" style="margin-bottom: 16px; font-size: 12.5px;">
+                  ℹ️ <strong>Demonstration Environment:</strong> Do not submit real banking credentials. Use pre-filled dummy details.
+                </div>
+
+                <!-- Payment Method Radios -->
+                <div class="form-group">
+                  <label class="form-label">Select Payment Method</label>
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px;">
+                    <label class="selection-card"><input type="radio" name="paymentMethod" value="UPI" checked> UPI / QR</label>
+                    <label class="selection-card"><input type="radio" name="paymentMethod" value="Credit Card"> Credit Card</label>
+                    <label class="selection-card"><input type="radio" name="paymentMethod" value="Debit Card"> Debit Card</label>
+                    <label class="selection-card"><input type="radio" name="paymentMethod" value="Cash on Delivery"> COD</label>
+                  </div>
+                </div>
+
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label class="form-label" for="cardHolder">Cardholder / UPI Account Name</label>
+                    <input type="text" id="cardHolder" class="form-control" value="SHAIK ZABIULLAH">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="cardNumber">Card Number / VPA Handle</label>
+                    <input type="text" id="cardNumber" class="form-control" value="shaik@okaxis / 4242 •••• •••• 4242">
+                  </div>
+                </div>
+
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label class="form-label" for="cardExpiry">Expiry Date (MM/YY)</label>
+                    <input type="text" id="cardExpiry" class="form-control" value="12/28">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="cardCvv">CVV Code</label>
+                    <input type="password" id="cardCvv" class="form-control" value="888" maxlength="3">
+                  </div>
+                </div>
+
+                <!-- Terms Checkbox -->
+                <div class="form-group" style="margin-top: 10px;">
+                  <label style="display: flex; align-items: flex-start; gap: 8px; font-size: 13px; cursor: pointer;">
+                    <input type="checkbox" id="termsCheck" checked style="margin-top: 2px;">
+                    <span>I accept the University Store Purchase Terms, 7-Day Exchange Policy, and Student ID verification on delivery.</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Part C – Cart Summary & Place Order (Q27) -->
+          <div class="card" style="box-shadow: var(--shadow-xl); border: 2px solid var(--accent-blue); position: sticky; top: calc(var(--nav-height) + 20px);">
+            <div class="card-header" style="background: #1e3a8a; color: #fff;">
+              <h3 style="font-size: 16px; font-weight: 700;">Part C – Live Cart Summary</h3>
+              <span class="badge badge-cyan">STEP 3 OF 3</span>
+            </div>
+            
+            <div class="card-body">
+              <div class="table-responsive" style="margin-bottom: 20px;">
+                <table class="table" style="font-size: 13px;">
+                  <thead>
+                    <tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th></tr>
+                  </thead>
+                  <tbody id="checkoutSummaryItems">
+                    <!-- Populated dynamically by shopping.js -->
+                  </tbody>
+                </table>
+              </div>
+
+              <div style="border-top: 1px solid var(--border-light); padding-top: 14px; display: grid; gap: 8px; font-size: 13.5px;">
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="color: var(--text-muted);">Items Subtotal:</span>
+                  <span id="checkoutSubtotal" style="font-weight: 700;">₹0</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="color: var(--text-muted);">Campus Delivery Fee:</span>
+                  <span style="color: var(--status-success); font-weight: 700;">FREE (Hostel Delivery)</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 18px; font-weight: 800; color: var(--primary-navy); border-top: 2px dashed var(--border-light); padding-top: 10px; margin-top: 6px;">
+                  <span>Final Total:</span>
+                  <span id="checkoutTotal" style="color: var(--accent-blue);">₹0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-footer" style="display: flex; gap: 10px;">
+              <button type="submit" class="btn btn-primary btn-block btn-lg" style="flex: 2;">Place Campus Order</button>
+              <button type="button" class="btn btn-secondary btn-lg" style="flex: 1;" onclick="openCartModal()">Edit</button>
+            </div>
+          </div>
+
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- Cart Drawer Modal -->
+  <div id="cartModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+    <div class="card" style="width: 90%; max-width: 520px; max-height: 85vh; display: flex; flex-direction: column; box-shadow: var(--shadow-xl); border-radius: var(--radius-xl);">
+      <div class="card-header" style="background: var(--bg-subtle);">
+        <h3 style="font-size: 17px; font-weight: 700; color: var(--primary-navy);">Shopping Cart <span id="cartCountHeader"></span></h3>
+        <button type="button" onclick="closeCartModal()" style="background: none; border: none; font-size: 20px; cursor: pointer; color: var(--text-muted);">✕</button>
+      </div>
+      <div class="card-body" style="overflow-y: auto; flex: 1;" id="cartItemsList">
+        <!-- Rendered by shopping.js -->
+      </div>
+      <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <span style="font-size: 12px; color: var(--text-muted);">Estimated Total:</span>
+          <div id="cartTotal" style="font-size: 20px; font-weight: 800; color: var(--accent-blue);">₹0</div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button type="button" class="btn btn-secondary btn-sm" onclick="closeCartModal()">Continue Shopping</button>
+          <a href="#checkoutSection" class="btn btn-primary btn-sm" onclick="closeCartModal()">Proceed to Checkout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Receipt Success Modal -->
+  <div id="orderReceiptModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 10001; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+    <div class="card" style="width: 90%; max-width: 480px; padding: 28px; text-align: center; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl);">
+      <div style="width: 64px; height: 64px; border-radius: 50%; background: #ecfdf5; color: #059669; font-size: 32px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto;">
+        ✓
+      </div>
+      <h2 style="font-size: 22px; font-weight: 800; color: var(--primary-navy); margin-bottom: 6px;">Order Confirmed!</h2>
+      <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 20px;">Your purchase from VIT Campus Store has been scheduled for express hostel delivery.</p>
+
+      <div style="background: var(--bg-subtle); border-radius: var(--radius-md); padding: 16px; text-align: left; font-size: 13.5px; display: grid; gap: 8px; margin-bottom: 24px;">
+        <div style="display: flex; justify-content: space-between;">
+          <span style="color: var(--text-muted);">Order Receipt ID:</span>
+          <code id="receiptOrderId" style="font-weight: bold; color: var(--accent-blue);"></code>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span style="color: var(--text-muted);">Recipient:</span>
+          <span id="receiptCustomer" style="font-weight: 600;"></span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span style="color: var(--text-muted);">Payment Method:</span>
+          <span id="receiptPayment" style="font-weight: 600;"></span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span style="color: var(--text-muted);">Date:</span>
+          <span id="receiptDate"></span>
+        </div>
+        <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-light); padding-top: 8px; font-weight: 800; color: var(--primary-navy);">
+          <span>Amount Paid:</span>
+          <span id="receiptTotal" style="color: var(--accent-blue);"></span>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary btn-block" onclick="document.getElementById('orderReceiptModal').style.display='none'">
+        Back to Campus Store
+      </button>
+    </div>
+  </div>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>Copyright © 2026 VIT Smart Campus. All Rights Reserved.</div>
+        <div>Author: <strong>Shaik Zabiullah</strong> (Reg. No. <strong>23MIC0007</strong>) · VIT Vellore</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/shopping.js"></script>
+  <script>
+    function openCartModal() {
+      renderCartModal();
+      document.getElementById('cartModal').style.display = 'flex';
+    }
+    function closeCartModal() {
+      document.getElementById('cartModal').style.display = 'none';
+    }
+    function filterCategoryPills(btn, cat) {
+      document.querySelectorAll('.store-category-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterStoreByCategory(cat);
+    }
+  </script>
+</body>
+</html>
+

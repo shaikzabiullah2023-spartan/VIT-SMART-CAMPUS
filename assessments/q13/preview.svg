@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 450" width="100%" height="100%">
+  <rect width="850" height="450" fill="#F1F5F9"/>
+
+  <!-- E-commerce dark header bar -->
+  <rect x="0" y="40" width="850" height="70" fill="#131921"/>
+
+  <!-- Logo -->
+  <text x="30" y="82" font-family="Arial, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF">Shop<tspan fill="#F59E0B">Hub</tspan></text>
+
+  <!-- Location -->
+  <circle cx="150" cy="75" r="8" fill="none" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="165" y="70" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8">Deliver to</text>
+  <text x="165" y="86" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#FFFFFF">Chennai, TN</text>
+
+  <!-- Search Bar -->
+  <rect x="270" y="55" width="310" height="38" rx="4" fill="#FFFFFF"/>
+  <rect x="270" y="55" width="55" height="38" fill="#E2E8F0"/>
+  <text x="282" y="78" font-family="Arial, sans-serif" font-size="11" fill="#334155">All ▾</text>
+  <text x="335" y="78" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">Search products...</text>
+  <rect x="540" y="55" width="40" height="38" fill="#F59E0B"/>
+  <circle cx="560" cy="74" r="6" fill="none" stroke="#131921" stroke-width="2"/>
+
+  <!-- Accounts & Lists -->
+  <text x="610" y="70" font-family="Arial, sans-serif" font-size="10" fill="#CBD5E1">Hello, Guest</text>
+  <text x="610" y="86" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#FFFFFF">Account &amp; Lists ▾</text>
+
+  <!-- Returns & Orders -->
+  <text x="715" y="70" font-family="Arial, sans-serif" font-size="10" fill="#CBD5E1">Returns</text>
+  <text x="715" y="86" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#FFFFFF">&amp; Orders</text>
+
+  <!-- Cart -->
+  <rect x="790" y="60" width="30" height="25" rx="3" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="818" cy="62" r="7" fill="#F59E0B"/>
+  <text x="815" y="66" font-family="Arial, sans-serif" font-weight="bold" font-size="9" fill="#131921">3</text>
+
+  <!-- Content card -->
+  <rect x="100" y="160" width="650" height="220" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="425" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="22" fill="#1E293B">Amazon / Flipkart Single-Row Header</text>
+  <text x="425" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#64748B">Arranged in a single horizontal row with Flexbox alignment</text>
+  <text x="425" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0284C7">CSI3029 Assessment Q13 · Shaik Zabiullah (23MIC0007)</text>
+</svg>
+

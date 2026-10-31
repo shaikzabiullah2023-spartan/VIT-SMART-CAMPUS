@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assessment Workspace | CSI3029 Front End Design & Testing</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="./css/themes.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/syntax.css" />
+
+  <style>
+    .workspace-top-bar {
+      padding: 2.25rem 0 1.5rem;
+    }
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+    .breadcrumb-link:hover {
+      color: var(--text-primary);
+    }
+    .workspace-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .workspace-title-area {
+      flex: 1;
+      min-width: 320px;
+    }
+    .q-badge-large {
+      font-family: var(--font-mono);
+      font-size: 1.25rem;
+      font-weight: 800;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+    .workspace-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.75rem;
+    }
+    .nav-pager {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .pager-counter {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    
+    /* Builds On Banner */
+    .builds-on-banner {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Checklist */
+    .checklist-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.25rem;
+      accent-color: var(--accent-primary);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    /* Keyboard Hint */
+    .keyboard-hint-bar {
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--text-primary);
+    }
+
+    /* Output Lightbox */
+    .output-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .output-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform var(--transition-fast), border-color var(--transition-fast);
+    }
+    .output-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-medium);
+    }
+    .output-image-preview {
+      width: 100%;
+      height: 260px;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .output-caption {
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 100000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox-modal.open {
+      display: flex;
+    }
+    .lightbox-content {
+      max-width: 95vw;
+      max-height: 90vh;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      background: #FFFFFF;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Sticky Navbar -->
+  <header class="site-navbar" role="banner">
+    <div class="container nav-container">
+      <a href="./index.html" class="brand-logo" aria-label="Portfolio Home">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="brand-info">
+          <span>CSI3029 Portfolio</span>
+          <span class="brand-sub">Shaik Zabiullah · 23MIC0007</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="./index.html" class="nav-link">Home</a></li>
+          <li><a href="./assessments.html" class="nav-link">Assessments (42)</a></li>
+          <li><a href="./about.html" class="nav-link">About & Tech</a></li>
+          <li><a href="./docs/README.md" class="nav-link" target="_blank">Docs</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-trigger" aria-label="Search assessments (Press Ctrl+K)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span>Search...</span>
+          <span class="kbd-shortcut">Ctrl K</span>
+        </button>
+        <button class="btn-icon theme-toggle-btn" aria-label="Toggle theme"></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="workspace-top-bar">
+      <!-- Breadcrumb Navigation -->
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <a href="./index.html" class="breadcrumb-link">Home</a>
+        <span>/</span>
+        <a href="./assessments.html" class="breadcrumb-link">Assessments</a>
+        <span>/</span>
+        <span id="breadcrumb-unit-text">Unit</span>
+        <span>/</span>
+        <span id="breadcrumb-q-text" style="color: var(--text-primary); font-weight: 600;">Q00</span>
+      </nav>
+
+      <!-- Workspace Header -->
+      <div class="workspace-header">
+        <div class="workspace-title-area">
+          <span id="q-badge" class="q-badge-large">Q00</span>
+          <h1 id="assessment-title" style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 0.5rem;">Loading Assessment...</h1>
+          <div class="workspace-meta">
+            <span id="unit-chip" class="chip chip-unit">Unit</span>
+            <div id="tags-chips-wrapper" style="display: inline-flex; gap: 0.35rem; flex-wrap: wrap;"></div>
+          </div>
+        </div>
+
+        <div class="nav-pager">
+          <button id="btn-prev-assessment" class="btn btn-secondary" title="Previous Assessment (Press Left Arrow)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <span>Prev</span>
+          </button>
+          <span id="pager-counter" class="pager-counter">Q0 of 42</span>
+          <button id="btn-next-assessment" class="btn btn-secondary" title="Next Assessment (Press Right Arrow)">
+            <span>Next</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Builds On Banner (Appears if dependsOn is present) -->
+      <div id="builds-on-banner" class="builds-on-banner" style="display: none;">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span id="builds-on-text" style="font-size: 0.88rem; color: var(--text-primary); font-weight: 500;">
+            This assessment builds upon previous work.
+          </span>
+        </div>
+        <a id="builds-on-link" href="#" class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.35rem 0.75rem;">
+          View Base Question
+        </a>
+      </div>
+
+      <!-- Workspace Navigation Tabs -->
+      <div class="tabs-nav" role="tablist">
+        <button class="tab-btn active" data-tab="tab-question" role="tab" aria-selected="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span>Question</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-demo" role="tab" aria-selected="false">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span>Live Demo</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-code" role="tab" aria-selected="false">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>Code Viewer</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-output" role="tab" aria-selected="false">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Output Preview</span>
+        </button>
+      </div>
+
+      <!-- Tab 1: Question Text & Requirements Checklist -->
+      <div id="tab-question" class="tab-pane active" role="tabpanel">
+        <div class="glass-panel" style="padding: 2rem; margin-bottom: 2rem;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Assessment Problem Statement</h3>
+          <p id="question-full-text" style="font-size: 1rem; color: var(--text-primary); line-height: 1.7; background: var(--bg-surface-elevated); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--accent-primary);"></p>
+          
+          <h4 style="font-size: 1.05rem; margin-top: 2rem; margin-bottom: 0.5rem;">Syllabus Requirements Checklist</h4>
+          <div id="requirements-checklist" class="checklist-container"></div>
+
+          <div id="assessment-notes-area" style="margin-top: 1.5rem; padding: 1rem; border-radius: var(--radius-md); background: var(--bg-tag); font-size: 0.85rem; color: var(--text-muted);"></div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Live Demo in Isolated Browser Mockup -->
+      <div id="tab-demo" class="tab-pane" role="tabpanel">
+        <div id="keyboard-hint" class="keyboard-hint-bar" style="display: none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="6" y1="8" x2="6.01" y2="8"/><line x1="10" y1="8" x2="10.01" y2="8"/><line x1="14" y1="8" x2="14.01" y2="8"/><line x1="18" y1="8" x2="18.01" y2="8"/><line x1="6" y1="12" x2="6.01" y2="12"/><line x1="10" y1="12" x2="10.01" y2="12"/><line x1="14" y1="12" x2="14.01" y2="12"/><line x1="18" y1="12" x2="18.01" y2="12"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
+          <span><strong>Keyboard assessment hint:</strong> Click inside the demo frame to focus it, then use the keyboard triggers.</span>
+        </div>
+
+        <div class="browser-mockup" style="margin-bottom: 2.5rem;">
+          <div class="browser-header">
+            <div class="browser-dots" aria-hidden="true">
+              <span class="browser-dot dot-red"></span>
+              <span class="browser-dot dot-yellow"></span>
+              <span class="browser-dot dot-green"></span>
+            </div>
+
+            <div class="browser-bar">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span id="browser-url-text">localhost:3000/q00/index.html</span>
+            </div>
+
+            <div class="browser-actions">
+              <!-- Device Resizer Toggle -->
+              <div style="display: flex; gap: 2px; background: var(--bg-surface); padding: 2px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <button class="btn-icon" id="btn-device-desktop" style="width: 28px; height: 28px;" title="Desktop View (100%)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </button>
+                <button class="btn-icon" id="btn-device-tablet" style="width: 28px; height: 28px;" title="Tablet View (768px)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                </button>
+                <button class="btn-icon" id="btn-device-mobile" style="width: 28px; height: 28px;" title="Mobile View (375px)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                </button>
+              </div>
+
+              <!-- Reload Frame -->
+              <button class="btn-icon" id="btn-reload-demo" style="width: 28px; height: 28px;" title="Reload demo frame">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+              </button>
+
+              <!-- Open Full Page -->
+              <a id="btn-open-full" href="#" target="_blank" class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.35rem 0.75rem;" title="Open demo in new tab">
+                <span>Open Full Page</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Viewport Wrapper -->
+          <div id="browser-viewport-wrapper" class="browser-viewport-wrapper device-desktop">
+            <iframe id="demo-iframe" class="demo-iframe" loading="lazy" sandbox="allow-scripts allow-forms allow-same-origin" title="Live Assessment Sandbox"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Code Viewer with Pure JS Syntax Highlighting -->
+      <div id="tab-code" class="tab-pane" role="tabpanel">
+        <div id="code-viewer-container" style="margin-bottom: 2.5rem;"></div>
+      </div>
+
+      <!-- Tab 4: Output Preview Gallery -->
+      <div id="tab-output" class="tab-pane" role="tabpanel">
+        <div class="glass-panel" style="padding: 2rem; margin-bottom: 2rem;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Rendered Assessment Output</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Visual artifact rendering the verified output state for this laboratory problem.</p>
+          
+          <div class="output-gallery">
+            <div class="output-card" id="output-preview-card">
+              <div class="output-image-preview">
+                <img id="output-preview-img" src="" alt="Output Preview" style="width: 100%; height: 100%; object-fit: contain;" />
+              </div>
+              <div class="output-caption">
+                <strong style="color: var(--text-primary); display: block;" id="output-preview-caption">Default Output State</strong>
+                <span style="font-size: 0.78rem; color: var(--text-muted);">Click to view high-resolution inspection lightbox</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Assessments in Unit -->
+      <div style="margin-top: 3.5rem; margin-bottom: 3rem; border-top: 1px solid var(--border-subtle); padding-top: 2rem;">
+        <h3 style="font-size: 1.15rem; margin-bottom: 1rem;">Related Assessments in this Unit</h3>
+        <div id="related-assessments-row" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem;"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Output Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Output Screenshot Lightbox">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="Full Resolution Output" style="max-width: 90vw; max-height: 85vh; display: block;" />
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-bottom">
+      <span>© 2026 Shaik Zabiullah (23MIC0007). CSI3029 Front End Design and Testing (Lab), VIT Vellore.</span>
+      <span>Double-click offline ready · Zero NPM build step</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./data/assessments.js"></script>
+  <script src="./js/theme.js"></script>
+  <script src="./js/highlighter.js"></script>
+  <script src="./js/command-palette.js"></script>
+  <script src="./js/app.js"></script>
+  <script>
+    (function () {
+      let currentAssessment = null;
+      let activeFile = 'index.html';
+      let fileContentsCache = {};
+
+      function getQParam() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('q')) {
+          return parseInt(urlParams.get('q'), 10);
+        }
+        // Hash fallback: #/q13 or #13
+        const hash = window.location.hash.replace(/[^\d]/g, '');
+        if (hash) {
+          return parseInt(hash, 10);
+        }
+        return 1;
+      }
+
+      function loadAssessment(qNum) {
+        currentAssessment = window.getAssessmentByNumber(qNum) || window.ASSESSMENTS[0];
+        document.title = `Q${currentAssessment.q < 10 ? '0' + currentAssessment.q : currentAssessment.q}: ${currentAssessment.title} | CSI3029 Portfolio`;
+
+        // Breadcrumb
+        document.getElementById('breadcrumb-unit-text').textContent = currentAssessment.unit.split(':')[0];
+        document.getElementById('breadcrumb-q-text').textContent = `Q${currentAssessment.q < 10 ? '0' + currentAssessment.q : currentAssessment.q}`;
+
+        // Header info
+        const qBadge = document.getElementById('q-badge');
+        qBadge.textContent = `Q${currentAssessment.q < 10 ? '0' + currentAssessment.q : currentAssessment.q}`;
+        qBadge.style.color = `var(--unit-${currentAssessment.unitId})`;
+        qBadge.style.background = `rgba(255, 255, 255, 0.05)`;
+        qBadge.style.border = `1px solid var(--unit-${currentAssessment.unitId})40`;
+
+        document.getElementById('assessment-title').textContent = currentAssessment.title;
+
+        const unitChip = document.getElementById('unit-chip');
+        unitChip.textContent = currentAssessment.unit;
+        unitChip.style.color = `var(--unit-${currentAssessment.unitId})`;
+        unitChip.style.borderColor = `var(--unit-${currentAssessment.unitId})40`;
+
+        // Tags
+        const tagsWrapper = document.getElementById('tags-chips-wrapper');
+        tagsWrapper.innerHTML = currentAssessment.tags.map(t => `<span class="chip">${t}</span>`).join('');
+
+        // Progress counter
+        document.getElementById('pager-counter').textContent = `Q${currentAssessment.q} of ${window.ASSESSMENTS.length}`;
+
+        // Prev / Next button states
+        const prevBtn = document.getElementById('btn-prev-assessment');
+        const nextBtn = document.getElementById('btn-next-assessment');
+
+        if (currentAssessment.q <= 1) {
+          prevBtn.disabled = true;
+          prevBtn.style.opacity = '0.4';
+          prevBtn.style.cursor = 'not-allowed';
+        } else {
+          prevBtn.disabled = false;
+          prevBtn.style.opacity = '1';
+          prevBtn.style.cursor = 'pointer';
+        }
+
+        if (currentAssessment.q >= window.ASSESSMENTS.length) {
+          nextBtn.disabled = true;
+          nextBtn.style.opacity = '0.4';
+          nextBtn.style.cursor = 'not-allowed';
+        } else {
+          nextBtn.disabled = false;
+          nextBtn.style.opacity = '1';
+          nextBtn.style.cursor = 'pointer';
+        }
+
+        // Builds On Banner
+        const buildsOnBanner = document.getElementById('builds-on-banner');
+        if (currentAssessment.dependsOn) {
+          buildsOnBanner.style.display = 'flex';
+          document.getElementById('builds-on-text').innerHTML = `This assessment <strong>builds on ${currentAssessment.dependsOn}</strong>. It runs its own fully extended standalone copy.`;
+          const baseNum = currentAssessment.dependsOn.replace(/\D/g, '');
+          document.getElementById('builds-on-link').href = `./assessment.html?q=${baseNum}`;
+        } else {
+          buildsOnBanner.style.display = 'none';
+        }
+
+        // Tab 1: Question
+        document.getElementById('question-full-text').textContent = currentAssessment.question;
+        const checklistEl = document.getElementById('requirements-checklist');
+        checklistEl.innerHTML = currentAssessment.requirements.map((req, i) => `
+          <label class="checklist-item">
+            <input type="checkbox" id="check-${currentAssessment.q}-${i}" checked />
+            <span>${req}</span>
+          </label>
+        `).join('');
+
+        const notesEl = document.getElementById('assessment-notes-area');
+        notesEl.innerHTML = `<strong>Architectural Notes:</strong> ${currentAssessment.notes}`;
+
+        // Tab 2: Live Demo setup
+        const iframe = document.getElementById('demo-iframe');
+        const demoPath = `./${currentAssessment.entry}`;
+        iframe.src = demoPath;
+        document.getElementById('browser-url-text').textContent = `localhost:3000/${currentAssessment.slug}/${currentAssessment.files[0]}`;
+        document.getElementById('btn-open-full').href = demoPath;
+
+        // Keyboard hint show/hide
+        const isKeyboardQ = currentAssessment.q >= 37 && currentAssessment.q <= 42;
+        const keyboardHint = document.getElementById('keyboard-hint');
+        if (isKeyboardQ) {
+          keyboardHint.style.display = 'flex';
+          iframe.addEventListener('load', () => {
+            try { iframe.contentWindow.focus(); } catch (e) {}
+          }, { once: true });
+        } else {
+          keyboardHint.style.display = 'none';
+        }
+
+        // Tab 4: Output Preview
+        const previewImg = document.getElementById('output-preview-img');
+        const previewCard = document.getElementById('output-preview-card');
+        const previewCaption = document.getElementById('output-preview-caption');
+        previewImg.src = `./${currentAssessment.preview}`;
+        previewCaption.textContent = `Q${currentAssessment.q < 10 ? '0' + currentAssessment.q : currentAssessment.q} Verified Output`;
+
+        previewCard.onclick = () => {
+          openLightbox(`./${currentAssessment.preview}`);
+        };
+
+        // Related Assessments in Unit
+        renderRelatedAssessments();
+
+        // Load Code files
+        activeFile = currentAssessment.files[0];
+        loadAndDisplayCode();
+      }
+
+      function loadAndDisplayCode() {
+        const filePath = `./assessments/${currentAssessment.slug}/${activeFile}`;
+        const container = document.getElementById('code-viewer-container');
+
+        if (fileContentsCache[filePath]) {
+          window.CodeViewer.render(container, currentAssessment.files, activeFile, fileContentsCache[filePath], onFileChange);
+          return;
+        }
+
+        fetch(filePath)
+          .then(res => {
+            if (!res.ok) throw new Error('Network error or file not found');
+            return res.text();
+          })
+          .then(text => {
+            fileContentsCache[filePath] = text;
+            window.CodeViewer.render(container, currentAssessment.files, activeFile, text, onFileChange);
+          })
+          .catch(err => {
+            // Over file:// protocol, local fetch is restricted by browser security.
+            // Provide a clean fallback message or load if available
+            const fallbackText = `<!-- File: ${activeFile} -->\n<!-- Double-clicked over file:// or offline sandbox -->\n<!-- To inspect source directly, open ./assessments/${currentAssessment.slug}/${activeFile} in your text editor -->`;
+            window.CodeViewer.render(container, currentAssessment.files, activeFile, fallbackText, onFileChange);
+          });
+      }
+
+      function onFileChange(newFile) {
+        activeFile = newFile;
+        loadAndDisplayCode();
+      }
+
+      function renderRelatedAssessments() {
+        const row = document.getElementById('related-assessments-row');
+        const related = window.ASSESSMENTS.filter(a => a.unitId === currentAssessment.unitId && a.q !== currentAssessment.q);
+        
+        if (related.length === 0) {
+          row.innerHTML = `<span style="color:var(--text-muted);font-size:0.85rem">No other questions in this unit.</span>`;
+          return;
+        }
+
+        row.innerHTML = related.slice(0, 4).map(r => `
+          <a href="./assessment.html?q=${r.q}" class="glass-panel" style="padding: 1rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; border-top: 2px solid var(--unit-${r.unitId});">
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: var(--unit-${r.unitId});">Q${r.q < 10 ? '0' + r.q : r.q}</span>
+              <div style="font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-top: 0.25rem;">${r.title}</div>
+            </div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.5rem; font-family: var(--font-mono);">${r.files.length} files</span>
+          </a>
+        `).join('');
+      }
+
+      function openLightbox(imgSrc) {
+        const modal = document.getElementById('lightbox-modal');
+        const img = document.getElementById('lightbox-img');
+        img.src = imgSrc;
+        modal.classList.add('open');
+      }
+
+      function closeLightbox() {
+        document.getElementById('lightbox-modal').classList.remove('open');
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const qNum = getQParam();
+        loadAssessment(qNum);
+
+        // Prev / Next button handlers
+        document.getElementById('btn-prev-assessment').addEventListener('click', () => {
+          if (currentAssessment.q > 1) {
+            window.location.search = `?q=${currentAssessment.q - 1}`;
+          }
+        });
+
+        document.getElementById('btn-next-assessment').addEventListener('click', () => {
+          if (currentAssessment.q < window.ASSESSMENTS.length) {
+            window.location.search = `?q=${currentAssessment.q + 1}`;
+          }
+        });
+
+        // Left / Right keyboard arrow shortcuts
+        document.addEventListener('keydown', (e) => {
+          const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
+          const isInputFocused = activeTag === 'input' || activeTag === 'textarea' || activeTag === 'select';
+          const isIframeFocused = document.activeElement === document.getElementById('demo-iframe');
+
+          if (isInputFocused || isIframeFocused) return;
+
+          if (e.key === 'ArrowLeft' && currentAssessment.q > 1) {
+            window.location.search = `?q=${currentAssessment.q - 1}`;
+          } else if (e.key === 'ArrowRight' && currentAssessment.q < window.ASSESSMENTS.length) {
+            window.location.search = `?q=${currentAssessment.q + 1}`;
+          }
+        });
+
+        // Tabs switcher
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const tabId = btn.getAttribute('data-tab');
+            document.querySelectorAll('.tab-btn').forEach(b => {
+              b.classList.remove('active');
+              b.setAttribute('aria-selected', 'false');
+            });
+            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+            const targetPane = document.getElementById(tabId);
+            if (targetPane) targetPane.classList.add('active');
+
+            // If switching to demo tab and keyboard question, focus iframe
+            if (tabId === 'tab-demo' && currentAssessment.q >= 37 && currentAssessment.q <= 42) {
+              const iframe = document.getElementById('demo-iframe');
+              setTimeout(() => {
+                try { iframe.contentWindow.focus(); } catch (e) {}
+              }, 100);
+            }
+          });
+        });
+
+        // Device resizers
+        const viewportWrapper = document.getElementById('browser-viewport-wrapper');
+        const btnDesktop = document.getElementById('btn-device-desktop');
+        const btnTablet = document.getElementById('btn-device-tablet');
+        const btnMobile = document.getElementById('btn-device-mobile');
+
+        btnDesktop.addEventListener('click', () => {
+          viewportWrapper.className = 'browser-viewport-wrapper device-desktop';
+        });
+        btnTablet.addEventListener('click', () => {
+          viewportWrapper.className = 'browser-viewport-wrapper device-tablet';
+        });
+        btnMobile.addEventListener('click', () => {
+          viewportWrapper.className = 'browser-viewport-wrapper device-mobile';
+        });
+
+        // Reload demo frame
+        document.getElementById('btn-reload-demo').addEventListener('click', () => {
+          const iframe = document.getElementById('demo-iframe');
+          iframe.src = `./${currentAssessment.entry}?t=${Date.now()}`;
+        });
+
+        // Lightbox modal close
+        document.getElementById('lightbox-modal').addEventListener('click', closeLightbox);
+      });
+    })();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 480" width="100%" height="100%">
+  <rect width="850" height="480" fill="#0B0F19"/>
+  
+  <!-- Fixed Header -->
+  <rect x="0" y="0" width="850" height="60" fill="rgba(11, 15, 25, 0.95)" stroke="rgba(255,255,255,0.1)"/>
+  <text x="40" y="38" font-family="Arial, sans-serif" font-weight="900" font-size="20" fill="#FFFFFF">Game<tspan fill="#22C55E">Zone</tspan></text>
+  
+  <!-- Nav Links -->
+  <text x="400" y="37" font-family="Arial, sans-serif" font-size="13" fill="#22C55E" font-weight="bold">Home</text>
+  <text x="460" y="37" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8">Games</text>
+  <text x="530" y="37" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8">Tournaments</text>
+  <text x="640" y="37" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8">News</text>
+
+  <!-- Play Now button -->
+  <rect x="730" y="14" width="90" height="32" rx="6" fill="#22C55E"/>
+  <text x="775" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#052E16">PLAY NOW</text>
+
+  <!-- 70% Viewport Banner -->
+  <rect x="0" y="60" width="850" height="340" fill="#111827"/>
+  <!-- Center neon glow -->
+  <circle cx="425" cy="230" r="180" fill="none" stroke="rgba(34, 197, 94, 0.2)" stroke-width="60"/>
+
+  <rect x="335" y="120" width="180" height="24" rx="12" fill="rgba(34, 197, 94, 0.15)" stroke="#22C55E"/>
+  <text x="425" y="136" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10" fill="#4ADE80">NEXT-GEN TOURNAMENT 2026</text>
+
+  <text x="425" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="32" fill="#FFFFFF">Level Up Your Gaming Experience</text>
+  <text x="425" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#CBD5E1">Join exciting tournaments and explore the latest games.</text>
+
+  <!-- Explore Games button -->
+  <rect x="340" y="280" width="170" height="42" rx="6" fill="#22C55E"/>
+  <text x="425" y="306" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="#052E16">Explore Games</text>
+
+  <text x="425" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748B">Gaming Header &amp; 70vh Banner (Q17) · Shaik Zabiullah (23MIC0007)</text>
+</svg>
+

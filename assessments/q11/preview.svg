@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 480" width="100%" height="100%">
+  <rect width="700" height="480" fill="#FFFFFF"/>
+  <!-- Outline container mimicking the prompt's ASCII diagram -->
+  <rect x="40" y="30" width="620" height="420" fill="#1E293B" stroke="#0F172A" stroke-width="2"/>
+
+  <!-- HEADER -->
+  <line x1="40" y1="110" x2="660" y2="110" stroke="#FFFFFF" stroke-dasharray="6,6"/>
+  <text x="350" y="78" text-anchor="middle" font-family="Courier, monospace" font-weight="bold" font-size="24" fill="#FFFFFF">HEADER</text>
+
+  <!-- LEFT MENU & CONTENT vertical divider -->
+  <line x1="220" y1="110" x2="220" y2="370" stroke="#FFFFFF" stroke-dasharray="6,6"/>
+  
+  <text x="130" y="245" text-anchor="middle" font-family="Courier, monospace" font-weight="bold" font-size="18" fill="#FFFFFF">LEFT&#10;MENU</text>
+  <text x="440" y="245" text-anchor="middle" font-family="Courier, monospace" font-weight="bold" font-size="22" fill="#FFFFFF">CONTENT</text>
+
+  <!-- FOOTER -->
+  <line x1="40" y1="370" x2="660" y2="370" stroke="#FFFFFF" stroke-dasharray="6,6"/>
+  <text x="350" y="415" text-anchor="middle" font-family="Courier, monospace" font-weight="bold" font-size="22" fill="#FFFFFF">FOOTER</text>
+</svg>
+

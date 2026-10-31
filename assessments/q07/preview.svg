@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" width="100%" height="100%">
+  <rect width="700" height="500" fill="#FFFFFF"/>
+  <text x="50" y="50" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="#000000">Nature Gallery</text>
+  <text x="50" y="75" font-family="Arial, sans-serif" font-size="13" fill="#666666">Pure HTML &lt;div&gt; containers arranged vertically without CSS</text>
+
+  <!-- Section 1 -->
+  <text x="50" y="110" font-family="Arial, sans-serif" font-weight="bold" font-size="16" fill="#000000">1. Misty Mountain Peaks</text>
+  <rect x="50" y="120" width="300" height="60" fill="#BAE6FD" stroke="#94A3B8"/>
+  <polygon points="80,180 150,135 220,180" fill="#475569"/>
+  <text x="50" y="195" font-family="Arial, sans-serif" font-size="11" fill="#333333">Majestic snow-capped alpine peaks shrouded in early morning fog.</text>
+
+  <line x1="50" y1="210" x2="650" y2="210" stroke="#CCCCCC"/>
+
+  <!-- Section 2 -->
+  <text x="50" y="235" font-family="Arial, sans-serif" font-weight="bold" font-size="16" fill="#000000">2. Verdant Pine Forest</text>
+  <rect x="50" y="245" width="300" height="60" fill="#DCFCE7" stroke="#86EFAC"/>
+  <polygon points="100,305 85,260 115,260" fill="#166534"/>
+  <polygon points="150,305 135,255 165,255" fill="#15803D"/>
+  <text x="50" y="320" font-family="Arial, sans-serif" font-size="11" fill="#333333">Dense coniferous woodland canopy providing sanctuary for diverse flora.</text>
+
+  <line x1="50" y1="335" x2="650" y2="335" stroke="#CCCCCC"/>
+
+  <!-- Section 3 & 4 icons -->
+  <text x="50" y="360" font-family="Arial, sans-serif" font-weight="bold" font-size="16" fill="#000000">3. Sunset Coastal Shore &amp; 4. Autumn Meadow</text>
+  <rect x="50" y="370" width="145" height="50" fill="#FDBA74"/>
+  <rect x="205" y="370" width="145" height="50" fill="#FEF3C7"/>
+  <text x="50" y="445" font-family="Arial, sans-serif" font-size="11" fill="#666666">Vertical flow verified with 4 &lt;div&gt; elements · Shaik Zabiullah (23MIC0007)</text>
+</svg>
+

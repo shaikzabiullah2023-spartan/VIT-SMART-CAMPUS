@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 450" width="100%" height="100%">
+  <rect width="850" height="450" fill="#F8FAFC"/>
+  <!-- Indigo Header -->
+  <rect x="0" y="30" width="850" height="70" fill="#1E1B4B"/>
+  
+  <!-- Logo -->
+  <rect x="40" y="47" width="36" height="36" rx="8" fill="#6366F1"/>
+  <text x="58" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF">L</text>
+  <text x="88" y="71" font-family="Arial, sans-serif" font-weight="bold" font-size="18" fill="#FFFFFF">LearnSphere Academy</text>
+
+  <!-- Nav links -->
+  <text x="430" y="71" font-family="Arial, sans-serif" font-size="14" fill="#CBD5E1">Home</text>
+  <text x="490" y="71" font-family="Arial, sans-serif" font-size="14" fill="#CBD5E1">Courses</text>
+  <text x="565" y="71" font-family="Arial, sans-serif" font-size="14" fill="#CBD5E1">Instructors</text>
+  <text x="655" y="71" font-family="Arial, sans-serif" font-size="14" fill="#CBD5E1">Resources</text>
+
+  <!-- Enroll Now button -->
+  <rect x="740" y="48" width="90" height="34" rx="17" fill="#6366F1"/>
+  <text x="785" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#FFFFFF">Enroll Now</text>
+
+  <!-- Card preview -->
+  <rect x="100" y="160" width="650" height="210" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="425" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="22" fill="#1E1B4B">Static Online Learning Header</text>
+  <text x="425" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#64748B">Styled exclusively via internal &lt;style&gt; tag with zero external files (Q16)</text>
+  <text x="425" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6366F1">CSI3029 Assessment Q16 · Shaik Zabiullah (23MIC0007)</text>
+</svg>
+

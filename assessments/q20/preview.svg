@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <rect width="800" height="450" fill="#F8FAFC"/>
+  <!-- Top body content preview -->
+  <rect x="80" y="30" width="640" height="120" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="400" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#0F172A">VIT Book Haven – Campus Bookstore</text>
+  <text x="400" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#64748B">Webpage layout demonstrating internal &lt;style&gt; tag footer implementation</text>
+
+  <!-- Dark Footer -->
+  <rect x="0" y="180" width="800" height="270" fill="#0F172A"/>
+  <rect x="0" y="180" width="800" height="4" fill="#3B82F6"/>
+
+  <!-- Col 1: Store Name -->
+  <text x="60" y="230" font-family="Arial, sans-serif" font-weight="bold" font-size="16" fill="#FFFFFF">Store Name: VIT Book Haven</text>
+  <text x="60" y="260" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">Official academic bookstore serving VIT.</text>
+
+  <!-- Col 2: Quick Links -->
+  <text x="320" y="230" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="#FFFFFF">QUICK LINKS</text>
+  <text x="320" y="260" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">Home · Books · Authors · Contact</text>
+
+  <!-- Col 3: Social & Email -->
+  <text x="560" y="230" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="#FFFFFF">CONNECT</text>
+  <rect x="560" y="245" width="50" height="22" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <text x="585" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#FFFFFF">Twitter</text>
+  <rect x="620" y="245" width="60" height="22" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <text x="650" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#FFFFFF">Instagram</text>
+
+  <text x="560" y="300" font-family="Arial, sans-serif" font-size="12" fill="#CBD5E1">Email: <tspan fill="#38BDF8">support@bookhaven.com</tspan></text>
+
+  <!-- Copyright -->
+  <line x1="60" y1="350" x2="740" y2="350" stroke="#334155"/>
+  <text x="60" y="385" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">Copyright: © 2026 Book Haven. All Rights Reserved.</text>
+  <text x="740" y="385" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#64748B">Shaik Zabiullah (23MIC0007)</text>
+</svg>
+

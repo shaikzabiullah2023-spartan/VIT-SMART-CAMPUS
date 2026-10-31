@@ -1,0 +1,259 @@
+/* National Technical Symposium Portal CSS (Q25) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #0b1120;
+  color: #f1f5f9;
+  padding: 30px 16px;
+  line-height: 1.6;
+}
+
+.symposium-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #1e293b;
+  padding: 35px;
+  border-radius: 14px;
+  border: 1px solid #334155;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.symposium-header {
+  text-align: center;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 24px;
+  margin-bottom: 25px;
+}
+
+.header-badge {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #fbbf24;
+  background-color: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 4px 12px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.symposium-header h1 {
+  font-size: 26px;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.symposium-header p {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* Media Deck */
+.media-deck {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .media-deck {
+    grid-template-columns: 1fr;
+  }
+}
+
+.media-box {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.media-box h3 {
+  font-size: 14px;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+
+.video-box video {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+}
+
+.audio-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.audio-desc {
+  font-size: 12.5px;
+  color: #94a3b8;
+  margin-bottom: 14px;
+}
+
+.symposium-audio {
+  width: 100%;
+  height: 38px;
+}
+
+/* Form Styles */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 20px;
+}
+
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+}
+
+.required {
+  color: #ef4444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+  padding: 10px 14px;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #0f172a;
+  outline: none;
+  transition: all 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: #d97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.25);
+}
+
+.radio-row {
+  display: flex;
+  gap: 20px;
+  background: #0f172a;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+}
+
+.radio-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #cbd5e1;
+  cursor: pointer;
+}
+
+.skills-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  background: #0f172a;
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+}
+
+.skill-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  color: #cbd5e1;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  padding: 8px 0;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.hint-text {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* Action Bar */
+.form-action-bar {
+  display: flex;
+  gap: 14px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #334155;
+}
+
+.btn-register {
+  background-color: #d97706;
+  color: #ffffff;
+  font-size: 14.5px;
+  font-weight: 700;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 10px rgba(217, 119, 6, 0.35);
+}
+
+.btn-register:hover {
+  background-color: #b45309;
+  transform: translateY(-1px);
+}
+
+.btn-reset {
+  background-color: #334155;
+  color: #cbd5e1;
+  font-size: 14.5px;
+  font-weight: 600;
+  padding: 12px 22px;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-reset:hover {
+  background-color: #475569;
+  color: #ffffff;
+}
+
+.symposium-footer {
+  text-align: center;
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 25px;
+}
+

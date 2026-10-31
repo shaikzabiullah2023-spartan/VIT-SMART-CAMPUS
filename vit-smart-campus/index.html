@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIT SMART CAMPUS – Unified Student Portal | VIT University</title>
+  <meta name="description" content="Welcome to VIT Smart Campus – Your Complete Digital University Experience for Academics, Hospital, Events, and Student Services.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SITE HEADER & HORIZONTAL NAVIGATION
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      
+      <!-- Brand Logo -->
+      <a href="./index.html" class="brand-logo" aria-label="VIT Smart Campus Home">
+        <div class="logo-badge">🎓</div>
+        <div class="brand-text">
+          <span class="uni-name">VIT University</span>
+          <span class="portal-name">Smart Campus</span>
+        </div>
+      </a>
+
+      <!-- Horizontal Navigation Menu -->
+      <nav class="primary-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="./index.html" class="nav-link active">Home</a></li>
+          <li><a href="./pages/about.html" class="nav-link">About</a></li>
+          <li><a href="./pages/academics.html" class="nav-link">Academics</a></li>
+          
+          <!-- Student Services Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="#" class="nav-link" aria-haspopup="true">
+              <span>Student Services</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="./pages/dashboard.html" class="dropdown-link">📊 Student Dashboard</a></li>
+              <li><a href="./pages/hospital.html" class="dropdown-link">🏥 Campus Hospital</a></li>
+              <li><a href="./pages/store.html" class="dropdown-link">🛍️ Campus Store</a></li>
+              <li><a href="./pages/learning.html" class="dropdown-link">💻 LearnSphere Academy</a></li>
+              <li><a href="./pages/gamezone.html" class="dropdown-link">🎮 GameZone Arena</a></li>
+              <li><a href="./pages/news.html" class="dropdown-link">📰 Campus Times Newspaper</a></li>
+            </ul>
+          </li>
+
+          <li><a href="./pages/events.html" class="nav-link">Events</a></li>
+          <li><a href="./pages/gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="./pages/javascript-lab.html" class="nav-link" style="color: var(--brand-cyan);">⚡ JS Lab</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Buttons -->
+      <div class="header-actions">
+        <!-- Smart Search Shortcut -->
+        <a href="./pages/search.html" class="btn btn-secondary btn-sm" title="Smart Search Engine">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span class="hide-mobile">Search</span>
+        </a>
+
+        <!-- Cart Button -->
+        <a href="./pages/store.html#cart" class="cart-icon-btn" aria-label="Shopping Cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge">0</span>
+        </a>
+
+        <!-- Student Login -->
+        <a href="./pages/login.html" class="btn btn-outline btn-sm">Student Login</a>
+
+        <!-- Apply Now -->
+        <a href="./pages/registration.html" class="btn btn-primary btn-sm">Apply Now</a>
+
+        <!-- Mobile Hamburger Button -->
+        <button type="button" class="hamburger-btn" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO BANNER SECTION
+       ========================================================================== -->
+  <main>
+    <section class="hero-banner">
+      <div class="container hero-content">
+        <div class="hero-pill">
+          <span>🏛️ NAAC A++ ACCREDITED · INSTITUTION OF EMINENCE</span>
+        </div>
+        <h1 class="hero-heading">
+          Welcome to <br>
+          <span style="color: var(--accent-cyan); text-shadow: 0 0 20px rgba(6,182,212,0.4);">VIT Smart Campus</span>
+        </h1>
+        <p class="hero-subtitle">
+          Your Complete Digital University Experience. Seamlessly unifying course admissions, academic grading, campus healthcare, event symposiums, and student services into one intelligent ecosystem.
+        </p>
+        <div class="hero-actions">
+          <a href="./pages/dashboard.html" class="btn btn-primary btn-lg">
+            <span>Student Portal Dashboard</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <a href="./pages/gallery.html" class="btn btn-secondary btn-lg" style="color: var(--primary-navy);">
+            <span>Explore Campus Landmark Gallery</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         IMPORTANT ANNOUNCEMENTS TICKER
+         ========================================================================== -->
+    <div style="background: #0f172a; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 12px 0; color: #fff;">
+      <div class="container" style="display: flex; align-items: center; gap: 16px; overflow: hidden;">
+        <span class="badge badge-rose" style="flex-shrink: 0;">FLASH UPDATE</span>
+        <div style="font-size: 13.5px; color: #cbd5e1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+          📢 Registration open for National Technical Symposium 2026 · Fall Semester Examination Timetables Released · Free Health Screening at Campus Hospital this Friday.
+        </div>
+        <a href="./pages/news.html" style="margin-left: auto; font-size: 12px; color: var(--accent-cyan); flex-shrink: 0; font-weight: 600;">View All News →</a>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         QUICK ACCESS CARDS (BENTO GRID)
+         ========================================================================== -->
+    <section class="section-py">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Unified Services</span>
+          <h2 class="section-title">Quick Access Portals</h2>
+          <p class="section-desc">Experience instant navigation across all integrated university facilities, academic departments, healthcare centers, and student hubs.</p>
+        </div>
+
+        <div class="bento-grid">
+          
+          <!-- Card 1: Student Dashboard -->
+          <div class="card card-hover">
+            <div class="card-body">
+              <div class="stat-icon" style="background: #eff6ff; color: var(--accent-blue); margin-bottom: 16px;">📊</div>
+              <h3 class="card-title" style="margin-bottom: 8px;">Student Dashboard</h3>
+              <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">
+                Access your real-time attendance, internal test marks, semester grade calculators, and academic progress reports.
+              </p>
+              <a href="./pages/dashboard.html" class="btn btn-outline btn-sm">Enter Dashboard →</a>
+            </div>
+          </div>
+
+          <!-- Card 2: Academics & Courses -->
+          <div class="card card-hover">
+            <div class="card-body">
+              <div class="stat-icon" style="background: #ecfeff; color: var(--brand-cyan); margin-bottom: 16px;">📚</div>
+              <h3 class="card-title" style="margin-bottom: 8px;">Academics &amp; Courses</h3>
+              <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">
+                Browse the complete engineering curriculum catalog, department syllabi, research papers, and course registrations.
+              </p>
+              <a href="./pages/academics.html" class="btn btn-outline btn-sm">Explore Courses →</a>
+            </div>
+          </div>
+
+          <!-- Card 3: Campus Hospital -->
+          <div class="card card-hover">
+            <div class="card-body">
+              <div class="stat-icon" style="background: #fef2f2; color: #ef4444; margin-bottom: 16px;">🏥</div>
+              <h3 class="card-title" style="margin-bottom: 8px;">Campus Hospital</h3>
+              <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">
+                Book on-campus doctor consultations, access emergency pharmacy services, and submit electronic health records.
+              </p>
+              <a href="./pages/hospital.html" class="btn btn-outline btn-sm">Book Appointment →</a>
+            </div>
+          </div>
+
+          <!-- Card 4: Events & Symposiums -->
+          <div class="card card-hover">
+            <div class="card-body">
+              <div class="stat-icon" style="background: #fffbeb; color: #d97706; margin-bottom: 16px;">🏆</div>
+              <h3 class="card-title" style="margin-bottom: 8px;">Events &amp; Symposiums</h3>
+              <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">
+                Participate in national hackathons, technical paper presentations, cultural festivals, and keynote workshops.
+              </p>
+              <a href="./pages/events.html" class="btn btn-outline btn-sm">View Events →</a>
+            </div>
+          </div>
+
+          <!-- Card 5: Campus Store -->
+          <div class="card card-hover">
+            <div class="card-body">
+              <div class="stat-icon" style="background: #f3e8ff; color: #9333ea; margin-bottom: 16px;">🛍️</div>
+              <h3 class="card-title" style="margin-bottom: 8px;">Campus Store &amp; Checkout</h3>
+              <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">
+                Order engineering textbooks, computer peripherals, stationery supplies, and official university varsity apparel.
+              </p>
+              <a href="./pages/store.html" class="btn btn-outline btn-sm">Shop Store →</a>
+            </div>
+          </div>
+
+          <!-- Card 6: Interactive JavaScript Lab -->
+          <div class="card card-hover" style="border: 1.5px solid var(--accent-cyan); background: #f0fdf4;">
+            <div class="card-body">
+              <div class="stat-icon" style="background: #dcfce7; color: #16a34a; margin-bottom: 16px;">⚡</div>
+              <h3 class="card-title" style="margin-bottom: 8px;">Interactive JavaScript Lab</h3>
+              <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">
+                Test all 42 front-end laboratory concepts live: Marks calculator, ATM PIN guard, CBT Exam, traffic signal, and hotkeys.
+              </p>
+              <a href="./pages/javascript-lab.html" class="btn btn-primary btn-sm">Launch Live Lab →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         UNIVERSITY STATISTICS SECTION
+         ========================================================================== -->
+    <section style="background: #fff; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); padding: 50px 0;">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
+          
+          <div class="stat-card">
+            <div class="stat-icon" style="background: #eff6ff; color: var(--accent-blue);">👨‍🎓</div>
+            <div>
+              <div class="stat-num">45,000+</div>
+              <div class="stat-label">Enrolled Students</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon" style="background: #ecfeff; color: var(--brand-cyan);">👨‍🏫</div>
+            <div>
+              <div class="stat-num">2,400+</div>
+              <div class="stat-label">Faculty Members</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon" style="background: #fdf2f8; color: #db2777;">🏫</div>
+            <div>
+              <div class="stat-num">372 Acres</div>
+              <div class="stat-label">Smart Eco Campus</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon" style="background: #ecfdf5; color: #059669;">⚡</div>
+            <div>
+              <div class="stat-num">42 Modules</div>
+              <div class="stat-label">Integrated Lab Practical</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FEATURED CAMPUS NEWS PREVIEWS
+         ========================================================================== -->
+    <section class="section-py">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Campus Times</span>
+          <h2 class="section-title">Latest University News</h2>
+          <p class="section-desc">Keep abreast of pioneering academic breakthroughs, sports championships, and symposiums.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+          
+          <article class="card card-hover">
+            <div style="height: 160px; background: linear-gradient(135deg, #1e3a8a, #0369a1); display: flex; align-items: center; justify-content: center; font-size: 48px; color: #fff;">
+              🚀
+            </div>
+            <div class="card-body">
+              <span class="badge badge-blue" style="margin-bottom: 8px;">RESEARCH &amp; INNOVATION</span>
+              <h3 style="font-size: 17px; font-weight: 700; color: var(--primary-navy); margin-bottom: 8px;">VIT AI Lab Secures National Grant for Autonomous Vehicle Testing</h3>
+              <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+                Faculty and student researchers from the School of Information Technology announce breakthrough neural perception algorithms.
+              </p>
+              <a href="./pages/news.html" style="font-size: 13px; font-weight: 700; color: var(--accent-blue);">Read Full Article →</a>
+            </div>
+          </article>
+
+          <article class="card card-hover">
+            <div style="height: 160px; background: linear-gradient(135deg, #065f46, #059669); display: flex; align-items: center; justify-content: center; font-size: 48px; color: #fff;">
+              🌿
+            </div>
+            <div class="card-body">
+              <span class="badge badge-emerald" style="margin-bottom: 8px;">SUSTAINABILITY</span>
+              <h3 style="font-size: 17px; font-weight: 700; color: var(--primary-navy); margin-bottom: 8px;">Green Campus Initiative: 100% Solar Transition Completed</h3>
+              <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+                VIT Vellore becomes one of India's first higher education campuses powered completely by zero-emission solar microgrids.
+              </p>
+              <a href="./pages/news.html" style="font-size: 13px; font-weight: 700; color: var(--accent-blue);">Read Full Article →</a>
+            </div>
+          </article>
+
+          <article class="card card-hover">
+            <div style="height: 160px; background: linear-gradient(135deg, #991b1b, #dc2626); display: flex; align-items: center; justify-content: center; font-size: 48px; color: #fff;">
+              🏆
+            </div>
+            <div class="card-body">
+              <span class="badge badge-rose" style="margin-bottom: 8px;">ATHLETICS</span>
+              <h3 style="font-size: 17px; font-weight: 700; color: var(--primary-navy); margin-bottom: 8px;">University Basketball Team Clinches All-India Inter-University Trophy</h3>
+              <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+                A thrilling final in the indoor sports complex sees VIT triumph in double overtime against national contenders.
+              </p>
+              <a href="./pages/news.html" style="font-size: 13px; font-weight: 700; color: var(--accent-blue);">Read Full Article →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       COMMON PROFESSIONAL FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Column 1: Brand Info -->
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="logo-badge" style="background: var(--accent-cyan); color: var(--primary-navy);">🎓</div>
+            <div class="brand-text">
+              <span class="uni-name" style="color: var(--accent-cyan);">VIT University</span>
+              <span class="portal-name" style="color: #fff;">Smart Campus</span>
+            </div>
+          </div>
+          <p class="footer-about">
+            VIT Smart Campus is the official unified digital portal uniting academic records, hospital management, symposium events, and student utility systems for Vellore Institute of Technology.
+          </p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./pages/about.html">About &amp; Profile</a></li>
+            <li><a href="./pages/academics.html">Academics</a></li>
+            <li><a href="./pages/registration.html">Apply &amp; Register</a></li>
+            <li><a href="./pages/login.html">Student Login</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Portals -->
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="./pages/dashboard.html">Student Dashboard</a></li>
+            <li><a href="./pages/hospital.html">Campus Hospital</a></li>
+            <li><a href="./pages/store.html">Campus Store</a></li>
+            <li><a href="./pages/learning.html">LearnSphere Academy</a></li>
+            <li><a href="./pages/gamezone.html">GameZone Arena</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Academics & Media -->
+        <div>
+          <h4 class="footer-heading">Discovery</h4>
+          <ul class="footer-links">
+            <li><a href="./pages/events.html">Events &amp; Symposium</a></li>
+            <li><a href="./pages/news.html">Campus Times News</a></li>
+            <li><a href="./pages/gallery.html">Landmarks Gallery</a></li>
+            <li><a href="./pages/search.html">Smart Search</a></li>
+            <li><a href="./pages/javascript-lab.html">Interactive JS Lab</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Contact -->
+        <div class="footer-contact">
+          <h4 class="footer-heading">Campus Helpdesk</h4>
+          <p>📍 VIT Vellore Campus, Katpadi Road, Vellore - 632014, Tamil Nadu, India.</p>
+          <p>📞 Emergency / Health Desk: +91 416 220 2000</p>
+          <p>✉️ Email: <a href="mailto:support@vitsmartcampus.com">support@vitsmartcampus.com</a></p>
+          
+          <div class="social-links" style="margin-top: 16px;">
+            <a href="#" class="social-icon" aria-label="Twitter">𝕏</a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+            <a href="#" class="social-icon" aria-label="YouTube">▶</a>
+            <a href="#" class="social-icon" aria-label="GitHub">⌨</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          Copyright © 2026 VIT Smart Campus. All Rights Reserved. · Designed for CSI3029 Front End Design &amp; Testing
+        </div>
+        <div>
+          Student: <strong>Shaik Zabiullah</strong> (Reg. No. <strong>23MIC0007</strong>) · VIT Vellore
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./js/main.js"></script>
+  <script src="./js/shopping.js"></script>
+</body>
+</html>
+

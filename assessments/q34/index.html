@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color-Changing Box - Click & Mouseover Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="box-container">
+    <div class="box-card">
+      <header class="card-header">
+        <div class="badge">UNIT VII · JAVASCRIPT MOUSE EVENTS</div>
+        <h1>Interactive Color-Changing Box</h1>
+        <p class="subtitle">Click the box to cycle colors. Hover over it to detect mouse presence.</p>
+      </header>
+
+      <!-- Interactive Colored Box Element -->
+      <div class="box-wrapper">
+        <div id="colorBox" class="interactive-box" tabindex="0" role="button" aria-label="Interactive color box">
+          <div class="box-inner">
+            <span class="box-icon">🎨</span>
+            <span class="box-cta">Click Me to Change Color</span>
+            <span id="currentColorCode" class="color-code">#3B82F6</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hover Detection Output Banner -->
+      <div class="status-zone">
+        <div id="hoverMessage" class="hover-message idle">Move mouse over the box above</div>
+      </div>
+
+      <!-- Event Analytics / Controls -->
+      <div class="controls-panel">
+        <div class="info-pill">
+          <span class="info-label">Color Shifts:</span>
+          <span id="clickCount" class="info-val">0</span>
+        </div>
+        <div class="info-pill">
+          <span class="info-label">Mouse State:</span>
+          <span id="mouseState" class="info-val state-out">OUTSIDE</span>
+        </div>
+        <button type="button" class="btn-reset" onclick="resetBox()">Reset Box</button>
+      </div>
+
+    </div>
+
+    <footer class="box-footer">
+      CSI3029 Assessment Q34 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

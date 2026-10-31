@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login with JavaScript Regex Validation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="login-wrapper">
+    
+    <!-- Builds on Q24 Indicator Banner -->
+    <div class="builds-banner">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      <span><strong>Builds on Q24:</strong> Extended with client-side JavaScript regex validation &amp; empty-field enforcement.</span>
+    </div>
+
+    <!-- Login Card -->
+    <div class="login-card">
+      <header class="card-head">
+        <span class="role-badge">SECURE GATEWAY</span>
+        <h1>Student Portal Login</h1>
+        <p>JavaScript regular expression verification for username &amp; password credentials.</p>
+      </header>
+
+      <!-- Feedback Alert Box -->
+      <div id="alertBox" class="alert-box" style="display: none;"></div>
+
+      <form id="loginForm" class="login-form" novalidate onsubmit="event.preventDefault(); validateLoginForm();">
+        
+        <!-- User Role -->
+        <div class="form-item">
+          <label class="lbl-title">Select User Role <span class="req">*</span></label>
+          <div class="role-toggle-group">
+            <label class="role-lbl">
+              <input type="radio" name="role" value="Student" checked /> Student
+            </label>
+            <label class="role-lbl">
+              <input type="radio" name="role" value="Faculty" /> Faculty
+            </label>
+          </div>
+        </div>
+
+        <!-- Username Field with Regex Rule Explanation -->
+        <div class="form-item">
+          <div class="lbl-row">
+            <label for="usernameInput">Username <span class="req">*</span></label>
+            <span class="rule-hint">Pattern: Alphanumeric (4-15 chars)</span>
+          </div>
+          <input 
+            type="text" 
+            id="usernameInput" 
+            name="username" 
+            placeholder="e.g. 23MIC0007 or zabiullah" 
+            autocomplete="username"
+          />
+          <div id="usernameError" class="field-error"></div>
+        </div>
+
+        <!-- Password Field with Regex Rule Explanation -->
+        <div class="form-item">
+          <div class="lbl-row">
+            <label for="passwordInput">Password <span class="req">*</span></label>
+            <span class="rule-hint">Min 8 chars, 1 uppercase, 1 digit</span>
+          </div>
+          <input 
+            type="password" 
+            id="passwordInput" 
+            name="password" 
+            placeholder="••••••••••••" 
+            autocomplete="current-password"
+          />
+          <div id="passwordError" class="field-error"></div>
+        </div>
+
+        <!-- Remember Me Checkbox -->
+        <div class="form-meta-row">
+          <label class="chk-label">
+            <input type="checkbox" id="rememberMeChk" name="remember" />
+            <span>Remember Me</span>
+          </label>
+          <a href="#forgot" class="forgot-link">Forgot Password?</a>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="btn-cluster">
+          <button type="submit" class="btn-submit-login">Validate &amp; Login</button>
+          <button type="button" class="btn-clear-login" onclick="resetLoginForm();">Clear</button>
+        </div>
+
+        <!-- Create Account link -->
+        <div class="signup-footer">
+          <span>Need an account?</span>
+          <a href="#register" class="signup-link">Create New Account</a>
+        </div>
+
+      </form>
+    </div>
+
+    <footer class="login-footer">
+      CSI3029 Assessment Q29 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Employee Registration - EMP Regex & Radio Validation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="emp-container">
+    <div class="emp-card">
+      <header class="card-header">
+        <div class="badge">CORPORATE HRMS · ONBOARDING PORTAL</div>
+        <h1>Employee Registration Form</h1>
+        <p class="subtitle">Complete employee onboarding verification with regex pattern compliance and employment category selection.</p>
+      </header>
+
+      <!-- Dynamic Global Alert Banner -->
+      <div id="statusAlert" class="status-alert" style="display: none;"></div>
+
+      <form id="empForm" class="emp-form" novalidate onsubmit="event.preventDefault(); validateEmployeeForm();">
+
+        <!-- Employee ID Field -->
+        <div class="form-group">
+          <label for="empId">Employee ID <span class="required">*</span></label>
+          <div class="input-container">
+            <span class="input-prefix">ID</span>
+            <input type="text" id="empId" placeholder="EMP1234" maxlength="7" autocomplete="off" />
+          </div>
+          <span class="field-hint">Must start with <strong>EMP</strong> followed by exactly 4 digits (e.g., EMP1024, EMP5589)</span>
+          <div id="empIdFeedback" class="dynamic-feedback"></div>
+        </div>
+
+        <!-- Employment Type Radio Group -->
+        <div class="form-group">
+          <label class="section-label">Employment Type <span class="required">*</span></label>
+          <div class="radio-group">
+            
+            <label class="radio-card">
+              <input type="radio" name="empType" value="Full-Time" />
+              <div class="radio-box">
+                <span class="radio-dot"></span>
+                <div class="radio-text">
+                  <span class="type-title">Full-Time</span>
+                  <span class="type-desc">Permanent 40 hrs/week with corporate benefits</span>
+                </div>
+              </div>
+            </label>
+
+            <label class="radio-card">
+              <input type="radio" name="empType" value="Part-Time" />
+              <div class="radio-box">
+                <span class="radio-dot"></span>
+                <div class="radio-text">
+                  <span class="type-title">Part-Time</span>
+                  <span class="type-desc">Flexible scheduled hours (under 30 hrs/week)</span>
+                </div>
+              </div>
+            </label>
+
+            <label class="radio-card">
+              <input type="radio" name="empType" value="Intern" />
+              <div class="radio-box">
+                <span class="radio-dot"></span>
+                <div class="radio-text">
+                  <span class="type-title">Intern</span>
+                  <span class="type-desc">Fixed-term apprenticeship (3-6 months)</span>
+                </div>
+              </div>
+            </label>
+
+          </div>
+          <div id="empTypeFeedback" class="dynamic-feedback"></div>
+        </div>
+
+        <!-- Form Action Controls -->
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">
+            <span>Validate &amp; Submit</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+          <button type="button" class="btn-secondary" onclick="resetEmployeeForm()">Clear</button>
+        </div>
+
+      </form>
+
+      <!-- Confirmation Output Card -->
+      <div id="confirmationCard" class="confirmation-card" style="display: none;">
+        <div class="conf-header">
+          <span class="conf-badge">✓ Verified &amp; Accepted</span>
+          <h3>Employee Profile Created</h3>
+        </div>
+        <div class="conf-grid">
+          <div class="conf-item">
+            <span class="conf-label">Verified Employee ID:</span>
+            <span id="resEmpId" class="conf-val code-val">-</span>
+          </div>
+          <div class="conf-item">
+            <span class="conf-label">Assigned Category:</span>
+            <span id="resEmpType" class="conf-val badge-val">-</span>
+          </div>
+          <div class="conf-item">
+            <span class="conf-label">Timestamp:</span>
+            <span id="resTimestamp" class="conf-val date-val">-</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="portal-footer">
+      CSI3029 Assessment Q32 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

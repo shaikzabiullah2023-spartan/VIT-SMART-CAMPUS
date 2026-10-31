@@ -1,0 +1,131 @@
+/* ==========================================================================
+   CODE VIEWER & SYNTAX HIGHLIGHTER STYLES
+   CSI3029 Front End Design & Testing Portfolio
+   Author: SHAIK ZABIULLAH (23MIC0007)
+   ========================================================================== */
+
+.code-window {
+  background: var(--bg-code);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.code-files-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.code-file-tab {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  transition: all var(--transition-fast);
+}
+
+.code-file-tab:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.code-file-tab.active {
+  color: #FFFFFF;
+  background: rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+}
+
+.code-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.code-btn {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.code-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+
+.code-body {
+  position: relative;
+  max-height: 580px;
+  overflow: auto;
+  padding: 1rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #D4D4D8;
+}
+
+.code-pre {
+  margin: 0;
+  display: flex;
+  min-width: 100%;
+}
+
+.code-line-numbers {
+  user-select: none;
+  padding: 0 1rem;
+  text-align: right;
+  color: #52525B;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.82rem;
+  min-width: 3.5rem;
+}
+
+.code-content {
+  padding: 0 1.25rem;
+  flex: 1;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* Syntax Tokens */
+.token-tag { color: #F43F5E; }
+.token-attr-name { color: #38BDF8; }
+.token-attr-value { color: #34D399; }
+.token-comment { color: #71717A; font-style: italic; }
+.token-keyword { color: #C084FC; font-weight: 600; }
+.token-string { color: #34D399; }
+.token-function { color: #60A5FA; }
+.token-number { color: #FBBF24; }
+.token-property { color: #93C5FD; }
+.token-operator { color: #E879F9; }
+.token-punctuation { color: #A1A1AA; }
+

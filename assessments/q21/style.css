@@ -1,0 +1,268 @@
+/* Smart Hospital Appointment Portal CSS (Q21) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* Emergency Ticker */
+.emergency-bar {
+  background-color: #dc2626;
+  color: #ffffff;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* 1. Hero Banner with Attractive Background Gradient */
+.hospital-hero-banner {
+  min-height: 380px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0f172a 0%, #0369a1 50%, #0d9488 100%);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 860px;
+}
+
+/* 2. Text Effects: text-shadow, text-transform, letter-spacing, font styling */
+.hospital-brand-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  color: #ffffff;
+  text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.55), 0 0 25px rgba(56, 189, 248, 0.4);
+}
+
+.hospital-slogan {
+  font-size: clamp(0.85rem, 1.8vw, 1.05rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #a5f3fc;
+  margin-bottom: 30px;
+  text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary-hero {
+  background-color: #0284c7;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-primary-hero:hover {
+  background-color: #0369a1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.6);
+}
+
+.btn-outline-hero {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14.5px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-outline-hero:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Services Container */
+.services-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 24px;
+}
+
+.services-intro {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 40px;
+}
+
+.section-tag {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #0284c7;
+}
+
+.services-intro h2 {
+  font-size: 28px;
+  color: #0f172a;
+  margin: 6px 0 10px;
+}
+
+.services-intro p {
+  color: #64748b;
+  font-size: 15px;
+}
+
+/* 3. Cards Grid: Four Cards with Different Border Styles, Rounded Corners & Box Shadows */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Card 1: Emergency Services - Solid Border, Rounded Corners 14px, Elevated Red Shadow */
+.card-emergency {
+  background-color: #fef2f2; /* Light Red tint */
+  border: 2px solid #ef4444; /* Solid Border */
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.15);
+  color: #7f1d1d;
+}
+
+.card-emergency .card-icon {
+  color: #dc2626;
+  margin-bottom: 14px;
+}
+
+.card-emergency:hover {
+  box-shadow: 0 14px 32px rgba(239, 68, 68, 0.28);
+}
+
+/* Card 2: Doctor Consultation - Dashed Border, Rounded Corners 20px, Teal Shadow */
+.card-consultation {
+  background-color: #f0fdfa; /* Light Teal tint */
+  border: 2px dashed #0d9488; /* Dashed Border */
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(13, 148, 136, 0.15);
+  color: #134e4a;
+}
+
+.card-consultation .card-icon {
+  color: #0d9488;
+  margin-bottom: 14px;
+}
+
+.card-consultation:hover {
+  box-shadow: 0 14px 32px rgba(13, 148, 136, 0.28);
+}
+
+/* Card 3: Health Packages - Double Border, Rounded Corners 8px, Indigo Shadow */
+.card-packages {
+  background-color: #eef2ff; /* Light Indigo tint */
+  border: 4px double #4f46e5; /* Double Border */
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.15);
+  color: #312e81;
+}
+
+.card-packages .card-icon {
+  color: #4f46e5;
+  margin-bottom: 14px;
+}
+
+.card-packages:hover {
+  box-shadow: 0 14px 32px rgba(79, 70, 229, 0.28);
+}
+
+/* Card 4: Contact Information - Groove Border, Rounded Corners 24px, Amber Shadow */
+.card-contact {
+  background-color: #fffbeb; /* Light Amber tint */
+  border: 4px groove #d97706; /* Groove Border */
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.15);
+  color: #78350f;
+}
+
+.card-contact .card-icon {
+  color: #d97706;
+  margin-bottom: 14px;
+}
+
+.card-contact:hover {
+  box-shadow: 0 14px 32px rgba(217, 119, 6, 0.28);
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.card-footer-info {
+  font-size: 12.5px;
+  font-weight: 700;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 12px;
+}
+
+/* Footer */
+.hospital-footer {
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 24px;
+  text-align: center;
+  font-size: 13.5px;
+  margin-top: 60px;
+}
+

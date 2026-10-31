@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Symposium Registration with JS Arrays & Regex</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="symposium-wrapper">
+    
+    <!-- Builds On Q25 Banner -->
+    <div class="builds-banner">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      <span><strong>Builds on Q25:</strong> Features JavaScript Regex Validation &amp; dynamic Array-based Skills Table rendering.</span>
+    </div>
+
+    <div class="symposium-card">
+      <header class="symposium-head">
+        <span class="badge">SYMPOSIUM 2026 REGEX PORTAL</span>
+        <h1>Participant Registration &amp; Array Auditing</h1>
+        <p>Enter symposium registration details. Form submits via JavaScript regex verification and stores selected skills into a runtime array.</p>
+      </header>
+
+      <!-- Alert Box -->
+      <div id="validationAlert" class="alert-box" style="display: none;"></div>
+
+      <form id="symposiumForm" class="symposium-form" novalidate onsubmit="event.preventDefault(); validateSymposiumForm();">
+        
+        <div class="form-grid">
+          
+          <!-- Participant Name -->
+          <div class="form-col">
+            <label for="pName">Participant Name <span class="req">*</span></label>
+            <input type="text" id="pName" placeholder="Alphabets and spaces only" />
+            <div id="pNameError" class="field-error"></div>
+          </div>
+
+          <!-- Register Number -->
+          <div class="form-col">
+            <label for="pReg">Register Number <span class="req">*</span></label>
+            <input type="text" id="pReg" placeholder="REG followed by 6 digits (e.g. REG123456)" />
+            <div id="pRegError" class="field-error"></div>
+          </div>
+
+          <!-- Email ID -->
+          <div class="form-col">
+            <label for="pEmail">Email ID <span class="req">*</span></label>
+            <input type="email" id="pEmail" placeholder="valid.email@domain.com" />
+            <div id="pEmailError" class="field-error"></div>
+          </div>
+
+          <!-- Mobile Number -->
+          <div class="form-col">
+            <label for="pMobile">Mobile Number <span class="req">*</span></label>
+            <input type="tel" id="pMobile" placeholder="Exactly 10 digits" maxlength="10" />
+            <div id="pMobileError" class="field-error"></div>
+          </div>
+
+          <!-- Department -->
+          <div class="form-col full-width">
+            <label for="pDept">Department <span class="req">*</span></label>
+            <select id="pDept">
+              <option value="">-- Choose Academic Department --</option>
+              <option value="Computer Science & Engineering">Computer Science &amp; Engineering</option>
+              <option value="Information Technology">Information Technology</option>
+              <option value="Electronics & Communication">Electronics &amp; Communication</option>
+              <option value="Data Science & Artificial Intelligence">Data Science &amp; Artificial Intelligence</option>
+            </select>
+            <div id="pDeptError" class="field-error"></div>
+          </div>
+
+          <!-- Technical Skills (Array Requirement 1) -->
+          <div class="form-col full-width">
+            <label>Technical Skills (Stored in JavaScript Array) <span class="req">*</span></label>
+            <div class="skills-grid">
+              <label><input type="checkbox" name="techSkills" value="Full-Stack Web Engineering" /> Full-Stack Web</label>
+              <label><input type="checkbox" name="techSkills" value="Machine Learning & Deep Neural Nets" /> ML &amp; AI</label>
+              <label><input type="checkbox" name="techSkills" value="Offensive Cybersecurity & PenTesting" /> Cyber Security</label>
+              <label><input type="checkbox" name="techSkills" value="Cloud Native Architecture (AWS/GCP)" /> Cloud Architecture</label>
+              <label><input type="checkbox" name="techSkills" value="Embedded Systems & IoT Hardware" /> IoT &amp; Embedded</label>
+              <label><input type="checkbox" name="techSkills" value="Algorithm Sprints & Competitive Coding" /> Competitive Coding</label>
+            </div>
+            <div id="pSkillsError" class="field-error"></div>
+          </div>
+
+        </div>
+
+        <div class="btn-actions">
+          <button type="submit" class="btn-validate">Validate &amp; Submit Registration</button>
+          <button type="button" class="btn-reset" onclick="resetSymposium();">Reset</button>
+        </div>
+
+      </form>
+
+      <!-- Dynamic Tabular Output Section (Array & Details Table) -->
+      <div id="outputSection" class="output-section" style="display: none;">
+        <h3>Registration Confirmation &amp; Array Roster</h3>
+        <p style="font-size: 13.5px; color: #475569; margin-bottom: 15px;">The participant's selected technical skills were captured into a native JavaScript array and rendered in tabular format:</p>
+        
+        <table class="roster-table">
+          <tr>
+            <th>Participant Name</th>
+            <td id="outName" style="font-weight: bold; color: #1e3a8a;">-</td>
+          </tr>
+          <tr>
+            <th>Register Number</th>
+            <td id="outReg" style="font-family: monospace;">-</td>
+          </tr>
+          <tr>
+            <th>Department</th>
+            <td id="outDept">-</td>
+          </tr>
+          <tr>
+            <th>Selected Technical Skills (Array)</th>
+            <td id="outSkillsCell">
+              <!-- Array items rendered dynamically -->
+            </td>
+          </tr>
+          <tr>
+            <th>Array Count</th>
+            <td id="outSkillCount" style="font-weight: bold; color: #059669;">-</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+    <footer class="symposium-footer">
+      CSI3029 Assessment Q30 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

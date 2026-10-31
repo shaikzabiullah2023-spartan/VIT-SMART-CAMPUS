@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" width="100%" height="100%">
+  <rect width="750" height="500" fill="#F0FDF4"/>
+  <text x="375" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="26" fill="#065F46">Hospital Management System</text>
+  <text x="375" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#047857">2x2 Colored Blocks Layout using &lt;div&gt; &amp; Inline CSS</text>
+
+  <!-- 2x2 Grid -->
+  <!-- Block 1: Doctors (Blue) -->
+  <rect x="75" y="110" width="280" height="150" rx="10" fill="#1E40AF"/>
+  <circle cx="215" cy="150" r="20" fill="none" stroke="#93C5FD" stroke-width="2.5"/>
+  <text x="215" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF">Doctors</text>
+  <text x="215" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#DBEAFE">Specialists: 142 Active</text>
+
+  <!-- Block 2: Patients (Green) -->
+  <rect x="395" y="110" width="280" height="150" rx="10" fill="#047857"/>
+  <circle cx="535" cy="150" r="20" fill="none" stroke="#A7F3D0" stroke-width="2.5"/>
+  <text x="535" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF">Patients</text>
+  <text x="535" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#D1FAE5">Admitted: 389 Inpatients</text>
+
+  <!-- Block 3: Appointments (Amber) -->
+  <rect x="75" y="285" width="280" height="150" rx="10" fill="#D97706"/>
+  <rect x="200" y="305" width="30" height="30" rx="4" fill="none" stroke="#FDE68A" stroke-width="2.5"/>
+  <text x="215" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF">Appointments</text>
+  <text x="215" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#FEF3C7">512 Consultations Today</text>
+
+  <!-- Block 4: Pharmacy (Purple) -->
+  <rect x="395" y="285" width="280" height="150" rx="10" fill="#6B21A8"/>
+  <circle cx="535" cy="320" r="16" fill="none" stroke="#E9D5FF" stroke-width="2.5"/>
+  <text x="535" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF">Pharmacy</text>
+  <text x="535" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#F3E8FF">2,450 Drug SKUs In Stock</text>
+
+  <text x="375" y="465" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748B">CSI3029 Assessment Q19 · Shaik Zabiullah (23MIC0007)</text>
+</svg>
+

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Hospital Management | VIT Smart Campus</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo">
+        <div class="logo-badge" style="background: linear-gradient(135deg, #059669, #10b981);">🏥</div>
+        <div class="brand-text">
+          <span class="uni-name" style="color: #059669;">VIT Health Services</span>
+          <span class="portal-name">Campus Hospital</span>
+        </div>
+      </a>
+
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="./about.html" class="nav-link">About</a></li>
+          <li><a href="./academics.html" class="nav-link">Academics</a></li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#" class="nav-link active">
+              <span>Student Services</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="./dashboard.html" class="dropdown-link">📊 Student Dashboard</a></li>
+              <li><a href="./hospital.html" class="dropdown-link active">🏥 Campus Hospital</a></li>
+              <li><a href="./store.html" class="dropdown-link">🛍️ Campus Store</a></li>
+              <li><a href="./learning.html" class="dropdown-link">💻 LearnSphere Academy</a></li>
+              <li><a href="./gamezone.html" class="dropdown-link">🎮 GameZone Arena</a></li>
+              <li><a href="./news.html" class="dropdown-link">📰 Campus Times Newspaper</a></li>
+            </ul>
+          </li>
+
+          <li><a href="./events.html" class="nav-link">Events</a></li>
+          <li><a href="./gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="./javascript-lab.html" class="nav-link" style="color: var(--brand-cyan);">⚡ JS Lab</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#patientRegistrationSection" class="btn btn-primary btn-sm">Book Consultation</a>
+        <button type="button" class="hamburger-btn" aria-label="Toggle Mobile Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hospital Hero Banner (Q21) -->
+  <section style="background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%); color: #fff; padding: 70px 0 60px 0;">
+    <div class="container" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center;">
+      <div>
+        <span class="badge badge-emerald" style="background: rgba(255,255,255,0.2); color: #fff; border-color: rgba(255,255,255,0.4); margin-bottom: 14px;">24/7 CAMPUS HEALTHCARE</span>
+        <h1 style="font-family: var(--font-heading); font-size: 42px; font-weight: 800; line-height: 1.2; margin-bottom: 16px;">
+          Smart Hospital &amp; Wellness Center
+        </h1>
+        <p style="font-size: 16px; color: #d1fae5; line-height: 1.6; margin-bottom: 28px;">
+          Providing accredited multi-specialty clinical care, emergency ambulance response, outpatient diagnostics, and digital health records for 45,000+ university residents.
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="#patientRegistrationSection" class="btn btn-secondary" style="color: #064e3b; font-weight: 700;">Patient Registration Form ↓</a>
+          <a href="tel:+914162202000" class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.4);">🚑 Emergency: 220 2000</a>
+        </div>
+      </div>
+
+      <!-- Quick Hospital Stats -->
+      <div class="card" style="background: rgba(255, 255, 255, 0.95); padding: 24px; box-shadow: var(--shadow-xl); border-radius: var(--radius-xl);">
+        <h3 style="font-size: 17px; font-weight: 800; color: #064e3b; margin-bottom: 16px;">Emergency Department Status</h3>
+        <div style="display: grid; gap: 12px; font-size: 14px;">
+          <div style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid var(--border-light);">
+            <span style="color: var(--text-muted);">Duty Medical Officers:</span>
+            <span style="font-weight: 700; color: #059669;">4 Doctors On Call</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid var(--border-light);">
+            <span style="color: var(--text-muted);">Ambulance Fleet:</span>
+            <span style="font-weight: 700; color: #059669;">3 ICU Units Ready</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid var(--border-light);">
+            <span style="color: var(--text-muted);">Pharmacy Stock:</span>
+            <span style="font-weight: 700; color: #059669;">100% Essential Meds</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--text-muted);">Avg. Triage Wait Time:</span>
+            <span style="font-weight: 700; color: #0284c7;">&lt; 5 Minutes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Main Service Cards: 2x2 Grid Layout (Q19, Q21) -->
+  <section class="section-py" style="background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">Core Healthcare Wings</span>
+        <h2 class="section-title">Comprehensive Hospital Services</h2>
+        <p class="section-desc">Four specialized clinical divisions operating round-the-clock for inpatient and outpatient needs.</p>
+      </div>
+
+      <!-- 2x2 Service Grid (Q19) -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        
+        <!-- Service 1: Doctors -->
+        <div class="card card-hover" style="border-top: 4px solid var(--accent-blue);">
+          <div class="card-body">
+            <span style="font-size: 40px; display: block; margin-bottom: 12px;">👨‍⚕️</span>
+            <h3 class="card-title" style="margin-bottom: 8px;">Specialist Doctors</h3>
+            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+              General physicians, orthopedic surgeons, cardiologists, dermatologists, and mental wellness counselors.
+            </p>
+            <span class="badge badge-blue">18 Resident Specialists</span>
+          </div>
+        </div>
+
+        <!-- Service 2: Patients -->
+        <div class="card card-hover" style="border-top: 4px solid var(--brand-cyan);">
+          <div class="card-body">
+            <span style="font-size: 40px; display: block; margin-bottom: 12px;">🏥</span>
+            <h3 class="card-title" style="margin-bottom: 8px;">Patient Inpatient Wing</h3>
+            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+              50-bed air-conditioned observation wards, day-care minor OT, quarantine rooms, and 24/7 dedicated nursing staff.
+            </p>
+            <span class="badge badge-cyan">50 Beds Available</span>
+          </div>
+        </div>
+
+        <!-- Service 3: Appointments -->
+        <div class="card card-hover" style="border-top: 4px solid #059669;">
+          <div class="card-body">
+            <span style="font-size: 40px; display: block; margin-bottom: 12px;">📅</span>
+            <h3 class="card-title" style="margin-bottom: 8px;">Digital Appointments</h3>
+            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+              Schedule consultation slots online with automated SMS queue tokens and electronic diagnostic lab delivery.
+            </p>
+            <span class="badge badge-emerald">Real-time Slot Booking</span>
+          </div>
+        </div>
+
+        <!-- Service 4: Pharmacy -->
+        <div class="card card-hover" style="border-top: 4px solid #d97706;">
+          <div class="card-body">
+            <span style="font-size: 40px; display: block; margin-bottom: 12px;">💊</span>
+            <h3 class="card-title" style="margin-bottom: 8px;">24/7 Campus Pharmacy</h3>
+            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+              Fully stocked dispensary providing subsidized prescription medications, first-aid equipment, and wellness vitamins.
+            </p>
+            <span class="badge badge-amber">Open 24 Hours</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       COMPLETE 20-FIELD PATIENT REGISTRATION FORM (Q26)
+       ========================================================================== -->
+  <section id="patientRegistrationSection" class="section-py" style="background: #ffffff; border-top: 1px solid var(--border-light);">
+    <div class="container" style="max-width: 900px;">
+      
+      <div class="section-header">
+        <span class="section-kicker">Hospital Admissions</span>
+        <h2 class="section-title">Patient Consultation Registration Form</h2>
+        <p class="section-desc">Complete medical admission intake containing all 20 distinct HTML5 input elements, range scales, and clinical validations.</p>
+      </div>
+
+      <!-- Alert Notification -->
+      <div id="patientAlert" class="alert alert-info" style="display: none;"></div>
+
+      <div class="card" style="box-shadow: var(--shadow-lg); border-radius: var(--radius-xl);">
+        <div class="card-header" style="background: #f0fdf4;">
+          <div>
+            <h3 style="font-size: 18px; font-weight: 800; color: #065f46;">Outpatient Intake &amp; Triage Form</h3>
+            <span style="font-size: 12px; color: #047857;">All 20 HTML5 standard input attributes implemented</span>
+          </div>
+          <span class="badge badge-emerald">SECURE E-HEALTH</span>
+        </div>
+
+        <form id="patientRegForm" class="card-body" onsubmit="validatePatientForm(event)">
+          
+          <!-- Row 1: Text & Email -->
+          <div class="form-row-2">
+            <!-- 1. Text -->
+            <div class="form-group">
+              <label class="form-label" for="patName">1. Patient Full Name <span class="req">*</span></label>
+              <input type="text" id="patName" name="patName" class="form-control" placeholder="e.g. Shaik Zabiullah" required>
+              <div id="patNameFeedback" class="field-feedback"></div>
+            </div>
+
+            <!-- 2. Email -->
+            <div class="form-group">
+              <label class="form-label" for="patEmail">2. Email Address <span class="req">*</span></label>
+              <input type="email" id="patEmail" name="patEmail" class="form-control" placeholder="patient@example.com" required>
+              <div id="patEmailFeedback" class="field-feedback"></div>
+            </div>
+          </div>
+
+          <!-- Row 2: Password & Tel -->
+          <div class="form-row-2">
+            <!-- 3. Password -->
+            <div class="form-group">
+              <label class="form-label" for="patPassword">3. Portal Password <span class="req">*</span></label>
+              <input type="password" id="patPassword" name="patPassword" class="form-control" placeholder="Min 6 characters" minlength="6" required>
+              <div id="patPasswordFeedback" class="field-feedback"></div>
+            </div>
+
+            <!-- 4. Tel -->
+            <div class="form-group">
+              <label class="form-label" for="patTel">4. Contact Phone (Tel) <span class="req">*</span></label>
+              <input type="tel" id="patTel" name="patTel" class="form-control" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+              <div id="patTelFeedback" class="field-feedback"></div>
+            </div>
+          </div>
+
+          <!-- Row 3: Number, Date, Time -->
+          <div class="form-row-3">
+            <!-- 5. Number -->
+            <div class="form-group">
+              <label class="form-label" for="patAge">5. Patient Age <span class="req">*</span></label>
+              <input type="number" id="patAge" name="patAge" class="form-control" min="1" max="120" placeholder="e.g. 21" required>
+              <div id="patAgeFeedback" class="field-feedback"></div>
+            </div>
+
+            <!-- 6. Date -->
+            <div class="form-group">
+              <label class="form-label" for="patDob">6. Date of Birth <span class="req">*</span></label>
+              <input type="date" id="patDob" name="patDob" class="form-control" required>
+              <div id="patDobFeedback" class="field-feedback"></div>
+            </div>
+
+            <!-- 7. Time -->
+            <div class="form-group">
+              <label class="form-label" for="patTime">7. Appointment Time <span class="req">*</span></label>
+              <input type="time" id="patTime" name="patTime" class="form-control" required>
+              <div id="patTimeFeedback" class="field-feedback"></div>
+            </div>
+          </div>
+
+          <!-- Row 4: Datetime-local, URL, Search -->
+          <div class="form-row-3">
+            <!-- 8. Datetime-local -->
+            <div class="form-group">
+              <label class="form-label" for="patDateTime">8. Appointment DateTime <span class="req">*</span></label>
+              <input type="datetime-local" id="patDateTime" name="patDateTime" class="form-control" required>
+              <div id="patDateTimeFeedback" class="field-feedback"></div>
+            </div>
+
+            <!-- 9. URL -->
+            <div class="form-group">
+              <label class="form-label" for="patUrl">9. Personal Health Record URL</label>
+              <input type="url" id="patUrl" name="patUrl" class="form-control" placeholder="https://health.example.com">
+            </div>
+
+            <!-- 10. Search -->
+            <div class="form-group">
+              <label class="form-label" for="patSearchDoctor">10. Search Attending Doctor</label>
+              <input type="search" id="patSearchDoctor" name="patSearchDoctor" class="form-control" placeholder="Search doctor by name...">
+            </div>
+          </div>
+
+          <!-- Row 5: Color, File, Month, Week -->
+          <div class="form-row-2">
+            <!-- 11. Color -->
+            <div class="form-group">
+              <label class="form-label" for="patColor">11. Prescription Card Color Theme</label>
+              <input type="color" id="patColor" name="patColor" class="form-control" value="#059669" style="height: 42px; padding: 2px;">
+            </div>
+
+            <!-- 12. File -->
+            <div class="form-group">
+              <label class="form-label" for="patFile">12. Upload Previous Medical Record</label>
+              <input type="file" id="patFile" name="patFile" class="form-control" accept=".pdf,.png,.jpg,.jpeg">
+            </div>
+          </div>
+
+          <!-- Row 6: Range (Pain Level) -->
+          <!-- 13. Range -->
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label class="form-label" for="patPain" style="margin: 0;">13. Current Pain Level Assessment (Scale 1 – 10)</label>
+              <span id="painLevelVal" class="badge badge-amber" style="font-size: 13px;">5 (Moderate)</span>
+            </div>
+            <input type="range" id="patPain" name="patPain" min="1" max="10" value="5" class="form-control" oninput="document.getElementById('painLevelVal').textContent = this.value + (this.value > 7 ? ' (Severe)' : (this.value < 4 ? ' (Mild)' : ' (Moderate)'))">
+          </div>
+
+          <!-- Row 7: Radio (Gender) -->
+          <!-- 14. Radio -->
+          <div class="form-group">
+            <label class="form-label">14. Patient Gender <span class="req">*</span></label>
+            <div style="display: flex; gap: 20px;">
+              <label style="display: flex; align-items: center; gap: 6px; font-size: 14px; cursor: pointer;">
+                <input type="radio" name="patGender" value="Male" required> Male
+              </label>
+              <label style="display: flex; align-items: center; gap: 6px; font-size: 14px; cursor: pointer;">
+                <input type="radio" name="patGender" value="Female"> Female
+              </label>
+              <label style="display: flex; align-items: center; gap: 6px; font-size: 14px; cursor: pointer;">
+                <input type="radio" name="patGender" value="Other"> Other
+              </label>
+            </div>
+            <div id="patGenderGroupFeedback" class="field-feedback"></div>
+          </div>
+
+          <!-- Row 8: Checkbox (Known Allergies) -->
+          <!-- 15. Checkbox -->
+          <div class="form-group">
+            <label class="form-label">15. Known Allergies (Select all applicable)</label>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <label style="display: flex; align-items: center; gap: 6px; font-size: 13.5px;"><input type="checkbox" name="patAllergies" value="Penicillin"> Penicillin</label>
+              <label style="display: flex; align-items: center; gap: 6px; font-size: 13.5px;"><input type="checkbox" name="patAllergies" value="Dust"> Dust / Asthma</label>
+              <label style="display: flex; align-items: center; gap: 6px; font-size: 13.5px;"><input type="checkbox" name="patAllergies" value="Latex"> Latex</label>
+              <label style="display: flex; align-items: center; gap: 6px; font-size: 13.5px;"><input type="checkbox" name="patAllergies" value="Pollen"> Pollen</label>
+              <label style="display: flex; align-items: center; gap: 6px; font-size: 13.5px;"><input type="checkbox" name="patAllergies" value="None"> No Known Allergies</label>
+            </div>
+          </div>
+
+          <!-- Row 9: Select (Blood Group) & Month/Week -->
+          <div class="form-row-2">
+            <!-- 16. Select -->
+            <div class="form-group">
+              <label class="form-label" for="patBlood">16. Blood Group <span class="req">*</span></label>
+              <select id="patBlood" name="patBlood" class="form-select" required>
+                <option value="">-- Choose Blood Group --</option>
+                <option value="O+">O Positive (O+)</option>
+                <option value="O-">O Negative (O-)</option>
+                <option value="A+">A Positive (A+)</option>
+                <option value="A-">A Negative (A-)</option>
+                <option value="B+">B Positive (B+)</option>
+                <option value="B-">B Negative (B-)</option>
+                <option value="AB+">AB Positive (AB+)</option>
+                <option value="AB-">AB Negative (AB-)</option>
+              </select>
+              <div id="patBloodFeedback" class="field-feedback"></div>
+            </div>
+
+            <!-- 17. Month -->
+            <div class="form-group">
+              <label class="form-label" for="patMonth">17. Preferred Consultation Month</label>
+              <input type="month" id="patMonth" name="patMonth" class="form-control" value="2026-11">
+            </div>
+          </div>
+
+          <!-- Row 10: Textarea (Address) -->
+          <!-- 18. Textarea -->
+          <div class="form-group">
+            <label class="form-label" for="patAddress">18. Residential Address &amp; Hostel Block</label>
+            <textarea id="patAddress" name="patAddress" rows="3" class="form-control" placeholder="Room No, Hostel Block (e.g. Mens Hostel Block L) or Home Address..."></textarea>
+          </div>
+
+          <!-- Actions: Submit (19) & Reset (20) -->
+          <div style="display: flex; gap: 14px; margin-top: 24px;">
+            <!-- 19. Submit -->
+            <button type="submit" class="btn btn-primary btn-lg" style="flex: 1;">19. Submit Patient Registration</button>
+            <!-- 20. Reset -->
+            <button type="reset" class="btn btn-secondary btn-lg">20. Reset Form</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>Copyright © 2026 VIT Smart Campus. All Rights Reserved.</div>
+        <div>Author: <strong>Shaik Zabiullah</strong> (Reg. No. <strong>23MIC0007</strong>) · VIT Vellore</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/validation.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 500" width="100%" height="100%">
+  <rect width="650" height="500" fill="#F1F5F9"/>
+
+  <!-- Centered Login Card -->
+  <rect x="100" y="30" width="450" height="440" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  
+  <text x="325" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#0F172A">Student &amp; Faculty Login</text>
+  <text x="325" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748B">HTML5 Input Types &amp; Embedded &lt;audio&gt; Guide</text>
+
+  <!-- Audio Player Mockup -->
+  <rect x="135" y="120" width="380" height="40" rx="6" fill="#EFF6FF" stroke="#BFDBFE"/>
+  <circle cx="160" cy="140" r="10" fill="#1E40AF"/>
+  <polygon points="157,135 167,140 157,145" fill="#FFFFFF"/>
+  <line x1="185" y1="140" x2="480" y2="140" stroke="#93C5FD" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="280" cy="140" r="6" fill="#1E40AF"/>
+
+  <!-- Role radio -->
+  <text x="135" y="195" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#334155">User Role:</text>
+  <text x="210" y="195" font-family="Arial, sans-serif" font-size="12" fill="#1E293B">(●) Student   ( ) Faculty</text>
+
+  <!-- Username -->
+  <text x="135" y="235" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#334155">Username / Email Address</text>
+  <rect x="135" y="245" width="380" height="34" rx="4" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="150" y="267" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">23MIC0007 / name@vitstudent.ac.in</text>
+
+  <!-- Password -->
+  <text x="135" y="305" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#334155">Password</text>
+  <rect x="135" y="315" width="380" height="34" rx="4" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="150" y="337" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">••••••••••••</text>
+
+  <!-- Remember me & Forgot -->
+  <text x="135" y="375" font-family="Arial, sans-serif" font-size="11" fill="#475569">[✓] Remember Me</text>
+  <text x="515" y="375" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#2563EB">Forgot Password?</text>
+
+  <!-- Buttons -->
+  <rect x="135" y="395" width="240" height="36" rx="4" fill="#1E40AF"/>
+  <text x="255" y="418" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="13" fill="#FFFFFF">Login</text>
+  
+  <rect x="385" y="395" width="130" height="36" rx="4" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="450" y="418" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#475569">Clear</text>
+
+  <text x="325" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8">Q24 Student Login Portal · Shaik Zabiullah (23MIC0007)</text>
+</svg>
+

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" width="100%" height="100%">
+  <rect width="700" height="450" fill="#F8FAFC"/>
+  <rect x="50" y="30" width="600" height="390" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="50" y="30" width="600" height="6" fill="#10B981"/>
+
+  <text x="80" y="80" font-family="Arial, sans-serif" font-weight="bold" font-size="28" fill="#065F46">HTML Text Formatting</text>
+  
+  <text x="80" y="130" font-family="Arial, sans-serif" font-size="16" fill="#1E293B">
+    <tspan font-weight="bold">HTML</tspan> stands for <tspan font-style="italic">HyperText</tspan> <tspan text-decoration="underline">Markup Language</tspan>.
+  </text>
+  <text x="80" y="160" font-family="Arial, sans-serif" font-size="16" fill="#1E293B">It is the standard language used for creating modern web pages.</text>
+
+  <!-- Highlight representation -->
+  <rect x="110" y="195" width="85" height="24" fill="#FEF08A"/>
+  <text x="80" y="212" font-family="Arial, sans-serif" font-size="16" fill="#1E293B">It is <tspan font-weight="bold">important</tspan> to structure web documents properly.</text>
+
+  <text x="80" y="270" font-family="Arial, sans-serif" font-weight="bold" font-size="18" fill="#047857">Scientific Formulas</text>
+  
+  <text x="80" y="310" font-family="Arial, sans-serif" font-size="18" fill="#1E293B">Chemical formula: H<tspan dy="6" font-size="13">2</tspan><tspan dy="-6">O</tspan></text>
+  <text x="80" y="350" font-family="Arial, sans-serif" font-size="18" fill="#1E293B">Mathematical expression: x<tspan dy="-6" font-size="13">2</tspan></text>
+
+  <line x1="80" y1="380" x2="620" y2="380" stroke="#E2E8F0"/>
+  <text x="80" y="405" font-family="Arial, sans-serif" font-size="12" fill="#64748B">Tags used: &lt;h1&gt;, &lt;p&gt;, &lt;b&gt;, &lt;i&gt;, &lt;u&gt;, &lt;mark&gt;, &lt;sub&gt;, &lt;sup&gt;</text>
+</svg>
+

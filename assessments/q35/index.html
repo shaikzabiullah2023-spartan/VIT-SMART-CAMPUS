@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Product Card - Mouse Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-container">
+    <div class="showcase-wrapper">
+      
+      <header class="section-header">
+        <div class="badge">E-COMMERCE · DOM EVENT SHOWCASE</div>
+        <h1>Interactive Product Card</h1>
+        <p class="subtitle">Hover over the image for technical specs. Click "View Details" to reveal price &amp; inventory.</p>
+      </header>
+
+      <!-- The Product Card -->
+      <div class="product-card">
+        
+        <!-- Image Area with Mouseover / Mouseleave -->
+        <div class="product-media-wrapper" id="imageWrapper">
+          <div class="img-container" id="productImageContainer">
+            <!-- Inline SVG Vector Laptop -->
+            <svg class="product-svg" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="20" width="260" height="150" rx="10" fill="#1E293B" stroke="#475569" stroke-width="2"/>
+              <rect x="42" y="32" width="236" height="126" rx="6" fill="#0F172A"/>
+              <!-- Screen graphic -->
+              <circle cx="160" cy="85" r="32" fill="url(#gradOrb)"/>
+              <rect x="80" y="125" width="160" height="6" rx="3" fill="#334155"/>
+              <rect x="110" y="137" width="100" height="4" rx="2" fill="#1E293B"/>
+              <!-- Base and trackpad -->
+              <path d="M10 170 C10 170 30 185 50 185 L270 185 C290 185 310 170 310 170 L10 170 Z" fill="#334155"/>
+              <rect x="135" y="172" width="50" height="8" rx="2" fill="#475569"/>
+              <defs>
+                <linearGradient id="gradOrb" x1="128" y1="53" x2="192" y2="117" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#38BDF8"/>
+                  <stop offset="1" stop-color="#818CF8"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <!-- Hover Specs Overlay (Appears on Mouseover) -->
+          <div id="specsOverlay" class="specs-overlay">
+            <div class="specs-badge">⚡ TECHNICAL SPECIFICATIONS</div>
+            <ul class="specs-list">
+              <li><strong>Chip:</strong> M3 Max / 16-Core CPU</li>
+              <li><strong>Memory:</strong> 36 GB Unified RAM</li>
+              <li><strong>Display:</strong> 16.2" Liquid Retina XDR</li>
+              <li><strong>Battery:</strong> Up to 22 Hours</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Product Details Body -->
+        <div class="product-body">
+          <div class="product-category">PREMIUM WORKSTATION</div>
+          <h2 class="product-title">ApexPro Ultra Studio 16"</h2>
+          <p class="product-summary">Engineered for extreme creative workloads, full-stack compiling, and deep learning workflows.</p>
+
+          <!-- Action Button (Click triggers details display) -->
+          <div class="card-action">
+            <button id="viewDetailsBtn" class="btn-details">
+              <span>View Details</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </div>
+
+          <!-- Dynamic Details Output (Appears on Click) -->
+          <div id="detailsOutput" class="details-panel" style="display: none;">
+            <div class="panel-row">
+              <span class="label">Unit Price:</span>
+              <span class="price-val">₹2,49,900</span>
+            </div>
+            <div class="panel-row">
+              <span class="label">Inventory Status:</span>
+              <span class="stock-badge in-stock">● In Stock (14 Units Available)</span>
+            </div>
+            <div class="panel-row">
+              <span class="label">Warranty:</span>
+              <span class="val">3-Year AppleCare+ Included</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer class="page-footer">
+      CSI3029 Assessment Q35 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

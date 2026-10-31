@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 500" width="100%" height="100%">
+  <rect width="850" height="500" fill="#090D16"/>
+
+  <!-- Card Container -->
+  <rect x="150" y="30" width="550" height="440" rx="16" fill="#111827" stroke="#1F2937" stroke-width="1.5"/>
+
+  <!-- Badge -->
+  <rect x="250" y="55" width="350" height="24" rx="12" fill="rgba(99,102,241,0.15)" stroke="rgba(99,102,241,0.3)"/>
+  <text x="425" y="71" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#818CF8">UNIT VIII · REAL-TIME INPUT &amp; KEYBOARD EVENTS</text>
+
+  <!-- Title -->
+  <text x="425" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">Dynamic Product Search</text>
+  <text x="425" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">Real-time typing echo · Dynamic background color shift · Enter query</text>
+
+  <!-- Input Field (Active Indigo state) -->
+  <rect x="190" y="150" width="470" height="48" rx="10" fill="#1E1B4B" stroke="#6366F1" stroke-width="2" filter="drop-shadow(0 0 15px rgba(99,102,241,0.35))"/>
+  <circle cx="218" cy="174" r="6" fill="none" stroke="#818CF8" stroke-width="2"/>
+  <line x1="223" y1="179" x2="230" y2="186" stroke="#818CF8" stroke-width="2"/>
+  <text x="245" y="180" font-family="Arial, sans-serif" font-size="14" fill="#E0E7FF">Wireless Mechanical Keyboard</text>
+
+  <!-- Echo Box -->
+  <rect x="190" y="215" width="470" height="60" rx="8" fill="#0A0F1D" stroke="#1F2937"/>
+  <text x="210" y="235" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#64748B">LIVE TYPING STREAM (REAL-TIME ECHO)</text>
+  <text x="210" y="258" font-family="Courier, monospace" font-size="13" font-weight="bold" fill="#38BDF8">Wireless Mechanical Keyboard</text>
+
+  <!-- Search Result Banner (Enter pressed) -->
+  <rect x="190" y="290" width="470" height="56" rx="8" fill="rgba(99,102,241,0.15)" stroke="#6366F1"/>
+  <text x="215" y="325" font-family="Arial, sans-serif" font-size="20">🔍</text>
+  <text x="250" y="315" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#818CF8">SEARCH DISPATCHED (ENTER KEY)</text>
+  <text x="250" y="333" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">Searching for: "Wireless Mechanical Keyboard"</text>
+
+  <!-- Bottom Hints -->
+  <line x1="190" y1="365" x2="660" y2="365" stroke="#1F2937"/>
+  <text x="190" y="390" font-family="Arial, sans-serif" font-size="11" fill="#94A3B8">● Input background color shifts to indigo upon first keystroke</text>
+  <text x="190" y="410" font-family="Arial, sans-serif" font-size="11" fill="#94A3B8">● Enter key executes dispatch banner with query interpolation</text>
+
+  <text x="425" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748B">CSI3029 Assessment Q39 · Shaik Zabiullah (23MIC0007)</text>
+</svg>
+

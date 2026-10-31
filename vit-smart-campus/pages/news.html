@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Times Newspaper | Multi-Column Layout | VIT Smart Campus</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body style="background: #fafaf9;">
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo">
+        <div class="logo-badge" style="background: #0f172a;">📰</div>
+        <div class="brand-text">
+          <span class="uni-name">The Official Gazette</span>
+          <span class="portal-name">Campus Times</span>
+        </div>
+      </a>
+
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="./about.html" class="nav-link">About</a></li>
+          <li><a href="./academics.html" class="nav-link">Academics</a></li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#" class="nav-link active">
+              <span>Student Services</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="./dashboard.html" class="dropdown-link">📊 Student Dashboard</a></li>
+              <li><a href="./hospital.html" class="dropdown-link">🏥 Campus Hospital</a></li>
+              <li><a href="./store.html" class="dropdown-link">🛍️ Campus Store</a></li>
+              <li><a href="./learning.html" class="dropdown-link">💻 LearnSphere Academy</a></li>
+              <li><a href="./gamezone.html" class="dropdown-link">🎮 GameZone Arena</a></li>
+              <li><a href="./news.html" class="dropdown-link active">📰 Campus Times Newspaper</a></li>
+            </ul>
+          </li>
+
+          <li><a href="./events.html" class="nav-link">Events</a></li>
+          <li><a href="./gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="./javascript-lab.html" class="nav-link" style="color: var(--brand-cyan);">⚡ JS Lab</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn btn-dark btn-sm" onclick="window.print()">Print Edition 🖨️</button>
+        <button type="button" class="hamburger-btn" aria-label="Toggle Mobile Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section-py">
+    <div class="container" style="max-width: 1040px; background: #ffffff; padding: 48px; box-shadow: var(--shadow-lg); border: 1px solid var(--border-light); border-radius: var(--radius-lg);">
+      
+      <!-- ======================================================================
+           NEWSPAPER MASTHEAD (Q22)
+           ====================================================================== -->
+      <header style="text-align: center; border-bottom: 3px double #0f172a; padding-bottom: 16px; margin-bottom: 24px;">
+        <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #64748b; margin-bottom: 6px;">
+          THE OFFICIAL CHRONICLE OF VELLORE INSTITUTE OF TECHNOLOGY · ESTABLISHED 1984
+        </div>
+        <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 52px; font-weight: 900; letter-spacing: -0.02em; color: #0f172a; line-height: 1.1; margin-bottom: 8px;">
+          The VIT Campus Times
+        </h1>
+        
+        <!-- Live Date Injected by JavaScript (Q22 requirement) -->
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #0f172a; border-bottom: 1px solid #0f172a; padding: 6px 10px; font-size: 12.5px; font-weight: 700; color: #334155; text-transform: uppercase;">
+          <span>Vol. XLII · No. 42</span>
+          <span id="newspaperLiveDate">Loading Current Date...</span>
+          <span>Vellore, Tamil Nadu · ₹5.00</span>
+        </div>
+      </header>
+
+      <!-- HIGHLIGHTED LEAD HEADLINE (Q22) -->
+      <section style="margin-bottom: 32px; padding-bottom: 24px; border-bottom: 2px solid #0f172a;">
+        <span class="badge badge-rose" style="margin-bottom: 10px;">BREAKING EXCLUSIVE</span>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 34px; font-weight: 900; color: #0f172a; line-height: 1.2; margin-bottom: 14px;">
+          VIT Achieves Historic Top Tier in National University Rankings: Research Output Surges by 48%
+        </h2>
+        <p style="font-size: 16px; color: #334155; line-height: 1.7; text-align: justify;" class="newspaper-dropcap">
+          Vellore Institute of Technology has attained unprecedented global acclaim following the latest institutional audit, securing premier standing among higher technical education universities. The milestone crowns four decades of relentless academic innovation, pioneering interdisciplinary research, and high-impact international consortiums. Across sixteen academic schools, over two thousand research grants were commercialized, yielding patent filings in quantum cryptographic hardware, renewable solar microgrids, and autonomous neural vehicle perception.
+        </p>
+      </section>
+
+      <!-- ======================================================================
+           3-COLUMN CSS NEWSPAPER LAYOUT (Q22: column-count, column-gap, column-rule)
+           ====================================================================== -->
+      <section class="newspaper-layout">
+        
+        <!-- Article 1: Autonomous AI Fleet -->
+        <article class="newspaper-article">
+          <div class="newspaper-meta">ARTIFICIAL INTELLIGENCE</div>
+          <h3 class="newspaper-headline">Driverless Campus Shuttles Begin Full Autonomous Pilot</h3>
+          <p style="font-size: 13.5px; color: #334155; line-height: 1.6;">
+            The School of Information Technology and Engineering unveiled five all-electric driverless shuttles engineered entirely by undergraduate researchers. Navigating Katpadi Road corridors using solid-state LiDAR and computer vision, the fleet operates 24-hour routes connecting Mens Hostels to the Technology Tower.
+          </p>
+        </article>
+
+        <!-- Article 2: Green Solar Transition -->
+        <article class="newspaper-article">
+          <div class="newspaper-meta">CAMPUS SUSTAINABILITY</div>
+          <h3 class="newspaper-headline">372-Acre Campus Reaches Net-Zero Carbon Benchmark</h3>
+          <p style="font-size: 13.5px; color: #334155; line-height: 1.6;">
+            A monumental milestone in university green engineering was celebrated yesterday as the Department of Facilities transitioned the final academic quad to 100% rooftop solar energy. In tandem with an automated zero-discharge water recycling plant, campus emissions fell by 82% over the previous fiscal cycle.
+          </p>
+        </article>
+
+        <!-- Article 3: Tech Symposium 2026 -->
+        <article class="newspaper-article">
+          <div class="newspaper-meta">STUDENT AFFAIRS</div>
+          <h3 class="newspaper-headline">Delegates From 140 Colleges Arrive for Technical Symposium</h3>
+          <p style="font-size: 13.5px; color: #334155; line-height: 1.6;">
+            The registration desk at Anna Convocation Auditorium saw a record influx of three thousand student innovators competing in algorithm marathons, embedded drone sprints, and cybersecurity war-games. Silicon Valley sponsors pledged twenty-five research fellowships for top podium teams.
+          </p>
+        </article>
+
+        <!-- Article 4: Inter-University Sports -->
+        <article class="newspaper-article">
+          <div class="newspaper-meta">ATHLETICS &amp; RECREATION</div>
+          <h3 class="newspaper-headline">Basketball Squad Captures South Zone Collegiate Championship</h3>
+          <p style="font-size: 13.5px; color: #334155; line-height: 1.6;">
+            Overcoming a ten-point fourth-quarter deficit, the VIT varsity basketball squad defeated Chennai rivals 84-78 in front of an ecstatic four-thousand-strong crowd at the indoor sports complex, qualifying for the upcoming All-India University Finals in New Delhi.
+          </p>
+        </article>
+
+        <!-- Article 5: Periyar Library Expansion -->
+        <article class="newspaper-article">
+          <div class="newspaper-meta">ACADEMIC RESOURCES</div>
+          <h3 class="newspaper-headline">Periyar Central Library Unveils 24/7 Digital Commons</h3>
+          <p style="font-size: 13.5px; color: #334155; line-height: 1.6;">
+            A state-of-the-art computational reading commons equipped with gigabit fiber terminals and high-performance GPU nodes opened on the third tier of the library, granting researchers continuous access to IEEE Xplore, ACM Digital Library, and computational clusters.
+          </p>
+        </article>
+
+        <!-- Article 6: Health Clinic Upgrades -->
+        <article class="newspaper-article">
+          <div class="newspaper-meta">HEALTH &amp; WELLNESS</div>
+          <h3 class="newspaper-headline">Campus Hospital Launches Digital Triage &amp; Telemedicine Desk</h3>
+          <p style="font-size: 13.5px; color: #334155; line-height: 1.6;">
+            The university healthcare division announced full migration to encrypted electronic health records, permitting students to book clinical slots, consult on-call duty officers, and access pharmacy orders instantaneously via the unified Smart Campus web portal.
+          </p>
+        </article>
+
+      </section>
+
+      <!-- Newspaper Footer Colophon -->
+      <footer style="border-top: 1px solid #0f172a; padding-top: 14px; margin-top: 24px; display: flex; justify-content: space-between; font-size: 11px; color: #64748b; text-transform: uppercase;">
+        <span>The VIT Campus Times · Student Editor: Shaik Zabiullah (23MIC0007)</span>
+        <span>Printed at VIT University Press, Vellore</span>
+        <span>Page 1 of 1 · CSI3029 Front End Design</span>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>Copyright © 2026 VIT Smart Campus. All Rights Reserved.</div>
+        <div>Author: <strong>Shaik Zabiullah</strong> (Reg. No. <strong>23MIC0007</strong>) · VIT Vellore</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Live Current Date in Newspaper Header (Q22)
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const today = new Date();
+    document.getElementById('newspaperLiveDate').textContent = today.toLocaleDateString('en-US', options);
+  </script>
+</body>
+</html>
+

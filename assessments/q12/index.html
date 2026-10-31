@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Website Layout using Table Tag</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 20px; background-color: #f1f5f9; color: #1e293b;">
+
+  <div style="max-width: 900px; margin: 0 auto; background: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    
+    <!-- Outer Table Layout -->
+    <table width="100%" border="0" cellpadding="15" cellspacing="8" style="border-collapse: separate;">
+      
+      <!-- Row 1: Full-width <header> (Red / Crimson) -->
+      <tr>
+        <td colspan="2" bgcolor="#ef4444" style="color: #ffffff; border-radius: 6px; text-align: center; padding: 20px;">
+          <header>
+            <h1 style="margin: 0; font-size: 26px; text-transform: uppercase; letter-spacing: 0.05em;">&lt;header&gt;</h1>
+            <p style="margin: 5px 0 0; font-size: 15px;">Front-End Design &amp; Testing Lab Portal · VIT Vellore</p>
+          </header>
+        </td>
+      </tr>
+
+      <!-- Row 2: Full-width <nav> (Cyan / Bright Blue) -->
+      <tr>
+        <td colspan="2" bgcolor="#06b6d4" style="color: #ffffff; border-radius: 6px; text-align: center; padding: 14px;">
+          <nav>
+            <strong style="font-size: 18px;">&lt;nav&gt;</strong> — 
+            <a href="#" style="color: #ffffff; text-decoration: none; margin: 0 10px; font-weight: bold;">Home</a> |
+            <a href="#" style="color: #ffffff; text-decoration: none; margin: 0 10px; font-weight: bold;">Syllabus</a> |
+            <a href="#" style="color: #ffffff; text-decoration: none; margin: 0 10px; font-weight: bold;">Practicals</a> |
+            <a href="#" style="color: #ffffff; text-decoration: none; margin: 0 10px; font-weight: bold;">About Author</a>
+          </nav>
+        </td>
+      </tr>
+
+      <!-- Middle Content Area -->
+      <tr>
+        <!-- Left Column - Top: <section> (Amber / Orange) -->
+        <td width="65%" bgcolor="#f59e0b" style="color: #ffffff; border-radius: 6px; vertical-align: top; padding: 20px;">
+          <section>
+            <h2 style="margin: 0 0 10px; font-size: 20px;">&lt;section&gt; Featured Laboratory Experiments</h2>
+            <p style="font-size: 14px; line-height: 1.6; margin: 0;">
+              This section explores structural semantic HTML5 markup, highlighting the progression from table-driven layouts to fluid Flexbox and modern CSS Grid architectures.
+            </p>
+          </section>
+        </td>
+
+        <!-- Right Column: Tall <aside> spanning both rows (Hot Pink / Magenta) -->
+        <td width="35%" rowspan="2" bgcolor="#ec4899" style="color: #ffffff; border-radius: 6px; vertical-align: top; padding: 20px;">
+          <aside>
+            <h2 style="margin: 0 0 12px; font-size: 20px;">&lt;aside&gt; Quick Links</h2>
+            <p style="font-size: 14px; line-height: 1.6; margin-bottom: 15px;">
+              Sidebar information, announcements, and supplementary technical documentation.
+            </p>
+            <div style="background: rgba(0,0,0,0.15); padding: 10px; border-radius: 4px; font-size: 13px;">
+              <strong>Student Details:</strong><br>
+              Shaik Zabiullah<br>
+              Reg: 23MIC0007<br>
+              SCOPE, VIT Vellore
+            </div>
+          </aside>
+        </td>
+      </tr>
+
+      <tr>
+        <!-- Left Column - Bottom: <article> (Coral / Salmon) -->
+        <td bgcolor="#f97316" style="color: #ffffff; border-radius: 6px; vertical-align: top; padding: 20px;">
+          <article>
+            <h2 style="margin: 0 0 10px; font-size: 20px;">&lt;article&gt; Technical Article</h2>
+            <p style="font-size: 14px; line-height: 1.6; margin: 0;">
+              Semantic HTML provides accessibility benefits and clean machine parsing for search crawlers. The table layout provides multi-row rowspan and colspan framing.
+            </p>
+          </article>
+        </td>
+      </tr>
+
+      <!-- Row 5: Full-width <footer> (Slate / Dark Navy) -->
+      <tr>
+        <td colspan="2" bgcolor="#334155" style="color: #ffffff; border-radius: 6px; text-align: center; padding: 16px;">
+          <footer>
+            <strong style="font-size: 18px;">&lt;footer&gt;</strong>
+            <p style="margin: 6px 0 0; font-size: 13px; color: #cbd5e1;">
+              &copy; 2026 CSI3029 Front End Design &amp; Testing. All rights reserved.
+            </p>
+          </footer>
+        </td>
+      </tr>
+
+    </table>
+
+  </div>
+
+</body>
+</html>
+

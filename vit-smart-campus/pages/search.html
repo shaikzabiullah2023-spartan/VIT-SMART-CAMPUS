@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Search Engine | VIT Smart Campus</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo">
+        <div class="logo-badge">🎓</div>
+        <div class="brand-text">
+          <span class="uni-name">VIT University</span>
+          <span class="portal-name">Smart Campus</span>
+        </div>
+      </a>
+
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="./about.html" class="nav-link">About</a></li>
+          <li><a href="./academics.html" class="nav-link">Academics</a></li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#" class="nav-link">
+              <span>Student Services</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="./dashboard.html" class="dropdown-link">📊 Student Dashboard</a></li>
+              <li><a href="./hospital.html" class="dropdown-link">🏥 Campus Hospital</a></li>
+              <li><a href="./store.html" class="dropdown-link">🛍️ Campus Store</a></li>
+              <li><a href="./learning.html" class="dropdown-link">💻 LearnSphere Academy</a></li>
+              <li><a href="./gamezone.html" class="dropdown-link">🎮 GameZone Arena</a></li>
+              <li><a href="./news.html" class="dropdown-link">📰 Campus Times Newspaper</a></li>
+            </ul>
+          </li>
+
+          <li><a href="./events.html" class="nav-link">Events</a></li>
+          <li><a href="./gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="./javascript-lab.html" class="nav-link" style="color: var(--brand-cyan);">⚡ JS Lab</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="./search.html" class="btn btn-secondary btn-sm active">Search</a>
+        <a href="./store.html#cart" class="cart-icon-btn"><span class="cart-badge">0</span>🛒</a>
+        <a href="./login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="./registration.html" class="btn btn-primary btn-sm">Apply Now</a>
+        <button type="button" class="hamburger-btn" aria-label="Toggle Mobile Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search Hero Header (Q15) -->
+  <section style="background: linear-gradient(135deg, #0f172a, #1e3a8a); color: #fff; padding: 60px 0 50px 0; text-align: center;">
+    <div class="container" style="max-width: 820px;">
+      <span class="badge badge-cyan" style="margin-bottom: 14px;">UNIVERSAL INDEX</span>
+      <h1 style="font-family: var(--font-heading); font-size: 40px; font-weight: 800; margin-bottom: 12px;">
+        Smart Search Engine
+      </h1>
+      <p style="font-size: 16px; color: #cbd5e1; margin-bottom: 32px;">
+        Instant multi-filter discovery across campus store supplies, student services, research archives, and campus hospital consultations.
+      </p>
+
+      <!-- Search Controls Bar -->
+      <form class="card" style="padding: 16px; box-shadow: var(--shadow-xl); border: 2px solid var(--accent-cyan); display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 12px; align-items: center;" onsubmit="event.preventDefault(); executeSmartSearch();">
+        
+        <!-- Search Input -->
+        <div class="input-icon-group">
+          <span class="icon">🔍</span>
+          <input type="text" id="smartSearchQuery" class="form-control" placeholder="Search products, services, or articles..." autocomplete="off">
+        </div>
+
+        <!-- Category Dropdown -->
+        <select id="smartSearchCategory" class="form-select">
+          <option value="All">All Categories</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Books">Books</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Groceries">Groceries &amp; Daily</option>
+          <option value="Services">Campus Services</option>
+        </select>
+
+        <!-- Price Range Dropdown -->
+        <select id="smartSearchPrice" class="form-select">
+          <option value="Any">Any Price</option>
+          <option value="Under500">Under ₹500</option>
+          <option value="500-2000">₹500 – ₹2,000</option>
+          <option value="Above2000">Above ₹2,000</option>
+        </select>
+
+        <!-- Search Button -->
+        <button type="submit" class="btn btn-primary" style="height: 100%;">
+          <span>Search</span>
+        </button>
+
+      </form>
+
+      <!-- Quick Filter Tags (Q15) -->
+      <div style="display: flex; justify-content: center; gap: 8px; margin-top: 18px; flex-wrap: wrap;">
+        <span style="font-size: 13px; color: #94a3b8; align-self: center;">Popular Searches:</span>
+        <button type="button" class="btn btn-outline btn-sm" style="color: #cbd5e1; border-color: rgba(255,255,255,0.2);" onclick="quickSearch('Java')">Java Textbooks</button>
+        <button type="button" class="btn btn-outline btn-sm" style="color: #cbd5e1; border-color: rgba(255,255,255,0.2);" onclick="quickSearch('Hoodie')">Varsity Hoodie</button>
+        <button type="button" class="btn btn-outline btn-sm" style="color: #cbd5e1; border-color: rgba(255,255,255,0.2);" onclick="quickSearch('Doctor')">Doctor Consultation</button>
+        <button type="button" class="btn btn-outline btn-sm" style="color: #cbd5e1; border-color: rgba(255,255,255,0.2);" onclick="quickSearch('Drafting')">Drafting Kit</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Search Results Section -->
+  <main class="section-py">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <h2 style="font-size: 20px; font-weight: 700; color: var(--primary-navy);" id="searchResultsTitle">Matching Search Results</h2>
+        <span id="searchResultCount" class="badge badge-blue">8 items indexed</span>
+      </div>
+
+      <!-- Results Grid -->
+      <div class="bento-grid" id="searchResultsGrid">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>Copyright © 2026 VIT Smart Campus. All Rights Reserved.</div>
+        <div>Author: <strong>Shaik Zabiullah</strong> (Reg. No. <strong>23MIC0007</strong>) · VIT Vellore</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/shopping.js"></script>
+  <script>
+    // Searchable Index of items across campus store, hospital, services, and articles
+    const SEARCH_INDEX = [
+      {
+        title: 'Data Structures & Algorithms in Java (Core Textbook)',
+        category: 'Books',
+        type: 'Product',
+        price: 650,
+        priceText: '₹650',
+        desc: 'Official semester curriculum guide with algorithm analysis and lab tutorials.',
+        url: './store.html',
+        icon: '📚'
+      },
+      {
+        title: 'Logitech Signature Wireless Ergonomic Mouse',
+        category: 'Electronics',
+        type: 'Product',
+        price: 1899,
+        priceText: '₹1,899',
+        desc: 'Precision optical tracking with silent clicks and dual Bluetooth / 2.4GHz USB.',
+        url: './store.html',
+        icon: '🖱️'
+      },
+      {
+        title: 'VIT University Official Varsity Hoodie (Navy Blue)',
+        category: 'Clothing',
+        type: 'Product',
+        price: 1299,
+        priceText: '₹1,299',
+        desc: 'Premium fleece cotton embroidered with the official VIT Vellore crest.',
+        url: './store.html',
+        icon: '👕'
+      },
+      {
+        title: 'Classmate Octane Neon Gel Pens (Pack of 25)',
+        category: 'Groceries',
+        type: 'Product',
+        price: 250,
+        priceText: '₹250',
+        desc: 'Smooth Japanese waterproof ink cartridges designed for examinations.',
+        url: './store.html',
+        icon: '🖊️'
+      },
+      {
+        title: 'General Physician & OPD Health Consultation',
+        category: 'Services',
+        type: 'Healthcare',
+        price: 0,
+        priceText: 'Free (Student Health Plan)',
+        desc: 'On-campus certified physician consultation and preventive vital screenings.',
+        url: './hospital.html',
+        icon: '🏥'
+      },
+      {
+        title: 'Web Technologies: HTML5, CSS3 & Modern JavaScript',
+        category: 'Books',
+        type: 'Product',
+        price: 780,
+        priceText: '₹780',
+        desc: 'Comprehensive reference covering responsive design, flexbox, grid, and DOM events.',
+        url: './store.html',
+        icon: '📖'
+      },
+      {
+        title: 'SanDisk 128GB Ultra Dual USB 3.1 OTG Flash Drive',
+        category: 'Electronics',
+        type: 'Product',
+        price: 849,
+        priceText: '₹849',
+        desc: 'High-speed Type-C and Type-A flash storage for instant project backups.',
+        url: './store.html',
+        icon: '💾'
+      },
+      {
+        title: 'Engineering Graphics Pro Drafting Kit',
+        category: 'Groceries',
+        type: 'Product',
+        price: 890,
+        priceText: '₹890',
+        desc: 'Complete engineering geometry set with mini drafter, scale rulers, and compass.',
+        url: './store.html',
+        icon: '📐'
+      }
+    ];
+
+    function renderSearchResults(items) {
+      const grid = document.getElementById('searchResultsGrid');
+      const countBadge = document.getElementById('searchResultCount');
+      if (!grid) return;
+
+      countBadge.textContent = `${items.length} item${items.length === 1 ? '' : 's'} found`;
+
+      if (items.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 48px; color: var(--text-muted);">
+            <span style="font-size: 48px; display: block; margin-bottom: 12px;">🔎</span>
+            <h3 style="color: var(--primary-navy); margin-bottom: 6px;">No results found</h3>
+            <p>Try searching for broader keywords or resetting category and price filters.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = items.map(item => `
+        <div class="card card-hover">
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="badge badge-cyan">${item.category}</span>
+              <span style="font-size: 12px; font-weight: 700; color: var(--text-muted);">${item.type}</span>
+            </div>
+            <div style="display: flex; gap: 14px; align-items: start; margin-bottom: 12px;">
+              <span style="font-size: 36px;">${item.icon}</span>
+              <div>
+                <h3 style="font-size: 16px; font-weight: 700; color: var(--primary-navy); line-height: 1.3;">${item.title}</h3>
+                <span style="font-size: 16px; font-weight: 800; color: var(--accent-blue);">${item.priceText}</span>
+              </div>
+            </div>
+            <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">${item.desc}</p>
+            <div style="border-top: 1px solid var(--border-light); padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+              <a href="${item.url}" class="btn btn-outline btn-sm">View Details →</a>
+              ${item.type === 'Product' ? `<button type="button" class="btn btn-primary btn-sm" onclick="showToast('Item accessible in Campus Store', 'success')">Shop</button>` : ''}
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function executeSmartSearch() {
+      const query = document.getElementById('smartSearchQuery')?.value.trim().toLowerCase() || '';
+      const category = document.getElementById('smartSearchCategory')?.value || 'All';
+      const priceRange = document.getElementById('smartSearchPrice')?.value || 'Any';
+
+      let results = SEARCH_INDEX;
+
+      // 1. Text Query Filter
+      if (query) {
+        results = results.filter(item =>
+          item.title.toLowerCase().includes(query) ||
+          item.desc.toLowerCase().includes(query) ||
+          item.category.toLowerCase().includes(query)
+        );
+      }
+
+      // 2. Category Filter
+      if (category !== 'All') {
+        results = results.filter(item => item.category.toLowerCase() === category.toLowerCase());
+      }
+
+      // 3. Price Filter
+      if (priceRange === 'Under500') {
+        results = results.filter(item => item.price < 500);
+      } else if (priceRange === '500-2000') {
+        results = results.filter(item => item.price >= 500 && item.price <= 2000);
+      } else if (priceRange === 'Above2000') {
+        results = results.filter(item => item.price > 2000);
+      }
+
+      renderSearchResults(results);
+    }
+
+    function quickSearch(term) {
+      document.getElementById('smartSearchQuery').value = term;
+      document.getElementById('smartSearchCategory').value = 'All';
+      document.getElementById('smartSearchPrice').value = 'Any';
+      executeSmartSearch();
+    }
+
+    // Initial render
+    renderSearchResults(SEARCH_INDEX);
+  </script>
+</body>
+</html>
+

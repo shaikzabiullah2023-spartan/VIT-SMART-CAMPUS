@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Search Engine Header</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Dynamic Search Engine Header: Horizontally Arranged -->
+  <header class="search-engine-header">
+    
+    <!-- Left: Website Title in White Text -->
+    <div class="header-brand">
+      <svg class="brand-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        <circle cx="11" cy="11" r="3" fill="#38bdf8"></circle>
+      </svg>
+      <h1 class="brand-title">Smart Search Engine</h1>
+    </div>
+
+    <!-- Right: Search Controls (Input + Category + Price + Search Button) -->
+    <form class="search-form-controls" onsubmit="event.preventDefault();">
+      
+      <!-- Search Text Box -->
+      <input 
+        type="search" 
+        class="search-input-box" 
+        placeholder="Search products, services, or articles..." 
+        aria-label="Search keywords"
+      />
+
+      <!-- Category Drop-down List -->
+      <select class="search-select category-select" aria-label="Select Category">
+        <option value="all">All Categories</option>
+        <option value="electronics">Electronics</option>
+        <option value="books">Books</option>
+        <option value="clothing">Clothing</option>
+        <option value="groceries">Groceries</option>
+      </select>
+
+      <!-- Price Range Drop-down List -->
+      <select class="search-select price-select" aria-label="Select Price Range">
+        <option value="any">Any Price</option>
+        <option value="under500">Under ₹500</option>
+        <option value="500-2000">₹500 – ₹2,000</option>
+        <option value="above2000">Above ₹2,000</option>
+      </select>
+
+      <!-- Search Button with Hover Effect -->
+      <button type="submit" class="search-submit-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <span>Search</span>
+      </button>
+
+    </form>
+
+  </header>
+
+  <!-- Showcase Demonstration -->
+  <main class="demo-viewport">
+    <div class="demo-card">
+      <h2>Smart Multi-Parameter Query Interface</h2>
+      <p>Demonstrating horizontal CSS Flexbox arrangement with nested category filters, price thresholds, and responsive rounded controls.</p>
+      <div class="lab-tag">CSI3029 Lab Assessment Q15 · Shaik Zabiullah (23MIC0007) · VIT Vellore</div>
+    </div>
+  </main>
+
+</body>
+</html>
+

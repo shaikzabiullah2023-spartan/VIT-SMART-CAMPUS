@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnSphere Academy - Header</title>
+  
+  <!-- Internal <style> Tag CSS as mandated by syllabus -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+
+    /* Header Container */
+    .academy-header {
+      background-color: #1e1b4b; /* Deep Indigo */
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      box-shadow: 0 4px 15px rgba(30, 27, 75, 0.2);
+    }
+
+    /* Website Logo / Title */
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    .brand-logo-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      color: #ffffff;
+    }
+
+    .brand-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    /* Horizontal Navigation Menu */
+    .academy-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 6px;
+    }
+
+    .nav-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* "Enroll Now" Button on Right Side */
+    .btn-enroll {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 20px;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+      white-space: nowrap;
+    }
+
+    .btn-enroll:hover {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.5);
+    }
+
+    /* Main Showcase */
+    .page-main {
+      padding: 50px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .showcase-card {
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .showcase-card h2 {
+      font-size: 24px;
+      color: #1e1b4b;
+      margin-bottom: 12px;
+    }
+
+    .showcase-card p {
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    .credit-chip {
+      margin-top: 25px;
+      font-size: 13px;
+      color: #6366f1;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Static Online Learning Website Header -->
+  <header class="academy-header">
+    
+    <!-- Logo & Title -->
+    <a href="#" class="brand-logo">
+      <div class="brand-logo-icon">L</div>
+      <span class="brand-title">LearnSphere Academy</span>
+    </a>
+
+    <!-- Horizontal Nav Menu & Enroll Now Button -->
+    <nav class="academy-nav">
+      <ul class="nav-list">
+        <li><a href="#" class="nav-link">Home</a></li>
+        <li><a href="#" class="nav-link">Courses</a></li>
+        <li><a href="#" class="nav-link">Instructors</a></li>
+        <li><a href="#" class="nav-link">Resources</a></li>
+        <li><a href="#" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#enroll" class="btn-enroll">Enroll Now</a>
+    </nav>
+
+  </header>
+
+  <!-- Showcase Content -->
+  <main class="page-main">
+    <div class="showcase-card">
+      <h2>Empowering Next-Generation Tech Careers</h2>
+      <p>Self-contained single-page component utilizing internal <code>&lt;style&gt;</code> tag architecture for clean static delivery.</p>
+      <div class="credit-chip">CSI3029 Lab Q16 · Shaik Zabiullah (23MIC0007) · VIT Vellore</div>
+    </div>
+  </main>
+
+</body>
+</html>
+

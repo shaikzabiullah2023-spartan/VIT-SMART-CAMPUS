@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameZone Arena | Campus E-Sports & Gaming | VIT Smart Campus</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <style>
+    /* 70% Viewport Height Slider (Q17 requirement) */
+    .gamezone-hero-slider {
+      height: 70vh;
+      min-height: 480px;
+      position: relative;
+      background: #090d16;
+      color: #fff;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .slider-track {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .game-slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(9, 13, 22, 0.95) 0%, rgba(9, 13, 22, 0.6) 60%, rgba(9, 13, 22, 0.3) 100%);
+      z-index: 1;
+    }
+
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+    }
+
+    .slider-arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: var(--transition);
+      backdrop-filter: blur(4px);
+    }
+
+    .slider-arrow-btn:hover {
+      background: var(--accent-cyan);
+      color: #fff;
+      border-color: var(--accent-cyan);
+    }
+
+    .slider-arrow-prev { left: 24px; }
+    .slider-arrow-next { right: 24px; }
+
+    .slider-dots {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .slider-dot.active {
+      background: var(--accent-cyan);
+      width: 32px;
+      border-radius: var(--radius-full);
+    }
+  </style>
+</head>
+<body style="background: #090d16; color: #f8fafc;">
+
+  <!-- Site Header (GameZone Sticky Header Q17) -->
+  <header class="site-header" style="background: rgba(9, 13, 22, 0.95); border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+    <div class="container nav-wrapper">
+      
+      <!-- Gaming Logo (Q17) -->
+      <a href="./gamezone.html" class="brand-logo" style="color: #fff;">
+        <div class="logo-badge" style="background: linear-gradient(135deg, #ec4899, #8b5cf6);">🎮</div>
+        <div class="brand-text">
+          <span class="uni-name" style="color: #ec4899;">VIT E-SPORTS</span>
+          <span class="portal-name" style="color: #fff;">GameZone</span>
+        </div>
+      </a>
+
+      <!-- Gaming Navigation (Q17: Home, Games, Tournaments, News, Contact) -->
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link" style="color: #cbd5e1;">Home</a></li>
+          <li><a href="#gamesSection" class="nav-link active" style="color: #38bdf8;">Games</a></li>
+          <li><a href="#tournamentsSection" class="nav-link" style="color: #cbd5e1;">Tournaments</a></li>
+          <li><a href="./news.html" class="nav-link" style="color: #cbd5e1;">News</a></li>
+          <li><a href="#footerContact" class="nav-link" style="color: #cbd5e1;">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Play Now Button (Q17) -->
+        <button type="button" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #ec4899, #8b5cf6); border: none;" onclick="showToast('Connecting to VIT LAN Gaming Server...', 'info')">
+          <span>Play Now</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </button>
+        <button type="button" class="hamburger-btn" style="color: #fff;" aria-label="Toggle Mobile Menu">☰</button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       70% VIEWPORT IMAGE SLIDER WITH CONTROLS (Q17)
+       ========================================================================== -->
+  <section class="gamezone-hero-slider">
+    
+    <div class="slider-track" id="sliderTrack">
+      
+      <!-- Slide 1 -->
+      <div class="game-slide" style="background: linear-gradient(135deg, #1e1b4b, #4338ca);">
+        <div class="slide-overlay"></div>
+        <div class="container slide-content">
+          <span class="badge" style="background: rgba(236,72,153,0.2); color: #f472b6; border: 1px solid #ec4899; margin-bottom: 14px;">ANNUAL E-SPORTS CHAMPIONSHIP</span>
+          <h1 style="font-family: var(--font-heading); font-size: 46px; font-weight: 800; line-height: 1.15; margin-bottom: 14px;">
+            Level Up Your Gaming Experience
+          </h1>
+          <p style="font-size: 17px; color: #cbd5e1; margin-bottom: 28px; line-height: 1.6;">
+            Join exciting tournaments and explore the latest games across high-speed ultra-low latency campus dedicated fiber rings.
+          </p>
+          <div style="display: flex; gap: 14px;">
+            <a href="#tournamentsSection" class="btn btn-lg" style="background: #ec4899; color: #fff;">Register for Tournament</a>
+            <a href="#gamesSection" class="btn btn-outline btn-lg" style="color: #fff; border-color: rgba(255,255,255,0.4);">Explore Games</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="game-slide" style="background: linear-gradient(135deg, #0f172a, #065f46);">
+        <div class="slide-overlay"></div>
+        <div class="container slide-content">
+          <span class="badge" style="background: rgba(16,185,129,0.2); color: #6ee7b7; border: 1px solid #10b981; margin-bottom: 14px;">TACTICAL MULTIPLAYER</span>
+          <h1 style="font-family: var(--font-heading); font-size: 46px; font-weight: 800; line-height: 1.15; margin-bottom: 14px;">
+            Valorant &amp; CS2 Inter-Hostel Derby
+          </h1>
+          <p style="font-size: 17px; color: #cbd5e1; margin-bottom: 28px; line-height: 1.6;">
+            32 hostel squads competing for a prize pool of ₹1,50,000 live at Anna Convocation Auditorium.
+          </p>
+          <div style="display: flex; gap: 14px;">
+            <a href="#tournamentsSection" class="btn btn-lg" style="background: #10b981; color: #fff;">Join Bracket</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="game-slide" style="background: linear-gradient(135deg, #312e81, #581c87);">
+        <div class="slide-overlay"></div>
+        <div class="container slide-content">
+          <span class="badge" style="background: rgba(139,92,246,0.2); color: #c4b5fd; border: 1px solid #8b5cf6; margin-bottom: 14px;">SPEEDRUN &amp; SIMULATION</span>
+          <h1 style="font-family: var(--font-heading); font-size: 46px; font-weight: 800; line-height: 1.15; margin-bottom: 14px;">
+            Sim Racing &amp; Apex Grand Prix
+          </h1>
+          <p style="font-size: 17px; color: #cbd5e1; margin-bottom: 28px; line-height: 1.6;">
+            Experience 4K triple-screen force feedback simulator rigs in Technology Tower Gaming Lounge.
+          </p>
+          <div style="display: flex; gap: 14px;">
+            <a href="#gamesSection" class="btn btn-lg" style="background: #8b5cf6; color: #fff;">Book Simulator Rig</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls: Prev & Next Arrow Buttons (Q17) -->
+    <button type="button" class="slider-arrow-btn slider-arrow-prev" onclick="prevGameSlide()" aria-label="Previous Slide">‹</button>
+    <button type="button" class="slider-arrow-btn slider-arrow-next" onclick="nextGameSlide()" aria-label="Next Slide">›</button>
+
+    <!-- Indicators -->
+    <div class="slider-dots" id="sliderDots">
+      <span class="slider-dot active" onclick="goToGameSlide(0)"></span>
+      <span class="slider-dot" onclick="goToGameSlide(1)"></span>
+      <span class="slider-dot" onclick="goToGameSlide(2)"></span>
+    </div>
+
+  </section>
+
+  <!-- Featured Games (Q17) -->
+  <section id="gamesSection" class="section-py" style="background: #111827;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker" style="background: rgba(236,72,153,0.15); color: #f472b6;">Campus LAN Games</span>
+        <h2 class="section-title" style="color: #fff;">Featured Gaming Titles</h2>
+        <p class="section-desc" style="color: #94a3b8;">Hosted on high-tick rate university local servers with zero internet ping.</p>
+      </div>
+
+      <div class="bento-grid">
+        
+        <div class="card" style="background: #1f2937; border-color: #374151;">
+          <div style="height: 150px; background: linear-gradient(135deg, #be185d, #ec4899); display: flex; align-items: center; justify-content: center; font-size: 54px;">
+            🎯
+          </div>
+          <div class="card-body">
+            <span class="badge badge-rose" style="margin-bottom: 8px;">FPS TACTICAL</span>
+            <h3 style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 6px;">Valorant Campus Arena</h3>
+            <p style="font-size: 13.5px; color: #9ca3af; margin-bottom: 16px;">128-tick private server, anti-cheat protected, daily competitive scrims.</p>
+            <button type="button" class="btn btn-primary btn-sm btn-block" onclick="showToast('Connecting to Valorant scrim room...', 'info')">Join Server Lobby</button>
+          </div>
+        </div>
+
+        <div class="card" style="background: #1f2937; border-color: #374151;">
+          <div style="height: 150px; background: linear-gradient(135deg, #1d4ed8, #3b82f6); display: flex; align-items: center; justify-content: center; font-size: 54px;">
+            ⚽
+          </div>
+          <div class="card-body">
+            <span class="badge badge-blue" style="margin-bottom: 8px;">SPORTS ESPORTS</span>
+            <h3 style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 6px;">EA Sports FC 26 Championship</h3>
+            <p style="font-size: 13.5px; color: #9ca3af; margin-bottom: 16px;">PlayStation 5 tournament booths available at Student Activity Center.</p>
+            <button type="button" class="btn btn-primary btn-sm btn-block" onclick="showToast('Match slot queued at SAC lounge', 'info')">Book Console Slot</button>
+          </div>
+        </div>
+
+        <div class="card" style="background: #1f2937; border-color: #374151;">
+          <div style="height: 150px; background: linear-gradient(135deg, #b45309, #f59e0b); display: flex; align-items: center; justify-content: center; font-size: 54px;">
+            🏎️
+          </div>
+          <div class="card-body">
+            <span class="badge badge-amber" style="margin-bottom: 8px;">RACING SIMULATOR</span>
+            <h3 style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 6px;">F1 2026 Virtual Grand Prix</h3>
+            <p style="font-size: 13.5px; color: #9ca3af; margin-bottom: 16px;">Direct drive wheel force-feedback rigs with Silverstone and Monza telemetry.</p>
+            <button type="button" class="btn btn-primary btn-sm btn-block" onclick="showToast('Sim rig reservation confirmed', 'info')">Join Time Trials</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tournament Cards (Q17) -->
+  <section id="tournamentsSection" class="section-py" style="background: #090d16;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker" style="background: rgba(139,92,246,0.15); color: #c4b5fd;">Prize Brackets</span>
+        <h2 class="section-title" style="color: #fff;">Upcoming Campus Tournaments</h2>
+        <p class="section-desc" style="color: #94a3b8;">Register your squad to compete for regional trophies, jerseys, and tech sponsorships.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+        
+        <div class="card" style="background: #111827; border: 1.5px solid #374151; padding: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span class="badge badge-rose">5v5 SQUAD</span>
+            <span style="font-weight: 800; color: #f472b6;">₹50,000 PRIZE</span>
+          </div>
+          <h3 style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 8px;">Inter-Hostel Winter Showdown</h3>
+          <p style="font-size: 13.5px; color: #9ca3af; line-height: 1.5; margin-bottom: 16px;">Double elimination knockout tournament hosted across Mens and Ladies hostel lounges.</p>
+          <div style="border-top: 1px solid #1f2937; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 12px; color: #64748b;">Starts: Nov 15, 2026</span>
+            <button type="button" class="btn btn-primary btn-sm" onclick="showToast('Squad registration link open', 'success')">Register Team</button>
+          </div>
+        </div>
+
+        <div class="card" style="background: #111827; border: 1.5px solid #374151; padding: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span class="badge badge-cyan">SOLO / 1v1</span>
+            <span style="font-weight: 800; color: #38bdf8;">₹25,000 PRIZE</span>
+          </div>
+          <h3 style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 8px;">Campus Chess &amp; Strategy Blitz</h3>
+          <p style="font-size: 13.5px; color: #9ca3af; line-height: 1.5; margin-bottom: 16px;">3-minute blitz rapid knockout on official FIDE digital clocks at Periyar Library hall.</p>
+          <div style="border-top: 1px solid #1f2937; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 12px; color: #64748b;">Starts: Nov 18, 2026</span>
+            <button type="button" class="btn btn-cyan btn-sm" onclick="showToast('Blitz seat reserved', 'success')">Register Solo</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Footer -->
+  <footer class="site-footer" id="footerContact" style="background: #060910; border-top-color: #1f2937;">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>Copyright © 2026 VIT Smart Campus · GameZone Division. All Rights Reserved.</div>
+        <div>Author: <strong>Shaik Zabiullah</strong> (Reg. No. <strong>23MIC0007</strong>) · VIT Vellore</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Slider Controls (Q17)
+    let currentSlide = 0;
+    const totalSlides = 3;
+    const track = document.getElementById('sliderTrack');
+    const dots = document.querySelectorAll('.slider-dot');
+
+    function updateSlide() {
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentSlide);
+      });
+    }
+
+    function nextGameSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlide();
+    }
+
+    function prevGameSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSlide();
+    }
+
+    function goToGameSlide(index) {
+      currentSlide = index;
+      updateSlide();
+    }
+
+    // Auto-advance slider every 6 seconds
+    setInterval(nextGameSlide, 6000);
+  </script>
+</body>
+</html>
+

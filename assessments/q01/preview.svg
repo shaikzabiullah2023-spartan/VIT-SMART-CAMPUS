@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <rect width="800" height="500" fill="#0B1120"/>
+  <!-- Terminal Window Mockup -->
+  <rect x="50" y="40" width="700" height="420" rx="10" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+  <!-- Dots -->
+  <circle cx="80" cy="70" r="7" fill="#EF4444"/>
+  <circle cx="102" cy="70" r="7" fill="#F59E0B"/>
+  <circle cx="124" cy="70" r="7" fill="#10B981"/>
+  <text x="150" y="75" fill="#94A3B8" font-family="monospace" font-size="14">PowerShell - Local Web Server Configuration (Q01)</text>
+  <!-- Content -->
+  <text x="80" y="125" fill="#38BDF8" font-family="monospace" font-size="15">PS C:\verdant&gt; python -m http.server 8000</text>
+  <text x="80" y="160" fill="#22C55E" font-family="monospace" font-size="14">Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...</text>
+  <text x="80" y="195" fill="#F8FAFC" font-family="monospace" font-size="14">127.0.0.1 - - [2026-10-31 09:30:15] "GET / HTTP/1.1" 200 -</text>
+  <text x="80" y="225" fill="#F8FAFC" font-family="monospace" font-size="14">127.0.0.1 - - [2026-10-31 09:30:15] "GET /css/main.css HTTP/1.1" 200 -</text>
+  <text x="80" y="255" fill="#F8FAFC" font-family="monospace" font-size="14">127.0.0.1 - - [2026-10-31 09:30:16] "GET /data/assessments.js HTTP/1.1" 200 -</text>
+  <!-- Verified Badge -->
+  <rect x="80" y="310" width="300" height="50" rx="6" fill="rgba(34, 197, 94, 0.15)" stroke="#22C55E" stroke-width="1.5"/>
+  <circle cx="110" cy="335" r="8" fill="#22C55E"/>
+  <text x="130" y="340" fill="#22C55E" font-family="sans-serif" font-weight="bold" font-size="15">SERVER VERIFIED: HTTP 200 OK</text>
+  <text x="80" y="410" fill="#64748B" font-family="sans-serif" font-size="13">CSI3029 Front End Design &amp; Testing · SHAIK ZABIULLAH (23MIC0007)</text>
+</svg>
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Search - Dynamic Color Change & Enter Query</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="search-page-container">
+    <div class="search-card">
+      
+      <header class="card-header">
+        <div class="badge">UNIT VIII · REAL-TIME INPUT &amp; KEYBOARD EVENTS</div>
+        <h1>Dynamic Product Search</h1>
+        <p class="subtitle">Real-time typing detection changes input styling dynamically. Press <kbd>Enter</kbd> to execute search query.</p>
+      </header>
+
+      <!-- Search Input Section -->
+      <div class="search-input-group">
+        <label for="productSearchInput">Search Catalog</label>
+        <div class="input-wrapper">
+          <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="productSearchInput" placeholder="Start typing product name (e.g., Wireless Mechanical Keyboard)..." autofocus autocomplete="off" />
+        </div>
+      </div>
+
+      <!-- Real-Time Text Echo Display -->
+      <div class="echo-section">
+        <div class="echo-label">LIVE TYPING STREAM:</div>
+        <div id="liveTypingOutput" class="typing-display idle">[Waiting for keystrokes...]</div>
+      </div>
+
+      <!-- Search Query Execution Banner (Appears on Enter) -->
+      <div id="searchResultBanner" class="search-result-banner" style="display: none;">
+        <div class="banner-icon">🔍</div>
+        <div class="banner-content">
+          <span class="banner-title">Search Dispatched</span>
+          <p id="searchResultText" class="result-text">Searching for: ...</p>
+        </div>
+      </div>
+
+      <!-- Keyboard Tips -->
+      <div class="hints-box">
+        <div class="hint-item">
+          <span class="hint-bullet">●</span>
+          <span>Input background color shifts from deep dark to glowing indigo as soon as typing begins.</span>
+        </div>
+        <div class="hint-item">
+          <span class="hint-bullet">●</span>
+          <span>Pressing <kbd>Enter</kbd> executes the final query dispatch banner.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="page-footer">
+      CSI3029 Assessment Q39 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

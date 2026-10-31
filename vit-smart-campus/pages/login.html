@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student & Faculty Login Portal | VIT Smart Campus</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh;">
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo">
+        <div class="logo-badge">🎓</div>
+        <div class="brand-text">
+          <span class="uni-name">VIT University</span>
+          <span class="portal-name">Smart Campus</span>
+        </div>
+      </a>
+
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="./about.html" class="nav-link">About</a></li>
+          <li><a href="./academics.html" class="nav-link">Academics</a></li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#" class="nav-link">
+              <span>Student Services</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="./dashboard.html" class="dropdown-link">📊 Student Dashboard</a></li>
+              <li><a href="./hospital.html" class="dropdown-link">🏥 Campus Hospital</a></li>
+              <li><a href="./store.html" class="dropdown-link">🛍️ Campus Store</a></li>
+              <li><a href="./learning.html" class="dropdown-link">💻 LearnSphere Academy</a></li>
+              <li><a href="./gamezone.html" class="dropdown-link">🎮 GameZone Arena</a></li>
+              <li><a href="./news.html" class="dropdown-link">📰 Campus Times Newspaper</a></li>
+            </ul>
+          </li>
+
+          <li><a href="./events.html" class="nav-link">Events</a></li>
+          <li><a href="./gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="./javascript-lab.html" class="nav-link" style="color: var(--brand-cyan);">⚡ JS Lab</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="./registration.html" class="btn btn-primary btn-sm">Create Account</a>
+        <button type="button" class="hamburger-btn" aria-label="Toggle Mobile Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Login Card Section -->
+  <main class="section-py" style="display: flex; align-items: center; justify-content: center;">
+    <div class="container" style="max-width: 480px;">
+      
+      <!-- Login Box Container -->
+      <div class="card" style="box-shadow: var(--shadow-xl); border-radius: var(--radius-xl); border: 1.5px solid var(--border-light);">
+        
+        <div class="card-header" style="background: linear-gradient(135deg, #1e3a8a, #0369a1); color: #fff; text-align: center; display: block; padding: 30px 24px;">
+          <div style="width: 56px; height: 56px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 12px auto;">
+            🔐
+          </div>
+          <h1 style="font-size: 22px; font-weight: 800; margin-bottom: 4px;">Student &amp; Faculty Login</h1>
+          <p style="font-size: 13px; color: #cbd5e1;">Sign in to access your dashboard, attendance, and exam marks</p>
+        </div>
+
+        <div class="card-body" style="padding: 30px 24px;">
+          
+          <!-- Dynamic Alert Banner (Q29) -->
+          <div id="loginAlert" class="alert alert-info" style="display: none;"></div>
+
+          <form id="loginForm" onsubmit="validateLoginForm(event)">
+            
+            <!-- User Role Selector -->
+            <div class="form-group">
+              <label class="form-label" for="loginRole">Select User Role</label>
+              <select id="loginRole" name="loginRole" class="form-select">
+                <option value="Student">Student (Undergraduate / Postgraduate)</option>
+                <option value="Faculty">Faculty / Research Mentor</option>
+                <option value="Staff">Administrative Staff</option>
+              </select>
+            </div>
+
+            <!-- Username or Email (Q24, Q29) -->
+            <div class="form-group">
+              <label class="form-label" for="loginUsername">Username or University Email <span class="req">*</span></label>
+              <div class="input-icon-group">
+                <span class="icon">👤</span>
+                <input type="text" id="loginUsername" name="loginUsername" class="form-control" placeholder="e.g. 23MIC0007 or shaik@vit.ac.in" autocomplete="username">
+              </div>
+              <div id="loginUsernameFeedback" class="field-feedback"></div>
+            </div>
+
+            <!-- Password (Q24, Q29) -->
+            <div class="form-group">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 7px;">
+                <label class="form-label" for="loginPassword" style="margin: 0;">Password <span class="req">*</span></label>
+                <a href="#" onclick="alert('Password reset link dispatched to registered institutional email.'); return false;" style="font-size: 12.5px; color: var(--accent-blue); font-weight: 600;">Forgot Password?</a>
+              </div>
+              <div class="input-icon-group">
+                <span class="icon">🔒</span>
+                <input type="password" id="loginPassword" name="loginPassword" class="form-control" placeholder="Enter password (min 6 chars)" autocomplete="current-password">
+              </div>
+              <div id="loginPasswordFeedback" class="field-feedback"></div>
+            </div>
+
+            <!-- Remember Me -->
+            <div class="form-group" style="display: flex; align-items: center; justify-content: space-between;">
+              <label style="display: flex; align-items: center; gap: 8px; font-size: 13.5px; cursor: pointer; color: var(--text-muted);">
+                <input type="checkbox" id="loginRemember" name="loginRemember" checked>
+                <span>Remember me on this browser</span>
+              </label>
+            </div>
+
+            <!-- Action Buttons: Login and Clear -->
+            <div style="display: flex; gap: 12px; margin-top: 24px;">
+              <button type="submit" class="btn btn-primary btn-block" style="flex: 2;">
+                <span>Login to Portal</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+              <button type="reset" class="btn btn-secondary" style="flex: 1;" onclick="document.getElementById('loginAlert').style.display='none'">
+                Clear
+              </button>
+            </div>
+
+          </form>
+
+          <div style="text-align: center; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border-light); font-size: 13.5px; color: var(--text-muted);">
+            Don't have an active portal account? <br>
+            <a href="./registration.html" style="color: var(--accent-blue); font-weight: 700;">Create New Student / Employee Account →</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>Copyright © 2026 VIT Smart Campus. All Rights Reserved.</div>
+        <div>Author: <strong>Shaik Zabiullah</strong> (Reg. No. <strong>23MIC0007</strong>) · VIT Vellore</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/validation.js"></script>
+</body>
+</html>
+

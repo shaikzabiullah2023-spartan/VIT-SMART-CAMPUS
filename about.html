@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About & Architecture | CSI3029 Front End Design & Testing</title>
+  <meta name="description" content="Course, author credentials, and technical architecture for the CSI3029 Front End Design and Testing lab portfolio." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="./css/themes.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+</head>
+<body>
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Sticky Navbar -->
+  <header class="site-navbar" role="banner">
+    <div class="container nav-container">
+      <a href="./index.html" class="brand-logo" aria-label="Portfolio Home">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="brand-info">
+          <span>CSI3029 Portfolio</span>
+          <span class="brand-sub">Shaik Zabiullah · 23MIC0007</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="./index.html" class="nav-link">Home</a></li>
+          <li><a href="./assessments.html" class="nav-link">Assessments (42)</a></li>
+          <li><a href="./about.html" class="nav-link active">About & Tech</a></li>
+          <li><a href="./docs/README.md" class="nav-link" target="_blank">Docs</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-trigger" aria-label="Search assessments (Press Ctrl+K)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span>Search...</span>
+          <span class="kbd-shortcut">Ctrl K</span>
+        </button>
+        <button class="btn-icon theme-toggle-btn" aria-label="Toggle theme"></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <!-- Author Profile Card -->
+    <div class="glass-panel" style="padding: 2.5rem; margin-bottom: 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+      <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+        <!-- Avatar SVG -->
+        <div style="width: 88px; height: 88px; border-radius: var(--radius-lg); background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); color: #fff;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div>
+          <span class="hero-badge" style="margin-bottom: 0.4rem;">PRIMARY AUTHOR & DEVELOPER</span>
+          <h1 style="font-size: 2.2rem; margin-bottom: 0.25rem;">SHAIK ZABIULLAH</h1>
+          <div style="font-family: var(--font-mono); font-size: 0.95rem; color: var(--accent-primary); font-weight: 600;">
+            Registration Number: 23MIC0007
+          </div>
+          <div style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.25rem;">
+            Vellore Institute of Technology (VIT), Vellore, Tamil Nadu, India
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem;">
+        <a href="./assessments.html" class="btn btn-primary">
+          <span>Explore Assessments</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Course & Academic Context -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem; margin-bottom: 3.5rem;">
+      <div class="glass-panel" style="padding: 2rem;">
+        <span class="section-tag">Course Syllabus</span>
+        <h2 style="font-size: 1.4rem; margin: 0.5rem 0 1rem;">CSI3029 – Front End Design and Testing</h2>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+          An advanced university laboratory course focusing on semantic HTML5 structure, modern CSS layout engines (Flexbox, Grid, Multi-column), strict client-side form validation using Regular Expressions, and vanilla JavaScript DOM event handling.
+        </p>
+      </div>
+
+      <div class="glass-panel" style="padding: 2rem;">
+        <span class="section-tag">Academic Institution</span>
+        <h2 style="font-size: 1.4rem; margin: 0.5rem 0 1rem;">VIT Vellore</h2>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+          School of Computer Science and Engineering (SCOPE). This portfolio serves as an empirical record of all 42 required laboratory tasks, tested and verified across desktop and mobile viewports.
+        </p>
+      </div>
+    </div>
+
+    <!-- Technical Architecture & Constraints -->
+    <div class="section-header">
+      <span class="section-tag">Engineering Rigor</span>
+      <h2 class="section-title">Technical Constraints & Architecture</h2>
+      <p class="section-desc">Designed according to strict academic and production criteria.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+      <div class="glass-panel" style="padding: 1.75rem;">
+        <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--accent-primary);">1. Pure Vanilla Web Stack</h3>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+          Constructed with 100% native HTML5, CSS3, and ES6+ JavaScript. Completely free of frontend frameworks (no React, Vue, Angular), zero bundlers (no Webpack, Vite), and zero NPM runtime dependencies.
+        </p>
+      </div>
+
+      <div class="glass-panel" style="padding: 1.75rem;">
+        <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--accent-cyan);">2. Double-Click & Subpath Ready</h3>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+          Can be opened simply by double-clicking <code>index.html</code> from local storage (working seamlessly over the <code>file://</code> protocol) or hosted on GitHub Pages or Netlify subpaths.
+        </p>
+      </div>
+
+      <div class="glass-panel" style="padding: 1.75rem;">
+        <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--accent-mint);">3. Strict Sandboxed Isolation</h3>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+          Each assessment runs inside an isolated <code>&lt;iframe&gt;</code> container with proper sandboxing. Code, styles, and scripts from one exercise can never collide with or pollute another exercise.
+        </p>
+      </div>
+
+      <div class="glass-panel" style="padding: 1.75rem;">
+        <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--accent-amber);">4. Hand-Written Syntax Highlighter</h3>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+          The Code viewer utilizes a bespoke, zero-dependency token highlighter parsing HTML, CSS, and JavaScript with line numbers, code copying, and one-click file downloading.
+        </p>
+      </div>
+
+      <div class="glass-panel" style="padding: 1.75rem;">
+        <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--accent-pink);">5. Extensible Data-Driven Manifest</h3>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+          Adding a 43rd assessment requires only creating a new folder and adding one JSON-like entry to <code>data/assessments.js</code>. The listing, search, filters, and pager adapt automatically.
+        </p>
+      </div>
+
+      <div class="glass-panel" style="padding: 1.75rem;">
+        <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--unit-8);">6. Accessibility & Responsiveness</h3>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+          Complies with WCAG AA contrast standards, keyboard navigability, semantic tags, and responsive design scales fluidly from 360px mobile displays up to 1920px widescreen monitors.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-bottom">
+      <span>© 2026 Shaik Zabiullah (23MIC0007). CSI3029 Front End Design and Testing (Lab), VIT Vellore.</span>
+      <span>Double-click offline ready · Zero NPM build step</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./data/assessments.js"></script>
+  <script src="./js/theme.js"></script>
+  <script src="./js/command-palette.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
+

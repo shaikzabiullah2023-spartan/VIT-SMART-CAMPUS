@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Q1: Local Web Server Configuration & Verification</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --success: #22c55e;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      background: #0284c7;
+      color: white;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--success);
+      font-weight: 600;
+      background: rgba(34, 197, 94, 0.1);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 8px var(--success);
+    }
+    pre {
+      background: #0b1120;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: Consolas, monospace;
+      color: #38bdf8;
+      border: 1px solid #1e293b;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+    }
+    th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="badge">Assessment Q01</span>
+      <h1>Local Web Server Configuration & Working Verification</h1>
+      <p style="color: var(--muted); margin-top: 0.5rem;">CSI3029 Lab · SHAIK ZABIULLAH (23MIC0007) · VIT Vellore</p>
+    </div>
+
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="margin: 0; font-size: 1.25rem;">Server Status Simulation</h2>
+        <div class="status-badge">
+          <span class="pulse-dot"></span>
+          <span>HTTP Server Active (Port 8000)</span>
+        </div>
+      </div>
+      <p>This verification confirms the installation, binding, and document serving capabilities of a local web server (such as Python <code>http.server</code>, Apache XAMPP, or Node http-server) on Windows/Linux environments.</p>
+    </div>
+
+    <div class="card">
+      <h3>1. Commands Executed for Local Server Setup</h3>
+      <p>To run this lab locally from any laptop terminal:</p>
+      <pre># Method 1: Python Built-in HTTP Server
+python -m http.server 8000
+
+# Method 2: Node.js Live Server
+npx serve .
+
+# Method 3: XAMPP Apache
+# Start Apache from XAMPP Control Panel and place files in C:\xampp\htdocs\verdant</pre>
+    </div>
+
+    <div class="card">
+      <h3>2. Server Environment Configuration Report</h3>
+      <table>
+        <tr>
+          <th>Configuration Parameter</th>
+          <th>Configured Value</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>Local Hostname</td>
+          <td><code>localhost</code> / <code>127.0.0.1</code></td>
+          <td style="color: var(--success);">Verified</td>
+        </tr>
+        <tr>
+          <td>Listening Port</td>
+          <td><code>8000</code> / <code>80</code></td>
+          <td style="color: var(--success);">Open & Bound</td>
+        </tr>
+        <tr>
+          <td>Root Directory</td>
+          <td><code>c:\Users\useR\.gemini\antigravity\scratch\verdant</code></td>
+          <td style="color: var(--success);">Accessible</td>
+        </tr>
+        <tr>
+          <td>MIME Types Supported</td>
+          <td><code>text/html</code>, <code>text/css</code>, <code>application/javascript</code>, <code>image/svg+xml</code></td>
+          <td style="color: var(--success);">Enabled</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
+

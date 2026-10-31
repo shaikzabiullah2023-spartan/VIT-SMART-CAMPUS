@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <rect width="800" height="500" fill="#F8FAFC"/>
+  <!-- Top bar -->
+  <rect x="0" y="0" width="800" height="40" fill="#1E3A8A"/>
+  <text x="30" y="26" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="16">Personal Profile - SHAIK ZABIULLAH (23MIC0007)</text>
+  <!-- Card Mockup -->
+  <rect x="40" y="60" width="720" height="400" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <!-- Avatar -->
+  <circle cx="90" cy="120" r="35" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+  <circle cx="90" cy="112" r="14" fill="#1E3A8A"/>
+  <path d="M 68 145 Q 90 126 112 145 Z" fill="#3B82F6"/>
+  <!-- Name & intro -->
+  <text x="145" y="105" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1E3A8A">SHAIK ZABIULLAH</text>
+  <text x="145" y="130" font-family="Arial, sans-serif" font-size="14" fill="#64748B">Integrated M.Tech CSE · VIT Vellore · Reg: 23MIC0007</text>
+  <!-- Table representation -->
+  <rect x="60" y="180" width="680" height="30" fill="#DBEAFE"/>
+  <text x="75" y="200" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1E3A8A">Degree</text>
+  <text x="250" y="200" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1E3A8A">Institution</text>
+  <text x="450" y="200" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1E3A8A">Year</text>
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1E3A8A">Score</text>
+
+  <rect x="60" y="210" width="680" height="25" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="75" y="227" font-family="Arial, sans-serif" font-size="12" fill="#334155">Int. M.Tech CSE</text>
+  <text x="250" y="227" font-family="Arial, sans-serif" font-size="12" fill="#334155">VIT Vellore</text>
+  <text x="450" y="227" font-family="Arial, sans-serif" font-size="12" fill="#334155">2028</text>
+  <text x="600" y="227" font-family="Arial, sans-serif" font-size="12" fill="#334155">9.10 CGPA</text>
+
+  <!-- Hobbies snippet -->
+  <text x="60" y="280" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E3A8A">Hobbies &amp; Interests</text>
+  <text x="75" y="310" font-family="Arial, sans-serif" font-size="13" fill="#475569">• Web Development · Competitive Coding · Playing Chess · Tech Reading</text>
+  <!-- Footer -->
+  <line x1="60" y1="380" x2="740" y2="380" stroke="#E2E8F0"/>
+  <text x="60" y="415" font-family="Arial, sans-serif" font-size="12" fill="#64748B">Email: shaik.zabiullah2023@vitstudent.ac.in</text>
+</svg>
+

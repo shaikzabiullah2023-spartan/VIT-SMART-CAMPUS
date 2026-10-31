@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academics & Course Portal | VIT Smart Campus</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo">
+        <div class="logo-badge">🎓</div>
+        <div class="brand-text">
+          <span class="uni-name">VIT University</span>
+          <span class="portal-name">Smart Campus</span>
+        </div>
+      </a>
+
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="./about.html" class="nav-link">About</a></li>
+          <li><a href="./academics.html" class="nav-link active">Academics</a></li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#" class="nav-link">
+              <span>Student Services</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="./dashboard.html" class="dropdown-link">📊 Student Dashboard</a></li>
+              <li><a href="./hospital.html" class="dropdown-link">🏥 Campus Hospital</a></li>
+              <li><a href="./store.html" class="dropdown-link">🛍️ Campus Store</a></li>
+              <li><a href="./learning.html" class="dropdown-link">💻 LearnSphere Academy</a></li>
+              <li><a href="./gamezone.html" class="dropdown-link">🎮 GameZone Arena</a></li>
+              <li><a href="./news.html" class="dropdown-link">📰 Campus Times Newspaper</a></li>
+            </ul>
+          </li>
+
+          <li><a href="./events.html" class="nav-link">Events</a></li>
+          <li><a href="./gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="./javascript-lab.html" class="nav-link" style="color: var(--brand-cyan);">⚡ JS Lab</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="./search.html" class="btn btn-secondary btn-sm">Search</a>
+        <a href="./store.html#cart" class="cart-icon-btn"><span class="cart-badge">0</span>🛒</a>
+        <a href="./login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="./registration.html" class="btn btn-primary btn-sm">Apply Now</a>
+        <button type="button" class="hamburger-btn" aria-label="Toggle Mobile Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Academics Hero Banner -->
+  <section style="background: linear-gradient(135deg, #1e3a8a, #0f172a); color: #fff; padding: 60px 0 40px 0;">
+    <div class="container">
+      <span class="badge badge-cyan" style="margin-bottom: 12px;">CURRICULUM ARCHITECTURE</span>
+      <h1 style="font-family: var(--font-heading); font-size: 38px; font-weight: 800; margin-bottom: 12px;">
+        Academics &amp; Course Catalog
+      </h1>
+      <p style="font-size: 16px; color: #cbd5e1; max-width: 720px;">
+        Explore interdisciplinary course offerings across Computer Science, Artificial Intelligence, Cybersecurity, and Software Engineering with live filtering and faculty information.
+      </p>
+    </div>
+  </section>
+
+  <!-- Horizontal Academic Sub-Navigation (Q09, Q14) -->
+  <div style="background: #fff; border-bottom: 1px solid var(--border-light); position: sticky; top: var(--nav-height); z-index: 90;">
+    <div class="container" style="display: flex; gap: 8px; overflow-x: auto; padding: 12px 24px;">
+      <button type="button" class="btn btn-secondary btn-sm active-tab" onclick="filterCourses('All')">All Courses</button>
+      <button type="button" class="btn btn-secondary btn-sm" onclick="filterCourses('Web')">Web &amp; Front-End</button>
+      <button type="button" class="btn btn-secondary btn-sm" onclick="filterCourses('AI')">AI &amp; Data Science</button>
+      <button type="button" class="btn btn-secondary btn-sm" onclick="filterCourses('Security')">Cyber Security</button>
+      <button type="button" class="btn btn-secondary btn-sm" onclick="filterCourses('Systems')">Core Systems</button>
+    </div>
+  </div>
+
+  <main class="section-py">
+    <div class="container">
+      
+      <!-- Live Search Bar -->
+      <div class="card" style="padding: 16px 20px; margin-bottom: 32px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+        <div class="input-icon-group" style="flex: 1; min-width: 260px;">
+          <span class="icon">🔍</span>
+          <input type="text" id="courseSearchInput" class="form-control" placeholder="Search by course code, title, or faculty (e.g. CSI3029, Java, Front End)..." oninput="searchCourses()">
+        </div>
+        <div style="font-size: 13.5px; color: var(--text-muted); font-weight: 600;" id="courseCountDisplay">Showing 6 courses</div>
+      </div>
+
+      <!-- Course Cards Grid -->
+      <div class="bento-grid" id="courseGrid">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+
+      <!-- Department & Faculty Showcase (Q14) -->
+      <div style="margin-top: 64px;">
+        <div class="section-header">
+          <span class="section-kicker">Faculty Leadership</span>
+          <h2 class="section-title">Academic Departments &amp; Mentors</h2>
+          <p class="section-desc">Learn from distinguished research professors and industry fellows pioneering advanced computation.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          
+          <div class="card card-hover" style="text-align: center; padding: 24px;">
+            <div style="width: 80px; height: 80px; border-radius: 50%; background: #eff6ff; color: var(--accent-blue); font-size: 36px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto;">👨‍🏫</div>
+            <h3 style="font-size: 17px; font-weight: 700; color: var(--primary-navy);">Dr. K. Ramanathan</h3>
+            <span style="font-size: 13px; color: var(--brand-cyan); font-weight: 600; display: block; margin-bottom: 8px;">Professor &amp; Dean, SITE</span>
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">Specialization in Distributed Web Architectures, Reactive Frameworks, and Microfrontends.</p>
+          </div>
+
+          <div class="card card-hover" style="text-align: center; padding: 24px;">
+            <div style="width: 80px; height: 80px; border-radius: 50%; background: #ecfeff; color: var(--brand-cyan); font-size: 36px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto;">👩‍🏫</div>
+            <h3 style="font-size: 17px; font-weight: 700; color: var(--primary-navy);">Dr. S. Priya Lakshmi</h3>
+            <span style="font-size: 13px; color: var(--brand-cyan); font-weight: 600; display: block; margin-bottom: 8px;">Associate Professor, Computer Applications</span>
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">Lead Instructor for Front End Design and Automated Usability Testing (CSI3029).</p>
+          </div>
+
+          <div class="card card-hover" style="text-align: center; padding: 24px;">
+            <div style="width: 80px; height: 80px; border-radius: 50%; background: #ecfdf5; color: #059669; font-size: 36px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto;">👨‍💻</div>
+            <h3 style="font-size: 17px; font-weight: 700; color: var(--primary-navy);">Dr. Arvind Sharma</h3>
+            <span style="font-size: 13px; color: var(--brand-cyan); font-weight: 600; display: block; margin-bottom: 8px;">Professor, AI &amp; Deep Learning Lab</span>
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">Head of Natural Language Processing and Autonomous Systems Research Group.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>Copyright © 2026 VIT Smart Campus. All Rights Reserved.</div>
+        <div>Author: <strong>Shaik Zabiullah</strong> (Reg. No. <strong>23MIC0007</strong>) · VIT Vellore</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const COURSES_DATA = [
+      {
+        code: 'CSI3029',
+        title: 'Front End Design and Testing (Lab)',
+        category: 'Web',
+        credits: '2 Credits · Practical Lab',
+        faculty: 'Dr. S. Priya Lakshmi',
+        desc: 'Comprehensive engineering of responsive HTML5 layouts, CSS3 Flexbox/Grid, vanilla JavaScript DOM events, and unit testing paradigms.',
+        badge: 'badge-blue'
+      },
+      {
+        code: 'CSE2005',
+        title: 'Object Oriented Programming with Java',
+        category: 'Systems',
+        credits: '4 Credits · Theory + Lab',
+        faculty: 'Prof. Java Systems Lab',
+        desc: 'Object abstraction, encapsulation, multi-threaded concurrency, JVM runtime memory models, and enterprise Java collections.',
+        badge: 'badge-emerald'
+      },
+      {
+        code: 'CSI3012',
+        title: 'Artificial Intelligence & Neural Networks',
+        category: 'AI',
+        credits: '3 Credits · Core Theory',
+        faculty: 'Dr. Arvind Sharma',
+        desc: 'Heuristic search strategies, probabilistic reasoning, supervised/unsupervised machine learning, and deep convolutional networks.',
+        badge: 'badge-cyan'
+      },
+      {
+        code: 'CSI3018',
+        title: 'Offensive Cyber Security & PenTesting',
+        category: 'Security',
+        credits: '3 Credits · Practical Lab',
+        faculty: 'Prof. Network Defense',
+        desc: 'Vulnerability assessment, buffer overflow exploitation, web application security (OWASP Top 10), and cryptographic defense protocols.',
+        badge: 'badge-rose'
+      },
+      {
+        code: 'CSI3024',
+        title: 'Cloud Native Computing & DevOps',
+        category: 'Systems',
+        credits: '3 Credits · Elective',
+        faculty: 'Dr. K. Ramanathan',
+        desc: 'Containerization with Docker, Kubernetes cluster orchestration, serverless microservices, and automated CI/CD deployment pipelines.',
+        badge: 'badge-amber'
+      },
+      {
+        code: 'CSI2008',
+        title: 'Modern Web Architecture & Full-Stack',
+        category: 'Web',
+        credits: '4 Credits · Integrated',
+        faculty: 'Dr. S. Priya Lakshmi',
+        desc: 'End-to-end full stack principles, asynchronous event loops, RESTful contract design, and secure browser client state management.',
+        badge: 'badge-blue'
+      }
+    ];
+
+    let currentCategory = 'All';
+
+    function renderCourseCards(courses) {
+      const container = document.getElementById('courseGrid');
+      const countEl = document.getElementById('courseCountDisplay');
+      if (!container) return;
+
+      countEl.textContent = `Showing ${courses.length} course${courses.length === 1 ? '' : 's'}`;
+
+      if (courses.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-muted);">
+            <span style="font-size: 40px; display: block; margin-bottom: 8px;">🔍</span>
+            <p style="font-weight: 600;">No courses match your query</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = courses.map(c => `
+        <div class="card card-hover">
+          <div class="card-header" style="background: var(--bg-subtle);">
+            <div>
+              <span class="badge ${c.badge}" style="margin-bottom: 4px;">${c.code}</span>
+              <h3 style="font-size: 16px; font-weight: 700; color: var(--primary-navy);">${c.title}</h3>
+            </div>
+          </div>
+          <div class="card-body">
+            <div style="font-size: 12.5px; color: var(--brand-cyan); font-weight: 600; margin-bottom: 8px;">👨‍🏫 Faculty: ${c.faculty}</div>
+            <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">${c.desc}</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 12px;">
+              <span style="font-size: 12px; font-weight: 700; color: var(--text-muted);">${c.credits}</span>
+              <button type="button" class="btn btn-outline btn-sm" onclick="showToast('Syllabus downloaded for ${c.code}', 'info')">Syllabus PDF</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterCourses(category) {
+      currentCategory = category;
+      searchCourses();
+    }
+
+    function searchCourses() {
+      const query = document.getElementById('courseSearchInput')?.value.trim().toLowerCase() || '';
+      let filtered = COURSES_DATA;
+
+      if (currentCategory !== 'All') {
+        filtered = filtered.filter(c => c.category === currentCategory);
+      }
+
+      if (query) {
+        filtered = filtered.filter(c => 
+          c.code.toLowerCase().includes(query) ||
+          c.title.toLowerCase().includes(query) ||
+          c.faculty.toLowerCase().includes(query) ||
+          c.desc.toLowerCase().includes(query)
+        );
+      }
+
+      renderCourseCards(filtered);
+    }
+
+    // Initial render
+    renderCourseCards(COURSES_DATA);
+  </script>
+</body>
+</html>
+

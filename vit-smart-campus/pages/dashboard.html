@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal Dashboard | VIT Smart Campus</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <style>
+    .dashboard-wrapper {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: calc(100vh - var(--nav-height) - 100px);
+      gap: 32px;
+      padding: 32px 0 60px 0;
+    }
+
+    .dashboard-sidebar {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 24px 16px;
+      box-shadow: var(--shadow-sm);
+      height: fit-content;
+      position: sticky;
+      top: calc(var(--nav-height) + 20px);
+    }
+
+    .sidebar-user-card {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-light);
+      margin-bottom: 20px;
+    }
+
+    .sidebar-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1e3a8a, #0284c7);
+      margin: 0 auto 12px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+    }
+
+    .sidebar-menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sidebar-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 16px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: left;
+    }
+
+    .sidebar-btn:hover {
+      background: var(--bg-subtle);
+      color: var(--primary-navy);
+    }
+
+    .sidebar-btn.active {
+      background: #eff6ff;
+      color: var(--accent-blue);
+      border-left: 3px solid var(--accent-blue);
+    }
+
+    .view-pane {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .view-pane.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo">
+        <div class="logo-badge">🎓</div>
+        <div class="brand-text">
+          <span class="uni-name">VIT University</span>
+          <span class="portal-name">Smart Campus</span>
+        </div>
+      </a>
+
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="./about.html" class="nav-link">About</a></li>
+          <li><a href="./academics.html" class="nav-link">Academics</a></li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#" class="nav-link active">
+              <span>Student Services</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="./dashboard.html" class="dropdown-link active">📊 Student Dashboard</a></li>
+              <li><a href="./hospital.html" class="dropdown-link">🏥 Campus Hospital</a></li>
+              <li><a href="./store.html" class="dropdown-link">🛍️ Campus Store</a></li>
+              <li><a href="./learning.html" class="dropdown-link">💻 LearnSphere Academy</a></li>
+              <li><a href="./gamezone.html" class="dropdown-link">🎮 GameZone Arena</a></li>
+              <li><a href="./news.html" class="dropdown-link">📰 Campus Times Newspaper</a></li>
+            </ul>
+          </li>
+
+          <li><a href="./events.html" class="nav-link">Events</a></li>
+          <li><a href="./gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="./javascript-lab.html" class="nav-link" style="color: var(--brand-cyan);">⚡ JS Lab</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <span class="badge badge-emerald" style="text-transform: none;">● Online</span>
+        <button type="button" class="btn btn-outline btn-sm" onclick="logoutStudent()">Logout</button>
+        <button type="button" class="hamburger-btn" aria-label="Toggle Mobile Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Dashboard Container -->
+  <main class="container">
+    <div class="dashboard-wrapper">
+      
+      <!-- ======================================================================
+           VERTICAL SIDEBAR (Q10)
+           ====================================================================== -->
+      <aside class="dashboard-sidebar">
+        <div class="sidebar-user-card">
+          <div class="sidebar-avatar">👨‍🎓</div>
+          <h3 style="font-size: 16px; font-weight: 700; color: var(--primary-navy);" id="dashUserName">Shaik Zabiullah</h3>
+          <span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-blue); font-weight: 700;" id="dashRegNo">23MIC0007</span>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Integrated M.Tech (SE)</div>
+        </div>
+
+        <ul class="sidebar-menu">
+          <li>
+            <button type="button" class="sidebar-btn active" data-view="viewDashboard">
+              <span>📊</span> <span>Dashboard</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="sidebar-btn" data-view="viewProfile">
+              <span>👤</span> <span>My Profile</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="sidebar-btn" data-view="viewAcademics">
+              <span>🎓</span> <span>Academics</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="sidebar-btn" data-view="viewAttendance">
+              <span>📅</span> <span>Attendance</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="sidebar-btn" data-view="viewMarks">
+              <span>📝</span> <span>Marks &amp; Grades</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="sidebar-btn" data-view="viewCourses">
+              <span>📖</span> <span>Registered Courses</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="sidebar-btn" data-view="viewSettings">
+              <span>⚙️</span> <span>Settings</span>
+            </button>
+          </li>
+          <li style="margin-top: 12px; border-top: 1px solid var(--border-light); padding-top: 8px;">
+            <button type="button" class="sidebar-btn" style="color: var(--status-error);" onclick="logoutStudent()">
+              <span>🚪</span> <span>Logout</span>
+            </button>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- ======================================================================
+           MAIN CONTENT AREA
+           ====================================================================== -->
+      <section class="dashboard-content">
+        
+        <!-- PANE 1: MAIN DASHBOARD VIEW -->
+        <div id="viewDashboard" class="view-pane active">
+          
+          <!-- Welcome Banner (Q10 requirement) -->
+          <div class="card" style="background: linear-gradient(135deg, #1e3a8a, #0369a1); color: #fff; padding: 28px; margin-bottom: 24px;">
+            <span class="badge badge-cyan" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.3); margin-bottom: 12px;">ACTIVE SESSION</span>
+            <h1 style="font-size: 26px; font-weight: 800; margin-bottom: 6px;">Welcome to the VIT Student Portal Dashboard!</h1>
+            <p style="font-size: 14.5px; color: #e0f2fe; max-width: 680px;">
+              Semester progress is on track. All academic attendance exceeds 85%, continuous assessment tests are graded, and final exam registration is validated.
+            </p>
+          </div>
+
+          <!-- Quick Metrics Grid -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin-bottom: 24px;">
+            <div class="stat-card">
+              <div class="stat-icon" style="background: #eff6ff; color: var(--accent-blue);">📅</div>
+              <div>
+                <div class="stat-num">93.4%</div>
+                <div class="stat-label">Overall Attendance</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon" style="background: #ecfeff; color: var(--brand-cyan);">🎯</div>
+              <div>
+                <div class="stat-num">9.42</div>
+                <div class="stat-label">Cumulative CGPA</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon" style="background: #ecfdf5; color: #059669);">📚</div>
+              <div>
+                <div class="stat-num">24</div>
+                <div class="stat-label">Registered Credits</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon" style="background: #fffbeb; color: #d97706;">⚡</div>
+              <div>
+                <div class="stat-num">0</div>
+                <div class="stat-label">Pending Arrears</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Announcements & Upcoming Events -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">📢 Important Announcements</h3>
+              </div>
+              <div class="card-body">
+                <ul style="list-style: none; display: grid; gap: 14px; font-size: 13.5px;">
+                  <li style="border-left: 3px solid var(--accent-blue); padding-left: 10px;">
+                    <strong>Mid-Term CBT Results Published:</strong> Marks for CSI3029 Lab available under Marks tab.
+                  </li>
+                  <li style="border-left: 3px solid var(--status-success); padding-left: 10px;">
+                    <strong>Symposium Registration Verified:</strong> Participant ID confirmed for National Technical Symposium 2026.
+                  </li>
+                  <li style="border-left: 3px solid var(--status-warning); padding-left: 10px;">
+                    <strong>Library Book Return:</strong> 1 volume due on Friday at Periyar Central Library.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">🗓️ Upcoming Deadlines</h3>
+              </div>
+              <div class="card-body">
+                <ul style="list-style: none; display: grid; gap: 14px; font-size: 13.5px;">
+                  <li style="display: flex; justify-content: space-between; align-items: center;">
+                    <span>CSI3029 Front End Lab Evaluation</span>
+                    <span class="badge badge-emerald">Today</span>
+                  </li>
+                  <li style="display: flex; justify-content: space-between; align-items: center;">
+                    <span>National Symposium Project Pitch</span>
+                    <span class="badge badge-cyan">In 3 Days</span>
+                  </li>
+                  <li style="display: flex; justify-content: space-between; align-items: center;">
+                    <span>Campus Annual Sports Meet 2026</span>
+                    <span class="badge badge-amber">Nov 12</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="card" style="padding: 20px;">
+            <h4 style="font-size: 15px; font-weight: 700; color: var(--primary-navy); margin-bottom: 14px;">Quick Actions</h4>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <a href="./academics.html" class="btn btn-secondary btn-sm">Course Registration</a>
+              <a href="./hospital.html" class="btn btn-secondary btn-sm">Book Clinic Appointment</a>
+              <a href="./store.html" class="btn btn-secondary btn-sm">Buy Supplies</a>
+              <a href="./javascript-lab.html" class="btn btn-primary btn-sm">Open JS Interactive Lab</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- PANE 2: MY PROFILE VIEW -->
+        <div id="viewProfile" class="view-pane">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Student Profile Dossier</h3>
+              <span class="badge badge-cyan">VERIFIED BIODATA</span>
+            </div>
+            <div class="card-body">
+              <table class="table table-bordered">
+                <tr><th>Full Legal Name</th><td>Shaik Zabiullah</td></tr>
+                <tr><th>Registration Number</th><td><code>23MIC0007</code></td></tr>
+                <tr><th>Department</th><td>Department of Computer Applications</td></tr>
+                <tr><th>School</th><td>School of Information Technology and Engineering (SITE)</td></tr>
+                <tr><th>Campus</th><td>VIT Vellore, Katpadi Road</td></tr>
+                <tr><th>Official Email</th><td>zabiullah.shaik2023@vitstudent.ac.in</td></tr>
+                <tr><th>Contact Phone</th><td>+91 98765 43210</td></tr>
+                <tr><th>Current Semester</th><td>Semester IV (Academic Year 2025–2026)</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANE 3: ACADEMICS VIEW -->
+        <div id="viewAcademics" class="view-pane">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Academic Curriculum Progress</h3>
+              <span class="badge badge-emerald">CREDITS EARNED: 86 / 160</span>
+            </div>
+            <div class="card-body">
+              <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">
+                Enrollment in Integrated Software Engineering track requires minimum 160 credits with grade threshold ≥ 5.0.
+              </p>
+              <div style="background: var(--bg-subtle); height: 12px; border-radius: 6px; overflow: hidden; margin-bottom: 16px;">
+                <div style="background: linear-gradient(90deg, #2563eb, #06b6d4); width: 54%; height: 100%;"></div>
+              </div>
+              <span style="font-size: 13px; font-weight: 700; color: var(--primary-navy);">54% of degree requirements completed with honors.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANE 4: ATTENDANCE VIEW -->
+        <div id="viewAttendance" class="view-pane">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Semester Course Attendance Tracker</h3>
+              <span class="badge badge-emerald">ALL COURSES ABOVE 85% THRESHOLD</span>
+            </div>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr><th>Course Code</th><th>Course Title</th><th>Conducted</th><th>Attended</th><th>Percentage</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>CSI3029</strong></td>
+                    <td>Front End Design &amp; Testing (Lab)</td>
+                    <td>24</td><td>24</td>
+                    <td><strong style="color: #059669;">100%</strong></td>
+                    <td><span class="badge badge-emerald">Eligible</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>CSE2005</strong></td>
+                    <td>Object Oriented Programming with Java</td>
+                    <td>36</td><td>34</td>
+                    <td><strong style="color: #059669;">94.4%</strong></td>
+                    <td><span class="badge badge-emerald">Eligible</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>MAT2001</strong></td>
+                    <td>Differential Equations &amp; Transforms</td>
+                    <td>40</td><td>36</td>
+                    <td><strong style="color: #059669;">90.0%</strong></td>
+                    <td><span class="badge badge-emerald">Eligible</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>ENG1002</strong></td>
+                    <td>Professional Communication English</td>
+                    <td>20</td><td>18</td>
+                    <td><strong style="color: #059669;">90.0%</strong></td>
+                    <td><span class="badge badge-emerald">Eligible</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANE 5: MARKS VIEW -->
+        <div id="viewMarks" class="view-pane">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Continuous Assessment Test (CAT) Marks</h3>
+              <span class="badge badge-blue">SEMESTER IV EVALUATION</span>
+            </div>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr><th>Subject</th><th>CAT-1 (50)</th><th>CAT-2 (50)</th><th>DA (30)</th><th>Lab FAT (50)</th><th>Total (%)</th><th>Grade</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>CSI3029 Front End Design</td>
+                    <td>48</td><td>49</td><td>30</td><td>49</td>
+                    <td><strong>97.0%</strong></td>
+                    <td><span class="badge badge-emerald">S Grade</span></td>
+                  </tr>
+                  <tr>
+                    <td>CSE2005 Java Programming</td>
+                    <td>45</td><td>46</td><td>28</td><td>46</td>
+                    <td><strong>92.5%</strong></td>
+                    <td><span class="badge badge-emerald">S Grade</span></td>
+                  </tr>
+                  <tr>
+                    <td>MAT2001 Differential Eq.</td>
+                    <td>44</td><td>43</td><td>27</td><td>44</td>
+                    <td><strong>88.0%</strong></td>
+                    <td><span class="badge badge-cyan">A Grade</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANE 6: COURSES VIEW -->
+        <div id="viewCourses" class="view-pane">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Registered Semester Courses</h3>
+              <a href="./academics.html" class="btn btn-outline btn-sm">Add / Drop Course</a>
+            </div>
+            <div class="card-body">
+              <div style="display: grid; gap: 12px;">
+                <div style="border: 1px solid var(--border-light); padding: 14px; border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                  <div>
+                    <h4 style="font-size: 15px; color: var(--primary-navy);">CSI3029 – Front End Design and Testing</h4>
+                    <span style="font-size: 12.5px; color: var(--text-muted);">Slot: L31+L32 · Venue: SJT-312 · Faculty: Prof. Academic Lead</span>
+                  </div>
+                  <span class="badge badge-emerald">Core Lab (2 Credits)</span>
+                </div>
+                <div style="border: 1px solid var(--border-light); padding: 14px; border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                  <div>
+                    <h4 style="font-size: 15px; color: var(--primary-navy);">CSE2005 – Object Oriented Programming</h4>
+                    <span style="font-size: 12.5px; color: var(--text-muted);">Slot: A1+TA1 · Venue: TT-401 · Faculty: Prof. Java Systems</span>
+                  </div>
+                  <span class="badge badge-cyan">Theory &amp; Lab (4 Credits)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANE 7: SETTINGS VIEW -->
+        <div id="viewSettings" class="view-pane">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Account &amp; Security Settings</h3>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label class="form-label">Update Contact Phone</label>
+                <input type="tel" class="form-control" value="+91 98765 43210">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Change Password</label>
+                <input type="password" class="form-control" placeholder="Enter new password">
+              </div>
+              <button type="button" class="btn btn-primary btn-sm" onclick="showToast('Profile settings saved successfully!', 'success')">Save Changes</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>Copyright © 2026 VIT Smart Campus. All Rights Reserved.</div>
+        <div>Author: <strong>Shaik Zabiullah</strong> (Reg. No. <strong>23MIC0007</strong>) · VIT Vellore</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Tab switching for Student Dashboard Vertical Sidebar (Q10)
+    document.querySelectorAll('.sidebar-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        const targetView = this.getAttribute('data-view');
+        if (!targetView) return;
+
+        // Reset all buttons
+        document.querySelectorAll('.sidebar-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        // Show target pane
+        document.querySelectorAll('.view-pane').forEach(pane => pane.classList.remove('active'));
+        const pane = document.getElementById(targetView);
+        if (pane) pane.classList.add('active');
+      });
+    });
+
+    function logoutStudent() {
+      if (confirm('Are you sure you want to log out from the student portal?')) {
+        try { localStorage.removeItem('vit_auth_user'); } catch(e) {}
+        window.location.href = './login.html';
+      }
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Exam Question Interface - Click & Keyboard Submission</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="exam-container">
+    <div class="exam-card">
+      
+      <!-- Exam Header -->
+      <header class="exam-header">
+        <div class="header-left">
+          <span class="exam-badge">CSI3029 · MID-TERM CBT EXAM</span>
+          <h1>Question 14 of 40</h1>
+        </div>
+        <div class="timer-badge">
+          <span class="timer-icon">⏱️</span>
+          <span class="timer-text">44:18 Left</span>
+        </div>
+      </header>
+
+      <!-- Question Stem -->
+      <div class="question-stem">
+        <p class="question-text">
+          Which HTML5 attribute specifies an input field that must be filled out before submitting the form?
+        </p>
+      </div>
+
+      <!-- Multiple-Choice Answer Options (Selected by Mouse Click) -->
+      <div class="options-container" id="optionsContainer">
+        
+        <div class="option-card" data-opt="A" tabindex="0" role="button">
+          <span class="opt-label">A</span>
+          <span class="opt-text">validate</span>
+          <span class="opt-indicator"></span>
+        </div>
+
+        <div class="option-card" data-opt="B" tabindex="0" role="button">
+          <span class="opt-label">B</span>
+          <span class="opt-text">required</span>
+          <span class="opt-indicator"></span>
+        </div>
+
+        <div class="option-card" data-opt="C" tabindex="0" role="button">
+          <span class="opt-label">C</span>
+          <span class="opt-text">mandatory</span>
+          <span class="opt-indicator"></span>
+        </div>
+
+        <div class="option-card" data-opt="D" tabindex="0" role="button">
+          <span class="opt-label">D</span>
+          <span class="opt-text">placeholder</span>
+          <span class="opt-indicator"></span>
+        </div>
+
+      </div>
+
+      <!-- Submit Action Row -->
+      <div class="action-row">
+        <button id="submitExamBtn" class="btn-exam-submit" title="Click or Press Enter">
+          <span>Submit Answer</span>
+          <kbd>Enter ↵</kbd>
+        </button>
+        <button type="button" class="btn-clear-choice" onclick="clearSelection()">Clear Selection</button>
+      </div>
+
+      <!-- Submission Status Alert (Displays on Enter or Click) -->
+      <div id="submissionAlert" class="submission-alert" style="display: none;"></div>
+
+      <!-- Interaction Instructions -->
+      <div class="interaction-guide">
+        <div class="guide-item">
+          <span class="guide-bullet">●</span>
+          <span>Click any option card to select &amp; highlight it.</span>
+        </div>
+        <div class="guide-item">
+          <span class="guide-bullet">●</span>
+          <span>Hover over the <strong>Submit Answer</strong> button to see the interactive hover highlight.</span>
+        </div>
+        <div class="guide-item">
+          <span class="guide-bullet">●</span>
+          <span>Press <kbd>Enter</kbd> anywhere on the interface to submit the chosen answer.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="exam-footer">
+      CSI3029 Assessment Q40 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

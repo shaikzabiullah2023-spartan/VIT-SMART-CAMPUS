@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 450" width="100%" height="100%">
+  <rect width="850" height="450" fill="#F1F5F9"/>
+
+  <!-- Blue Header Bar -->
+  <rect x="0" y="30" width="850" height="75" fill="#0369A1"/>
+
+  <!-- Title Left -->
+  <circle cx="45" cy="67" r="12" fill="none" stroke="#38BDF8" stroke-width="2.5"/>
+  <text x="68" y="73" font-family="Arial, sans-serif" font-weight="bold" font-size="18" fill="#FFFFFF">Smart Search Engine</text>
+
+  <!-- Controls on Right -->
+  <!-- Search input pill -->
+  <rect x="270" y="50" width="220" height="36" rx="18" fill="#FFFFFF"/>
+  <text x="285" y="72" font-family="Arial, sans-serif" font-size="11" fill="#64748B">Search products, services...</text>
+
+  <!-- Category select pill -->
+  <rect x="500" y="50" width="125" height="36" rx="18" fill="#FFFFFF"/>
+  <text x="515" y="72" font-family="Arial, sans-serif" font-size="11" fill="#334155">All Categories ▾</text>
+
+  <!-- Price select pill -->
+  <rect x="635" y="50" width="105" height="36" rx="18" fill="#FFFFFF"/>
+  <text x="645" y="72" font-family="Arial, sans-serif" font-size="11" fill="#334155">Any Price ▾</text>
+
+  <!-- Search button pill -->
+  <rect x="750" y="50" width="80" height="36" rx="18" fill="#38BDF8"/>
+  <text x="790" y="73" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#082F49">Search</text>
+
+  <!-- Body preview -->
+  <rect x="80" y="160" width="690" height="210" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="425" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="22" fill="#0369A1">Dynamic Search Engine Header</text>
+  <text x="425" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#64748B">Multi-parameter search with category &amp; price filters (Q15)</text>
+  <text x="425" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0284C7">CSI3029 Assessment Q15 · Shaik Zabiullah (23MIC0007)</text>
+</svg>
+

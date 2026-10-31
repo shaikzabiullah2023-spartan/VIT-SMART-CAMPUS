@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Registration Web Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="registration-wrapper">
+    
+    <!-- Page Header -->
+    <header class="form-header">
+      <span class="company-badge">ACME ENTERPRISES · HR ONBOARDING</span>
+      <h1>Employee Registration Portal</h1>
+      <p>Complete the profile registration below with verified personal, departmental, and skill credentials.</p>
+    </header>
+
+    <!-- Welcome Video Section with Playback Controls -->
+    <section class="video-orientation-card">
+      <h3>Company Orientation &amp; Onboarding Briefing</h3>
+      <div class="video-container">
+        <video controls poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='300' viewBox='0 0 600 300'><rect width='600' height='300' fill='%231e293b'/><circle cx='300' cy='150' r='36' fill='%233b82f6'/><polygon points='290,135 320,150 290,165' fill='%23ffffff'/><text x='300' y='220' text-anchor='middle' font-family='Arial' font-size='14' fill='%23cbd5e1'>Click to Play Onboarding Video</text></svg>">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          <p>Your browser does not support the HTML5 video element. Please update your browser.</p>
+        </video>
+      </div>
+    </section>
+
+    <!-- Registration Form with HTML5 Elements & Validations -->
+    <form class="employee-form" onsubmit="event.preventDefault(); alert('Employee Registration Submitted Successfully!\nEmployee: ' + document.getElementById('empName').value);">
+      
+      <div class="form-grid">
+        
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="empName">Full Name <span class="required">*</span></label>
+          <input 
+            type="text" 
+            id="empName" 
+            name="fullName" 
+            placeholder="e.g. Shaik Zabiullah" 
+            required 
+            minlength="3" 
+            maxlength="50" 
+            pattern="[A-Za-z ]+"
+            title="Name must contain only alphabets and spaces"
+          />
+        </div>
+
+        <!-- Employee ID -->
+        <div class="form-group">
+          <label for="empId">Employee ID <span class="required">*</span></label>
+          <input 
+            type="text" 
+            id="empId" 
+            name="empId" 
+            placeholder="e.g. EMP8921" 
+            required 
+            pattern="^EMP[0-9]{4}$" 
+            title="Employee ID must start with EMP followed by exactly 4 digits (e.g. EMP1234)"
+          />
+        </div>
+
+        <!-- Email Address -->
+        <div class="form-group">
+          <label for="empEmail">Corporate Email Address <span class="required">*</span></label>
+          <input 
+            type="email" 
+            id="empEmail" 
+            name="email" 
+            placeholder="name@company.com" 
+            required 
+          />
+        </div>
+
+        <!-- Mobile Number -->
+        <div class="form-group">
+          <label for="empPhone">Mobile Number <span class="required">*</span></label>
+          <input 
+            type="tel" 
+            id="empPhone" 
+            name="phone" 
+            placeholder="10-digit mobile number" 
+            required 
+            pattern="[0-9]{10}"
+            maxlength="10"
+            title="Mobile number must be exactly 10 digits"
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="empPass">Password <span class="required">*</span></label>
+          <input 
+            type="password" 
+            id="empPass" 
+            name="password" 
+            placeholder="Minimum 8 characters" 
+            required 
+            minlength="8" 
+          />
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label for="empConfirmPass">Confirm Password <span class="required">*</span></label>
+          <input 
+            type="password" 
+            id="empConfirmPass" 
+            name="confirmPassword" 
+            placeholder="Re-enter password" 
+            required 
+            minlength="8" 
+          />
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="form-group">
+          <label for="empDob">Date of Birth <span class="required">*</span></label>
+          <input 
+            type="date" 
+            id="empDob" 
+            name="dob" 
+            required 
+            max="2008-01-01" 
+          />
+        </div>
+
+        <!-- Department Drop-down -->
+        <div class="form-group">
+          <label for="empDept">Department <span class="required">*</span></label>
+          <select id="empDept" name="department" required>
+            <option value="">-- Select Department --</option>
+            <option value="engineering">Software Engineering</option>
+            <option value="design">UI/UX Design</option>
+            <option value="qa">Quality Assurance &amp; Testing</option>
+            <option value="hr">Human Resources</option>
+            <option value="marketing">Digital Marketing</option>
+          </select>
+        </div>
+
+        <!-- Gender (Radio Buttons) -->
+        <div class="form-group full-width">
+          <label>Gender <span class="required">*</span></label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="gender" value="male" required /> Male
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="gender" value="female" /> Female
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="gender" value="other" /> Other
+            </label>
+          </div>
+        </div>
+
+        <!-- Skills (Checkboxes) -->
+        <div class="form-group full-width">
+          <label>Technical Skills (Select all applicable)</label>
+          <div class="checkbox-grid">
+            <label class="check-label"><input type="checkbox" name="skills" value="HTML5" /> HTML5 &amp; Semantic Web</label>
+            <label class="check-label"><input type="checkbox" name="skills" value="CSS3" /> CSS3 &amp; Responsive Layouts</label>
+            <label class="check-label"><input type="checkbox" name="skills" value="JavaScript" /> JavaScript (ES6+)</label>
+            <label class="check-label"><input type="checkbox" name="skills" value="Testing" /> Automated Front-End Testing</label>
+            <label class="check-label"><input type="checkbox" name="skills" value="Git" /> Version Control (Git)</label>
+            <label class="check-label"><input type="checkbox" name="skills" value="Accessibility" /> WCAG Accessibility</label>
+          </div>
+        </div>
+
+        <!-- Upload Profile Photo (File) -->
+        <div class="form-group full-width">
+          <label for="empPhoto">Upload Profile Photo (File Input)</label>
+          <input 
+            type="file" 
+            id="empPhoto" 
+            name="photo" 
+            accept="image/png, image/jpeg, image/svg+xml" 
+          />
+          <small class="field-hint">Accepted formats: JPG, PNG, SVG (Max file size: 2MB)</small>
+        </div>
+
+      </div>
+
+      <!-- Action Buttons: Submit & Reset -->
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">Submit Registration</button>
+        <button type="reset" class="btn-reset">Reset Form</button>
+      </div>
+
+    </form>
+
+    <footer class="form-footer">
+      CSI3029 Lab Assessment Q23 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+
+  </div>
+
+</body>
+</html>
+

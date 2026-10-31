@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Photo Gallery - N, P & Spacebar Hotkey Controls</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="travel-container">
+    <div class="travel-card">
+      
+      <header class="card-header">
+        <div class="badge">UNIT VIII · HOTKEY KEYBOARD EVENTS</div>
+        <h1>Global Wanderlust Travel Gallery</h1>
+        <p class="subtitle">Press <kbd>N</kbd> for Next, <kbd>P</kbd> for Previous, and <kbd>Spacebar</kbd> to reveal destination name.</p>
+      </header>
+
+      <!-- Main Destination Viewport -->
+      <div class="gallery-viewport">
+        
+        <div id="travelScene" class="scene-stage">
+          <!-- Dynamic SVG Vector Injected by script.js -->
+        </div>
+
+        <div class="scene-hud">
+          <span id="slideIndicator" class="hud-pill">Destination 1 of 5</span>
+          <span class="hud-hint">Press <kbd>Spacebar</kbd> to identify</span>
+        </div>
+
+      </div>
+
+      <!-- Destination Name Display (Revealed by Spacebar) -->
+      <div class="destination-display-zone">
+        <div id="destinationCard" class="destination-card idle">
+          <div class="dest-icon">📍</div>
+          <div class="dest-info">
+            <span class="dest-label">CURRENT DESTINATION:</span>
+            <div id="destName" class="dest-title">Press Spacebar to identify location</div>
+            <div id="destCountry" class="dest-meta">Travel discovery awaiting hotkey trigger...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotkey Reference Deck / Controls -->
+      <div class="hotkey-deck">
+        <button type="button" class="deck-btn" onclick="navigateDestination(-1)">
+          <kbd>P</kbd> <span>Previous Destination</span>
+        </button>
+        <button type="button" class="deck-btn btn-space" onclick="revealCurrentDestination()">
+          <kbd>Spacebar ␣</kbd> <span>Reveal Location</span>
+        </button>
+        <button type="button" class="deck-btn" onclick="navigateDestination(1)">
+          <span>Next Destination</span> <kbd>N</kbd>
+        </button>
+      </div>
+
+    </div>
+
+    <footer class="travel-footer">
+      CSI3029 Assessment Q42 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

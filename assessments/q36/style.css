@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  background: #090d16;
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+}
+
+.simulation-container {
+  width: 100%;
+  max-width: 540px;
+}
+
+.simulation-card {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.5);
+}
+
+.card-header {
+  margin-bottom: 24px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(249, 115, 22, 0.15);
+  color: #fb923c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 13.5px;
+}
+
+/* Traffic Signal Housing */
+.signal-rig {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px 0 24px;
+}
+
+.signal-housing {
+  background: linear-gradient(145deg, #1f2937, #0f172a);
+  border: 3px solid #374151;
+  border-radius: 40px;
+  padding: 20px 24px;
+  box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.05), 0 15px 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.signal-housing::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 8px;
+  background: #374151;
+  border-radius: 4px 4px 0 0;
+}
+
+.signal-pole {
+  width: 16px;
+  height: 35px;
+  background: linear-gradient(90deg, #374151, #4b5563, #374151);
+  border-radius: 0 0 4px 4px;
+}
+
+.lamp-bracket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.lamp-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #4b5563;
+  transition: color 0.3s ease;
+}
+
+/* Signal Bulbs - Dim Idle State */
+.signal-bulb {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 3px solid rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.bulb-reflection {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  width: 22px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(-30deg);
+  pointer-events: none;
+}
+
+/* Idle Dims */
+.bulb-red {
+  background: #450a0a;
+}
+
+.bulb-yellow {
+  background: #422006;
+}
+
+.bulb-green {
+  background: #022c22;
+}
+
+/* Active Highlight States (Triggered by Mouseover) */
+.bulb-red.active {
+  background: #ef4444;
+  box-shadow: 0 0 35px #ef4444, inset 0 -4px 10px #7f1d1d;
+  transform: scale(1.08);
+}
+
+.bulb-yellow.active {
+  background: #eab308;
+  box-shadow: 0 0 35px #eab308, inset 0 -4px 10px #713f12;
+  transform: scale(1.08);
+}
+
+.bulb-green.active {
+  background: #10b981;
+  box-shadow: 0 0 35px #10b981, inset 0 -4px 10px #064e3b;
+  transform: scale(1.08);
+}
+
+/* Action Board */
+.action-board {
+  background: #0a0f1d;
+  border: 1.5px solid #1f2937;
+  border-radius: 12px;
+  padding: 20px 24px;
+  transition: all 0.3s ease;
+}
+
+.board-header {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.action-heading {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.action-heading.idle {
+  color: #475569;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.action-heading.action-stop {
+  color: #ef4444;
+  text-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+}
+
+.action-heading.action-ready {
+  color: #eab308;
+  text-shadow: 0 0 20px rgba(234, 179, 8, 0.6);
+}
+
+.action-heading.action-go {
+  color: #10b981;
+  text-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+}
+
+.action-desc {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-top: 4px;
+  min-height: 20px;
+}
+
+.page-footer {
+  text-align: center;
+  color: #64748b;
+  font-size: 12px;
+  margin-top: 24px;
+}
+

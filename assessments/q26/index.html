@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprehensive Patient Registration Form (20 Inputs)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="patient-form-wrapper">
+    
+    <!-- Form Title & Clinical Header -->
+    <header class="patient-header">
+      <div class="clinic-badge">APOLLO HEALTHCARE CLINICAL INTAKE</div>
+      <h1>Patient Intake &amp; Registration Portal</h1>
+      <p>Demonstrating all 20 specific HTML5 form input types, CSS Box Model, and responsive CSS Grid alignment.</p>
+    </header>
+
+    <form class="patient-form" onsubmit="event.preventDefault(); alert('Patient Intake Successfully Recorded!\nPatient Name: ' + document.getElementById('f1_name').value + '\nHidden ID: ' + document.getElementById('f18_hidden').value);">
+      
+      <!-- 18. Hidden Patient ID (input type="hidden") -->
+      <input type="hidden" id="f18_hidden" name="patientId" value="PID-2026-90412" />
+
+      <div class="form-grid-layout">
+
+        <!-- 1. Patient Name (text) -->
+        <div class="form-cell">
+          <label for="f1_name">1. Patient Name (text) <span class="req">*</span></label>
+          <input type="text" id="f1_name" name="patientName" placeholder="Full legal name" required />
+        </div>
+
+        <!-- 2. Email Address (email) -->
+        <div class="form-cell">
+          <label for="f2_email">2. Email Address (email) <span class="req">*</span></label>
+          <input type="email" id="f2_email" name="patientEmail" placeholder="patient@healthcare.com" required />
+        </div>
+
+        <!-- 3. Password (password) -->
+        <div class="form-cell">
+          <label for="f3_pass">3. Patient Portal Password (password) <span class="req">*</span></label>
+          <input type="password" id="f3_pass" name="patientPassword" placeholder="Minimum 8 characters" minlength="8" required />
+        </div>
+
+        <!-- 4. Contact Number (tel) -->
+        <div class="form-cell">
+          <label for="f4_tel">4. Contact Number (tel) <span class="req">*</span></label>
+          <input type="tel" id="f4_tel" name="patientPhone" placeholder="10-digit mobile" pattern="[0-9]{10}" required />
+        </div>
+
+        <!-- 5. Age (number) -->
+        <div class="form-cell">
+          <label for="f5_age">5. Age (number) <span class="req">*</span></label>
+          <input type="number" id="f5_age" name="patientAge" min="1" max="120" placeholder="e.g. 21" required />
+        </div>
+
+        <!-- 6. Date of Birth (date) -->
+        <div class="form-cell">
+          <label for="f6_dob">6. Date of Birth (date) <span class="req">*</span></label>
+          <input type="date" id="f6_dob" name="patientDob" required />
+        </div>
+
+        <!-- 7. Appointment Time (time) -->
+        <div class="form-cell">
+          <label for="f7_time">7. Preferred Time (time) <span class="req">*</span></label>
+          <input type="time" id="f7_time" name="appointmentTime" required />
+        </div>
+
+        <!-- 8. Appointment Date & Time (datetime-local) -->
+        <div class="form-cell">
+          <label for="f8_dtlocal">8. Consultation Slot (datetime-local) <span class="req">*</span></label>
+          <input type="datetime-local" id="f8_dtlocal" name="appointmentDateTime" required />
+        </div>
+
+        <!-- 9. Personal Website/Reference (url) -->
+        <div class="form-cell">
+          <label for="f9_url">9. Personal / Insurance URL (url)</label>
+          <input type="url" id="f9_url" name="referenceUrl" placeholder="https://myrecords.health.gov" />
+        </div>
+
+        <!-- 10. Search Doctor (search) -->
+        <div class="form-cell">
+          <label for="f10_search">10. Search Doctor / Specialty (search)</label>
+          <input type="search" id="f10_search" name="doctorSearch" placeholder="Search by physician or department..." />
+        </div>
+
+        <!-- 11. Favorite Consultation Color Theme (color) -->
+        <div class="form-cell">
+          <label for="f11_color">11. Clinic Theme Preference (color)</label>
+          <div class="color-picker-row">
+            <input type="color" id="f11_color" name="themeColor" value="#0284c7" />
+            <span class="color-hint">Pick consultation ambient tint</span>
+          </div>
+        </div>
+
+        <!-- 12. Medical Record Upload (file) -->
+        <div class="form-cell">
+          <label for="f12_file">12. Medical Record Upload (file)</label>
+          <input type="file" id="f12_file" name="medicalRecord" accept=".pdf,image/*" />
+        </div>
+
+        <!-- 13. Pain Level (range) -->
+        <div class="form-cell full-col">
+          <label for="f13_range">
+            13. Current Pain Level Assessment (range: 0 to 10) — 
+            <span id="painDisplay" class="range-badge">Level 4 (Mild)</span>
+          </label>
+          <input 
+            type="range" 
+            id="f13_range" 
+            name="painLevel" 
+            min="0" 
+            max="10" 
+            value="4" 
+            oninput="document.getElementById('painDisplay').textContent = 'Level ' + this.value + (this.value <= 3 ? ' (Low)' : (this.value <= 6 ? ' (Moderate)' : ' (Severe)'));"
+          />
+        </div>
+
+        <!-- 14. Gender (radio) -->
+        <div class="form-cell">
+          <label>14. Gender (radio) <span class="req">*</span></label>
+          <div class="radio-options">
+            <label><input type="radio" name="gender" value="male" checked required /> Male</label>
+            <label><input type="radio" name="gender" value="female" /> Female</label>
+            <label><input type="radio" name="gender" value="other" /> Other</label>
+          </div>
+        </div>
+
+        <!-- 15. Known Allergies (checkbox) -->
+        <div class="form-cell">
+          <label>15. Known Allergies (checkbox)</label>
+          <div class="checkbox-options">
+            <label><input type="checkbox" name="allergies" value="Penicillin" /> Penicillin</label>
+            <label><input type="checkbox" name="allergies" value="Pollen" /> Pollen</label>
+            <label><input type="checkbox" name="allergies" value="Latex" /> Latex</label>
+          </div>
+        </div>
+
+        <!-- 16. Blood Group (select) -->
+        <div class="form-cell">
+          <label for="f16_blood">16. Blood Group (select) <span class="req">*</span></label>
+          <select id="f16_blood" name="bloodGroup" required>
+            <option value="">-- Select Blood Group --</option>
+            <option value="O+">O Positive (O+)</option>
+            <option value="O-">O Negative (O-)</option>
+            <option value="A+">A Positive (A+)</option>
+            <option value="A-">A Negative (A-)</option>
+            <option value="B+">B Positive (B+)</option>
+            <option value="B-">B Negative (B-)</option>
+            <option value="AB+">AB Positive (AB+)</option>
+            <option value="AB-">AB Negative (AB-)</option>
+          </select>
+        </div>
+
+        <!-- 17. Residential Address (textarea) -->
+        <div class="form-cell full-col">
+          <label for="f17_address">17. Residential Address (textarea) <span class="req">*</span></label>
+          <textarea id="f17_address" name="address" rows="3" placeholder="Street, apartment, city, and pincode..." required></textarea>
+        </div>
+
+      </div>
+
+      <!-- Action Row: 19. Submit, Reset + 20. Image Button -->
+      <div class="action-footer-row">
+        
+        <div class="standard-btns">
+          <!-- 19. Submit & Reset Buttons -->
+          <button type="submit" class="btn-intake-submit">19a. Submit Registration</button>
+          <button type="reset" class="btn-intake-reset">19b. Reset Form</button>
+        </div>
+
+        <div class="image-btn-area">
+          <label style="font-size: 11.5px; color: #64748b; margin-bottom: 4px; display: block;">20. Instant Booking via Image Button:</label>
+          <!-- 20. Image Button (<input type="image">) with local inline SVG data -->
+          <input 
+            type="image" 
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='42' viewBox='0 0 160 42'><rect width='160' height='42' rx='6' fill='%23059669'/><circle cx='24' cy='21' r='10' fill='%2310b981'/><polygon points='20,21 23,24 28,18' fill='none' stroke='%23ffffff' stroke-width='2'/><text x='42' y='26' font-family='Arial, sans-serif' font-weight='bold' font-size='13' fill='%23ffffff'>Fast Confirm</text></svg>" 
+            alt="Fast Confirm Image Button" 
+            title="Click Image Button to Fast Confirm"
+            class="input-image-btn"
+          />
+        </div>
+
+      </div>
+
+    </form>
+
+    <footer class="patient-footer">
+      CSI3029 Assessment Q26 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+
+  </div>
+
+</body>
+</html>
+

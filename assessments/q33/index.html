@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouseover & Mouseleave Event Handling - VIT Greeting</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="demo-container">
+    <div class="event-card">
+      <header class="card-header">
+        <div class="badge">UNIT VII · DOM MOUSE EVENTS</div>
+        <h1>Mouse Event Interaction</h1>
+        <p class="subtitle">Demonstration of <code>mouseover</code> and <code>mouseout</code> event handling in vanilla JavaScript.</p>
+      </header>
+
+      <!-- Target Text Display Stage -->
+      <div class="display-stage">
+        <div class="stage-label">DYNAMIC PAGE DISPLAY TEXT</div>
+        <div id="greetingText" class="dynamic-heading">Hover over the button below to interact</div>
+        <div id="eventSubtext" class="status-subtext">Waiting for user mouse event...</div>
+      </div>
+
+      <!-- Interactive Button -->
+      <div class="action-area">
+        <button id="interactiveBtn" class="hover-btn">
+          <span class="btn-icon">🖱️</span>
+          <span class="btn-label">Move Mouse Over Me</span>
+        </button>
+      </div>
+
+      <!-- Telemetry / Event Monitor Panel -->
+      <div class="telemetry-panel">
+        <div class="stat-pill">
+          <span class="stat-name">Mouseover Count:</span>
+          <span id="hoverCount" class="stat-num">0</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-name">Mouseleave Count:</span>
+          <span id="leaveCount" class="stat-num">0</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-name">Active State:</span>
+          <span id="activeStatus" class="stat-val status-idle">IDLE</span>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="demo-footer">
+      CSI3029 Assessment Q33 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

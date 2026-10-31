@@ -1,0 +1,120 @@
+/* ==========================================================================
+   THEMES & DESIGN SYSTEM TOKENS
+   CSI3029 Front End Design & Testing Portfolio
+   Author: SHAIK ZABIULLAH (23MIC0007)
+   ========================================================================== */
+
+:root {
+  /* Fonts */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  /* Signature Brand Gradient */
+  --gradient-brand: linear-gradient(135deg, #6366F1 0%, #06B6D4 50%, #10B981 100%);
+  --gradient-glow: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(6, 182, 212, 0.2) 50%, rgba(16, 185, 129, 0.15) 100%);
+  --gradient-card-overlay: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+
+  /* Unit Accent Colors */
+  --unit-1: #3B82F6; /* HTML Basics - Royal Blue */
+  --unit-2: #06B6D4; /* HTML Layout Basic - Cyan Teal */
+  --unit-3: #8B5CF6; /* HTML Layout 2 - Vivid Violet */
+  --unit-4: #EC4899; /* CSS Background / Layouts - Fuchsia Pink */
+  --unit-5: #F59E0B; /* Forms & Media - Amber Gold */
+  --unit-6: #10B981; /* JS Basics Practice 1 - Emerald */
+  --unit-7: #F97316; /* JS Regex & Mouse Events - Sunset Orange */
+  --unit-8: #6366F1; /* JS Keyboard Events - Indigo */
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.14);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.24);
+  --shadow-glow: 0 0 35px rgba(99, 102, 241, 0.25);
+  
+  /* Transitions */
+  --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   DARK THEME (Default)
+   -------------------------------------------------------------------------- */
+:root, [data-theme="dark"] {
+  --bg-base: #0B0F19;
+  --bg-canvas: #070A11;
+  --bg-surface: rgba(18, 24, 38, 0.78);
+  --bg-surface-elevated: rgba(26, 34, 52, 0.85);
+  --bg-surface-solid: #121826;
+  --bg-input: rgba(15, 21, 35, 0.85);
+  --bg-code: #0A0D14;
+  --bg-glass: rgba(18, 24, 38, 0.6);
+  --bg-tag: rgba(255, 255, 255, 0.06);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.22);
+  --border-focus: #6366F1;
+
+  --text-primary: #F3F4F6;
+  --text-secondary: #9CA3AF;
+  --text-muted: #6B7280;
+  --text-inverse: #0B0F19;
+
+  --accent-primary: #6366F1;
+  --accent-cyan: #06B6D4;
+  --accent-mint: #10B981;
+  --accent-amber: #F59E0B;
+  --accent-pink: #EC4899;
+
+  --scrollbar-thumb: rgba(255, 255, 255, 0.18);
+  --scrollbar-track: #0B0F19;
+  
+  --backdrop-blur: blur(14px);
+  --mesh-opacity: 0.55;
+}
+
+/* --------------------------------------------------------------------------
+   LIGHT THEME
+   -------------------------------------------------------------------------- */
+[data-theme="light"] {
+  --bg-base: #F8FAFC;
+  --bg-canvas: #EEF2F6;
+  --bg-surface: rgba(255, 255, 255, 0.88);
+  --bg-surface-elevated: rgba(255, 255, 255, 0.98);
+  --bg-surface-solid: #FFFFFF;
+  --bg-input: #FFFFFF;
+  --bg-code: #1A1E29;
+  --bg-glass: rgba(255, 255, 255, 0.7);
+  --bg-tag: rgba(15, 23, 42, 0.05);
+
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-medium: rgba(15, 23, 42, 0.14);
+  --border-strong: rgba(15, 23, 42, 0.24);
+  --border-focus: #4F46E5;
+
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --text-inverse: #FFFFFF;
+
+  --accent-primary: #4F46E5;
+  --accent-cyan: #0891B2;
+  --accent-mint: #059669;
+  --accent-amber: #D97706;
+  --accent-pink: #DB2777;
+
+  --scrollbar-thumb: rgba(0, 0, 0, 0.2);
+  --scrollbar-track: #F8FAFC;
+
+  --backdrop-blur: blur(14px);
+  --mesh-opacity: 0.25;
+}
+

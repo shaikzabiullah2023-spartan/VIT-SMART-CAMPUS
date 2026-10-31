@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnSphere Academy | Online Learning Portal | VIT Smart Campus</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo">
+        <div class="logo-badge" style="background: linear-gradient(135deg, #0284c7, #06b6d4);">💻</div>
+        <div class="brand-text">
+          <span class="uni-name" style="color: #0284c7;">LearnSphere</span>
+          <span class="portal-name">Online Academy</span>
+        </div>
+      </a>
+
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="#coursesSection" class="nav-link">Courses</a></li>
+          <li><a href="#instructorsSection" class="nav-link">Instructors</a></li>
+          <li><a href="#resourcesSection" class="nav-link">Resources</a></li>
+          <li><a href="#contactSection" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn btn-cyan btn-sm" onclick="showToast('Enrollment open! Select course below to start.', 'info')">Enroll Now</button>
+        <button type="button" class="hamburger-btn" aria-label="Toggle Mobile Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- LearnSphere Hero Banner (Q16) -->
+  <section style="background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0284c7 100%); color: #fff; padding: 70px 0 50px 0;">
+    <div class="container" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center;">
+      <div>
+        <span class="badge badge-cyan" style="background: rgba(255,255,255,0.2); color: #fff; border-color: rgba(255,255,255,0.4); margin-bottom: 14px;">SELF-PACED ACADEMIC ACCELERATION</span>
+        <h1 style="font-family: var(--font-heading); font-size: 42px; font-weight: 800; line-height: 1.2; margin-bottom: 16px;">
+          LearnSphere Academy
+        </h1>
+        <p style="font-size: 16px; color: #e0f2fe; line-height: 1.6; margin-bottom: 28px;">
+          Master production-ready engineering through project-driven video lectures, interactive coding sandboxes, and personalized mentorship from university faculty.
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="#coursesSection" class="btn btn-secondary btn-lg" style="color: #0369a1; font-weight: 700;">Explore Certified Courses</a>
+          <a href="./javascript-lab.html" class="btn btn-outline btn-lg" style="color: #fff; border-color: rgba(255,255,255,0.4);">Launch Code Sandbox</a>
+        </div>
+      </div>
+
+      <!-- Quick Platform Card -->
+      <div class="card" style="padding: 24px; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); background: rgba(255,255,255,0.95);">
+        <h3 style="font-size: 18px; font-weight: 800; color: #0c4a6e; margin-bottom: 14px;">Academy Highlights</h3>
+        <ul style="list-style: none; display: grid; gap: 12px; font-size: 13.5px;">
+          <li style="display: flex; gap: 10px;"><span>✅</span> <span>100% Free for all registered VIT Vellore students</span></li>
+          <li style="display: flex; gap: 10px;"><span>✅</span> <span>Verified certificate credentials added to your student dossier</span></li>
+          <li style="display: flex; gap: 10px;"><span>✅</span> <span>Direct 1-on-1 office hours with course professors</span></li>
+          <li style="display: flex; gap: 10px;"><span>✅</span> <span>Integrated CSI3029 Front End Design syllabus modules</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section (Q16) -->
+  <section id="coursesSection" class="section-py">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">Specialized Curriculum</span>
+        <h2 class="section-title">Industry-Aligned Micro-Courses</h2>
+        <p class="section-desc">Practical, hands-on tracks engineered to bridge academic fundamentals with enterprise standards.</p>
+      </div>
+
+      <div class="bento-grid">
+        
+        <div class="card card-hover">
+          <div style="height: 140px; background: linear-gradient(135deg, #0284c7, #38bdf8); display: flex; align-items: center; justify-content: center; font-size: 48px; color: #fff;">
+            🌐
+          </div>
+          <div class="card-body">
+            <span class="badge badge-cyan" style="margin-bottom: 8px;">6 WEEKS · 18 MODULES</span>
+            <h3 style="font-size: 17px; font-weight: 700; color: var(--primary-navy); margin-bottom: 8px;">Modern Front-End Engineering &amp; DOM Testing</h3>
+            <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+              Master semantic HTML5, fluid CSS3 Flexbox/Grid layouts, JavaScript regular expressions, mouse and keyboard events.
+            </p>
+            <button type="button" class="btn btn-primary btn-sm btn-block" onclick="showToast('Enrolled in Modern Front-End Engineering!', 'success')">Enroll Now (Free)</button>
+          </div>
+        </div>
+
+        <div class="card card-hover">
+          <div style="height: 140px; background: linear-gradient(135deg, #1e3a8a, #4f46e5); display: flex; align-items: center; justify-content: center; font-size: 48px; color: #fff;">
+            🧠
+          </div>
+          <div class="card-body">
+            <span class="badge badge-blue" style="margin-bottom: 8px;">8 WEEKS · 24 MODULES</span>
+            <h3 style="font-size: 17px; font-weight: 700; color: var(--primary-navy); margin-bottom: 8px;">Applied Machine Learning &amp; Deep Learning</h3>
+            <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+              Build supervised classification pipelines, computer vision models, and natural language transformer models.
+            </p>
+            <button type="button" class="btn btn-primary btn-sm btn-block" onclick="showToast('Enrolled in Applied Machine Learning!', 'success')">Enroll Now (Free)</button>
+          </div>
+        </div>
+
+        <div class="card card-hover">
+          <div style="height: 140px; background: linear-gradient(135deg, #065f46, #10b981); display: flex; align-items: center; justify-content: center; font-size: 48px; color: #fff;">
+            🛡️
+          </div>
+          <div class="card-body">
+            <span class="badge badge-emerald" style="margin-bottom: 8px;">5 WEEKS · 15 MODULES</span>
+            <h3 style="font-size: 17px; font-weight: 700; color: var(--primary-navy); margin-bottom: 8px;">Offensive Security &amp; Ethical Hacking</h3>
+            <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+              Vulnerability scanning, web penetration testing, network traffic analysis, and cryptographic defenses.
+            </p>
+            <button type="button" class="btn btn-primary btn-sm btn-block" onclick="showToast('Enrolled in Offensive Security!', 'success')">Enroll Now (Free)</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Instructors Section (Q16) -->
+  <section id="instructorsSection" class="section-py" style="background: #f8fafc; border-top: 1px solid var(--border-light);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">Academic Faculty</span>
+        <h2 class="section-title">LearnSphere Master Instructors</h2>
+        <p class="section-desc">Instruction curated by university faculty chairs and industry veterans.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        
+        <div class="card card-hover" style="text-align: center; padding: 24px;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: #e0f2fe; color: #0284c7; font-size: 36px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto;">👩‍💻</div>
+          <h3 style="font-size: 17px; font-weight: 700; color: var(--primary-navy);">Dr. S. Priya Lakshmi</h3>
+          <span style="font-size: 12.5px; color: var(--brand-cyan); font-weight: 600; display: block; margin-bottom: 8px;">Senior Faculty, Web Systems</span>
+          <p style="font-size: 13px; color: var(--text-muted);">Author of 14 peer-reviewed publications in browser performance optimizations and frontend testing.</p>
+        </div>
+
+        <div class="card card-hover" style="text-align: center; padding: 24px;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: #eff6ff; color: #1e3a8a; font-size: 36px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto;">👨‍🏫</div>
+          <h3 style="font-size: 17px; font-weight: 700; color: var(--primary-navy);">Dr. Arvind Sharma</h3>
+          <span style="font-size: 12.5px; color: var(--brand-cyan); font-weight: 600; display: block; margin-bottom: 8px;">AI Research Director</span>
+          <p style="font-size: 13px; color: var(--text-muted);">Principal investigator in neural graph architectures and autonomous robotic perception systems.</p>
+        </div>
+
+        <div class="card card-hover" style="text-align: center; padding: 24px;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: #ecfdf5; color: #059669; font-size: 36px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto;">🛡️</div>
+          <h3 style="font-size: 17px; font-weight: 700; color: var(--primary-navy);">Prof. Rajesh Verma</h3>
+          <span style="font-size: 12.5px; color: var(--brand-cyan); font-weight: 600; display: block; margin-bottom: 8px;">Chief Security Consultant</span>
+          <p style="font-size: 13px; color: var(--text-muted);">Certified Ethical Hacker (CEH) and lead architect of university cyber defense infrastructure.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning Resources (Q16) -->
+  <section id="resourcesSection" class="section-py">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">Knowledge Repositories</span>
+        <h2 class="section-title">Open Learning Resources</h2>
+        <p class="section-desc">Download curated lecture notes, starter project codebases, and practice problem sets.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+        <div class="card" style="padding: 20px;">
+          <span style="font-size: 28px; display: block; margin-bottom: 8px;">📄</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: var(--primary-navy); margin-bottom: 4px;">CSI3029 Lab Manual (PDF)</h4>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Full 42-question practical specifications and unit test criteria.</p>
+          <a href="../docs/README.md" class="btn btn-outline btn-sm">Download Manual →</a>
+        </div>
+
+        <div class="card" style="padding: 20px;">
+          <span style="font-size: 28px; display: block; margin-bottom: 8px;">💻</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: var(--primary-navy); margin-bottom: 4px;">HTML5 &amp; CSS3 Code Snippets</h4>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Hand-crafted Flexbox, Grid, and syntax highlighter templates.</p>
+          <a href="./javascript-lab.html" class="btn btn-outline btn-sm">Open Snippets →</a>
+        </div>
+
+        <div class="card" style="padding: 20px;">
+          <span style="font-size: 28px; display: block; margin-bottom: 8px;">🧪</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: var(--primary-navy); margin-bottom: 4px;">Regex Verification Cheatsheet</h4>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Regular expressions for VIT emails, EMP IDs, and register numbers.</p>
+          <a href="./javascript-lab.html" class="btn btn-outline btn-sm">View Patterns →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Footer -->
+  <footer class="site-footer" id="contactSection">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>Copyright © 2026 VIT Smart Campus. All Rights Reserved.</div>
+        <div>Author: <strong>Shaik Zabiullah</strong> (Reg. No. <strong>23MIC0007</strong>) · VIT Vellore</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
+

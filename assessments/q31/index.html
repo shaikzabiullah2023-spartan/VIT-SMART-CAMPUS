@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIT Workshop Registration - Email Regex & Checkbox</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="workshop-container">
+    <div class="workshop-card">
+      <header class="card-header">
+        <div class="badge">VIT VELLORE · WORKSHOP PORTAL</div>
+        <h1>Technical Workshop Registration</h1>
+        <p class="subtitle">Enter your official university email and select your technical workshop interest areas.</p>
+      </header>
+
+      <!-- Alert Notification Area -->
+      <div id="alertBox" class="alert-box" style="display: none;"></div>
+
+      <form id="workshopForm" class="workshop-form" novalidate onsubmit="event.preventDefault(); validateWorkshop();">
+        
+        <!-- Institutional Email Input -->
+        <div class="form-group">
+          <label for="vitEmail">VIT Institutional Email ID <span class="required">*</span></label>
+          <div class="input-wrapper">
+            <svg class="input-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <input type="email" id="vitEmail" placeholder="e.g. zabiullah.shaik2023@vit.ac.in" autocomplete="off" />
+          </div>
+          <span class="hint">Must end with official domain: <code>@vit.ac.in</code></span>
+          <div id="emailError" class="field-error"></div>
+        </div>
+
+        <!-- Technical Interests Checkboxes -->
+        <div class="form-group">
+          <label class="section-label">Select Workshop Topics (Select at least one) <span class="required">*</span></label>
+          <div class="topics-grid">
+            <label class="topic-chip">
+              <input type="checkbox" name="workshopTopic" value="Web Development" />
+              <div class="chip-content">
+                <span class="topic-icon">🌐</span>
+                <span class="topic-name">Web Development</span>
+              </div>
+            </label>
+
+            <label class="topic-chip">
+              <input type="checkbox" name="workshopTopic" value="Artificial Intelligence" />
+              <div class="chip-content">
+                <span class="topic-icon">🤖</span>
+                <span class="topic-name">Artificial Intelligence</span>
+              </div>
+            </label>
+
+            <label class="topic-chip">
+              <input type="checkbox" name="workshopTopic" value="Cyber Security" />
+              <div class="chip-content">
+                <span class="topic-icon">🛡️</span>
+                <span class="topic-name">Cyber Security</span>
+              </div>
+            </label>
+
+            <label class="topic-chip">
+              <input type="checkbox" name="workshopTopic" value="Cloud Computing" />
+              <div class="chip-content">
+                <span class="topic-icon">☁️</span>
+                <span class="topic-name">Cloud Computing</span>
+              </div>
+            </label>
+          </div>
+          <div id="topicError" class="field-error"></div>
+        </div>
+
+        <!-- Actions -->
+        <div class="form-actions">
+          <button type="submit" class="btn-submit">
+            <span>Register for Workshop</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+          <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+        </div>
+
+      </form>
+
+      <!-- Registration Summary Confirmation (Displayed on Success) -->
+      <div id="successCard" class="success-card" style="display: none;">
+        <div class="success-header">
+          <span class="success-badge">✓ Registration Confirmed</span>
+          <h3>Pass Generated for Technical Workshop</h3>
+        </div>
+        <div class="summary-details">
+          <div class="summary-row">
+            <span class="summary-label">Registered VIT Email:</span>
+            <span id="summaryEmail" class="summary-value">-</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Selected Topics:</span>
+            <div id="summaryTopics" class="topics-badges">-</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="page-footer">
+      CSI3029 Assessment Q31 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Search - Keyboard Event Handling</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="search-container">
+    <div class="search-card">
+      
+      <header class="card-header">
+        <div class="badge">UNIT VIII · JAVASCRIPT KEYBOARD EVENTS</div>
+        <h1>Student Directory Search</h1>
+        <p class="subtitle">Press keys to inspect key values in real time. Press <kbd>Enter</kbd> to search or <kbd>Esc</kbd> to clear.</p>
+      </header>
+
+      <!-- Input Bar -->
+      <div class="input-section">
+        <label for="studentSearchInput">Student Search Query</label>
+        <div class="search-box-wrapper">
+          <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="studentSearchInput" placeholder="Type student name or Reg No (e.g., Shaik Zabiullah)..." autofocus autocomplete="off" />
+          <button type="button" class="clear-btn" id="clearBtn" title="Clear Search (Esc)">✕</button>
+        </div>
+      </div>
+
+      <!-- Real-Time Keydown Inspector Output -->
+      <div class="key-inspector">
+        <div class="inspector-label">LAST PRESSED KEY TELEMETRY</div>
+        <div class="key-display-row">
+          <div class="key-badge">
+            <span class="key-title">Key:</span>
+            <span id="pressedKeyVal" class="key-code-val">None</span>
+          </div>
+          <div class="key-badge">
+            <span class="key-title">Code:</span>
+            <span id="pressedKeyCode" class="key-code-val">None</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Status Notification Message (Enter / Esc output) -->
+      <div class="status-zone">
+        <div id="searchMessage" class="search-msg idle">Waiting for keyboard input...</div>
+      </div>
+
+      <!-- Keyboard Shortcuts Help -->
+      <div class="shortcuts-guide">
+        <div class="shortcut-item">
+          <kbd>Any Key</kbd>
+          <span>Displays pressed key value</span>
+        </div>
+        <div class="shortcut-item">
+          <kbd>Enter</kbd>
+          <span>Triggers "Searching for student..."</span>
+        </div>
+        <div class="shortcut-item">
+          <kbd>Esc</kbd>
+          <span>Clears text box and message</span>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="page-footer">
+      CSI3029 Assessment Q37 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

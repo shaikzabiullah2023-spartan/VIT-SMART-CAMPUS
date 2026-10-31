@@ -1,0 +1,11 @@
+{
+  "q": 30,
+  "slug": "q30",
+  "title": "Symposium Portal with JS Arrays & Regex Validation",
+  "unit": "Unit VII: JavaScript Regular Expressions & Mouse Events",
+  "unitId": 7,
+  "status": "PASS",
+  "dependsOn": "Q25",
+  "author": "SHAIK ZABIULLAH (23MIC0007)"
+}
+

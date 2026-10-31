@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" width="100%" height="100%">
+  <rect width="750" height="500" fill="#F8FAFC"/>
+  <!-- Centered Article Card -->
+  <rect x="60" y="30" width="630" height="440" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <!-- Centered Avatar -->
+  <circle cx="375" cy="85" r="35" fill="#EFF6FF" stroke="#2563EB" stroke-width="3"/>
+  <circle cx="375" cy="76" r="14" fill="#1E3A8A"/>
+  <path d="M 352 108 Q 375 88 398 108 Z" fill="#2563EB"/>
+
+  <text x="375" y="140" text-anchor="middle" font-family="Georgia, serif" font-weight="bold" font-size="20" fill="#1E3A8A">SHAIK ZABIULLAH</text>
+  <text x="375" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#2563EB">23MIC0007 · VIT VELLORE</text>
+
+  <!-- Horizontal divider -->
+  <line x1="90" y1="175" x2="660" y2="175" stroke="#CBD5E1"/>
+
+  <text x="90" y="200" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E3A8A">Education</text>
+  <text x="90" y="222" font-family="Arial, sans-serif" font-size="12" fill="#475569">Integrated M.Tech CSE · VIT Vellore · CGPA: 9.10</text>
+
+  <line x1="90" y1="240" x2="660" y2="240" stroke="#CBD5E1"/>
+
+  <text x="90" y="265" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E3A8A">Technical Skills</text>
+  <text x="90" y="287" font-family="Arial, sans-serif" font-size="12" fill="#475569">HTML5 Semantics · CSS3 Grid/Flexbox · JavaScript ES6+ · Regex</text>
+
+  <line x1="90" y1="305" x2="660" y2="305" stroke="#CBD5E1"/>
+
+  <text x="90" y="330" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E3A8A">Projects &amp; Career Goal</text>
+  <text x="90" y="352" font-family="Arial, sans-serif" font-size="12" fill="#475569">Senior Front-End Architect · Portfolio Architecture &amp; Automated Testing</text>
+
+  <line x1="90" y1="380" x2="660" y2="380" stroke="#CBD5E1"/>
+  <text x="375" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94A3B8">Strictly Inline CSS on Every Element (Q18) · Shaik Zabiullah (23MIC0007)</text>
+</svg>
+

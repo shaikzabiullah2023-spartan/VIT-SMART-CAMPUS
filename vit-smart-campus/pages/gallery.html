@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image & Travel Gallery | Keyboard Event Navigation | VIT Smart Campus</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <style>
+    kbd {
+      background: var(--primary-navy);
+      color: #fff;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo">
+        <div class="logo-badge" style="background: linear-gradient(135deg, #0284c7, #38bdf8);">📸</div>
+        <div class="brand-text">
+          <span class="uni-name">Visual Portfolio</span>
+          <span class="portal-name">Campus &amp; Travel</span>
+        </div>
+      </a>
+
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="./about.html" class="nav-link">About</a></li>
+          <li><a href="./academics.html" class="nav-link">Academics</a></li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#" class="nav-link">
+              <span>Student Services</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="./dashboard.html" class="dropdown-link">📊 Student Dashboard</a></li>
+              <li><a href="./hospital.html" class="dropdown-link">🏥 Campus Hospital</a></li>
+              <li><a href="./store.html" class="dropdown-link">🛍️ Campus Store</a></li>
+              <li><a href="./learning.html" class="dropdown-link">💻 LearnSphere Academy</a></li>
+              <li><a href="./gamezone.html" class="dropdown-link">🎮 GameZone Arena</a></li>
+              <li><a href="./news.html" class="dropdown-link">📰 Campus Times Newspaper</a></li>
+            </ul>
+          </li>
+
+          <li><a href="./events.html" class="nav-link">Events</a></li>
+          <li><a href="./gallery.html" class="nav-link active">Gallery</a></li>
+          <li><a href="./javascript-lab.html" class="nav-link" style="color: var(--brand-cyan);">⚡ JS Lab</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#travelSection" class="btn btn-secondary btn-sm">Travel Hotkeys</a>
+        <a href="#campusSection" class="btn btn-primary btn-sm">Campus Arrows</a>
+        <button type="button" class="hamburger-btn" aria-label="Toggle Mobile Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Gallery Hero -->
+  <section style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #fff; padding: 60px 0 40px 0; text-align: center;">
+    <div class="container" style="max-width: 800px;">
+      <span class="badge badge-cyan" style="margin-bottom: 12px;">KEYBOARD &amp; INTERACTIVE DOM</span>
+      <h1 style="font-family: var(--font-heading); font-size: 40px; font-weight: 800; margin-bottom: 12px;">
+        Campus Landmarks &amp; Global Discovery
+      </h1>
+      <p style="font-size: 16px; color: #cbd5e1; margin-bottom: 24px;">
+        Seamlessly combining VIT Campus landmarks (navigated via <kbd>←</kbd> <kbd>→</kbd> <kbd>Enter</kbd>), Global Travel Gallery (<kbd>N</kbd> <kbd>P</kbd> <kbd>Space</kbd>), and Nature Gallery sections.
+      </p>
+
+      <!-- Hotkey HUD bar -->
+      <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-lg); padding: 12px 20px; display: inline-flex; gap: 20px; flex-wrap: wrap; justify-content: center; font-size: 13px;">
+        <span>Campus Gallery: <kbd>→</kbd> Next · <kbd>←</kbd> Prev · <kbd>Enter</kbd> Select</span>
+        <span>•</span>
+        <span>Travel Gallery: <kbd>N</kbd> Next · <kbd>P</kbd> Prev · <kbd>Spacebar</kbd> Reveal</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 1: CAMPUS LANDMARKS GALLERY (Q41: Arrow Keys & Enter)
+       ========================================================================== -->
+  <section id="campusSection" class="section-py" style="background: #ffffff;">
+    <div class="container" style="max-width: 800px;">
+      
+      <div class="section-header">
+        <span class="section-kicker">Keyboard Arrow Navigation</span>
+        <h2 class="section-title">VIT Campus Landmarks Gallery</h2>
+        <p class="section-desc">Press Right Arrow <kbd>→</kbd> for next image, Left Arrow <kbd>←</kbd> for previous image, and <kbd>Enter</kbd> to select.</p>
+      </div>
+
+      <!-- Selection Output Banner (Q41) -->
+      <div id="campusSelectionBanner" class="alert alert-info" style="display: none; margin-bottom: 20px;"></div>
+
+      <!-- Main Landmark Viewport -->
+      <div class="card" style="box-shadow: var(--shadow-xl); border-radius: var(--radius-xl); overflow: hidden;">
+        
+        <div id="campusImageStage" style="height: 320px; display: flex; align-items: center; justify-content: center; position: relative; transition: background 0.4s ease;">
+          <!-- Injected via gallery.js -->
+        </div>
+
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span id="campusIndicator" class="badge badge-blue">1 of 4</span>
+            <span id="campusZone" class="badge badge-cyan">Academic Complex</span>
+          </div>
+          <h3 id="campusTitle" style="font-size: 22px; font-weight: 800; color: var(--primary-navy); margin-bottom: 8px;">Technology Tower (TT)</h3>
+          <p id="campusDesc" style="font-size: 14.5px; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+            Iconic central engineering hub housing smart computing laboratories, lecture halls, and faculty chambers.
+          </p>
+
+          <!-- On-Screen Clickable Buttons (Q41) -->
+          <div style="display: flex; gap: 12px; border-top: 1px solid var(--border-light); padding-top: 18px;">
+            <button type="button" class="btn btn-secondary btn-block" style="flex: 1;" onclick="prevCampusImage()">
+              <kbd>←</kbd> <span>Previous Image</span>
+            </button>
+            <button type="button" class="btn btn-primary btn-block" style="flex: 1;" onclick="selectCampusImage()">
+              <kbd>Enter ↵</kbd> <span>Select Image</span>
+            </button>
+            <button type="button" class="btn btn-secondary btn-block" style="flex: 1;" onclick="nextCampusImage()">
+              <span>Next Image</span> <kbd>→</kbd>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 2: GLOBAL TRAVEL PHOTO GALLERY (Q42: N, P & Spacebar Hotkeys)
+       ========================================================================== -->
+  <section id="travelSection" class="section-py" style="background: #f8fafc; border-top: 1px solid var(--border-light);">
+    <div class="container" style="max-width: 800px;">
+      
+      <div class="section-header">
+        <span class="section-kicker">Hotkeys N, P &amp; Spacebar</span>
+        <h2 class="section-title">Worldwide Travel Photo Gallery</h2>
+        <p class="section-desc">Press <kbd>N</kbd> for next destination, <kbd>P</kbd> for previous destination, and press <kbd>Spacebar</kbd> to reveal destination name below.</p>
+      </div>
+
+      <!-- Main Destination Viewport -->
+      <div class="card" style="box-shadow: var(--shadow-xl); border-radius: var(--radius-xl); overflow: hidden; margin-bottom: 24px;">
+        <div id="travelImageStage" style="height: 320px; display: flex; align-items: center; justify-content: center; position: relative; transition: background 0.4s ease;">
+          <!-- Injected via gallery.js -->
+        </div>
+
+        <div style="padding: 12px 20px; background: #0f172a; color: #fff; display: flex; justify-content: space-between; align-items: center; font-size: 12px;">
+          <span id="travelIndicator" style="font-weight: 700; color: var(--accent-cyan);">Destination 1 of 5</span>
+          <span style="color: #94a3b8;">Press <kbd>Spacebar</kbd> to reveal destination name</span>
+        </div>
+      </div>
+
+      <!-- Destination Name Display (Q42 requirement) -->
+      <div id="travelDestCard" class="card" style="padding: 20px 24px; margin-bottom: 24px; border: 1.5px dashed var(--border-light); transition: var(--transition);">
+        <div style="font-size: 11px; font-weight: 700; color: var(--brand-cyan); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;">LOCATION IDENTIFICATION</div>
+        <h3 id="travelDestName" style="font-size: 20px; font-weight: 800; color: var(--primary-navy); margin-bottom: 4px;">Press Spacebar or click "Reveal" to identify location</h3>
+        <p id="travelDestCountry" style="font-size: 14px; color: var(--text-muted);">Destination awaiting hotkey trigger...</p>
+      </div>
+
+      <!-- On-screen Control Buttons (Q42) -->
+      <div style="display: flex; gap: 12px;">
+        <button type="button" class="btn btn-secondary btn-block" style="flex: 1;" onclick="prevTravelDestination()">
+          <kbd>P</kbd> <span>Previous Destination</span>
+        </button>
+        <button type="button" class="btn btn-cyan btn-block" style="flex: 1;" onclick="revealTravelDestination()">
+          <kbd>Spacebar ␣</kbd> <span>Reveal Location</span>
+        </button>
+        <button type="button" class="btn btn-secondary btn-block" style="flex: 1;" onclick="nextTravelDestination()">
+          <span>Next Destination</span> <kbd>N</kbd>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: NATURE GALLERY (Q07: 4 Vertical Sections with Headings & Descriptions)
+       ========================================================================== -->
+  <section class="section-py" style="background: #ffffff; border-top: 1px solid var(--border-light);">
+    <div class="container" style="max-width: 860px;">
+      
+      <div class="section-header">
+        <span class="section-kicker">Nature &amp; Biosphere</span>
+        <h2 class="section-title">Nature Gallery (Vertical Divisions)</h2>
+        <p class="section-desc">Four distinct vertical container divisions featuring natural landscapes, headings, and ecological summaries.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        
+        <!-- Section 1 -->
+        <div class="card" style="padding: 24px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+          <div style="width: 100px; height: 100px; border-radius: var(--radius-md); background: linear-gradient(135deg, #064e3b, #059669); display: flex; align-items: center; justify-content: center; font-size: 48px; color: #fff;">
+            🌲
+          </div>
+          <div style="flex: 1; min-width: 240px;">
+            <h3 style="font-size: 18px; font-weight: 700; color: var(--primary-navy); margin-bottom: 6px;">1. Alpine Evergreen Pine Forests</h3>
+            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
+              Dense sub-arctic coniferous ecosystems thriving under montane conditions, maintaining vital carbon sequestration and mountain watershed stability.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="card" style="padding: 24px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+          <div style="width: 100px; height: 100px; border-radius: var(--radius-md); background: linear-gradient(135deg, #0369a1, #38bdf8); display: flex; align-items: center; justify-content: center; font-size: 48px; color: #fff;">
+            🌊
+          </div>
+          <div style="flex: 1; min-width: 240px;">
+            <h3 style="font-size: 18px; font-weight: 700; color: var(--primary-navy); margin-bottom: 6px;">2. Coral Reefs &amp; Oceanic Trenches</h3>
+            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
+              Biodiverse marine sanctuaries supporting over a quarter of all marine organisms, sheltered by barrier reef archipelagos and coastal shelves.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="card" style="padding: 24px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+          <div style="width: 100px; height: 100px; border-radius: var(--radius-md); background: linear-gradient(135deg, #b45309, #f59e0b); display: flex; align-items: center; justify-content: center; font-size: 48px; color: #fff;">
+            🏜️
+          </div>
+          <div style="flex: 1; min-width: 240px;">
+            <h3 style="font-size: 18px; font-weight: 700; color: var(--primary-navy); margin-bottom: 6px;">3. Arid Desert Sand Dunes &amp; Canyons</h3>
+            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
+              Wind-sculpted geological wonders shaped by millennia of aeolian weathering, demonstrating extreme biological adaptations and mineral wealth.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="card" style="padding: 24px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+          <div style="width: 100px; height: 100px; border-radius: var(--radius-md); background: linear-gradient(135deg, #4338ca, #6366f1); display: flex; align-items: center; justify-content: center; font-size: 48px; color: #fff;">
+            🌌
+          </div>
+          <div style="flex: 1; min-width: 240px;">
+            <h3 style="font-size: 18px; font-weight: 700; color: var(--primary-navy); margin-bottom: 6px;">4. Polar Auroras &amp; Arctic Glaciers</h3>
+            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
+              Spectacular geomagnetic ionosphere emissions illuminating vast ancient ice sheets, reflecting the raw kinetic majesty of planetary astrophysics.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>Copyright © 2026 VIT Smart Campus. All Rights Reserved.</div>
+        <div>Author: <strong>Shaik Zabiullah</strong> (Reg. No. <strong>23MIC0007</strong>) · VIT Vellore</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/gallery.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM PIN Entry Simulation - Keyboard Guard & Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="atm-container">
+    <div class="atm-rig">
+      
+      <!-- ATM Screen Terminal -->
+      <div class="atm-terminal">
+        <header class="terminal-header">
+          <div class="bank-brand">
+            <span class="bank-logo">🏛️</span>
+            <span>VIT SECURE BANKING ATM</span>
+          </div>
+          <span class="secure-badge">256-BIT ENCRYPTED</span>
+        </header>
+
+        <div class="terminal-body">
+          <h2 class="terminal-prompt">ENTER 4-DIGIT SECURE PIN</h2>
+          <p class="terminal-instruction">Type digits using keyboard. Non-numeric keys are blocked.</p>
+
+          <!-- PIN Input Field -->
+          <div class="pin-display-wrapper">
+            <input type="password" id="pinInput" maxlength="4" placeholder="••••" autofocus autocomplete="off" />
+          </div>
+
+          <!-- Dynamic Status / Warning Alerts -->
+          <div id="pinAlert" class="pin-alert idle">Ready for cardholder input...</div>
+          <div id="warningMsg" class="warning-msg" style="display: none;"></div>
+        </div>
+
+        <div class="terminal-footer">
+          <span>Press <kbd>Enter</kbd> to Submit · Press <kbd>Esc</kbd> / <kbd>Backspace</kbd> to Clear</span>
+        </div>
+      </div>
+
+      <!-- Virtual ATM Keypad -->
+      <div class="atm-keypad">
+        <div class="keypad-grid">
+          <button type="button" class="key-btn" onclick="pressVirtualKey('1')">1</button>
+          <button type="button" class="key-btn" onclick="pressVirtualKey('2')">2</button>
+          <button type="button" class="key-btn" onclick="pressVirtualKey('3')">3</button>
+          <button type="button" class="key-btn" onclick="pressVirtualKey('4')">4</button>
+          <button type="button" class="key-btn" onclick="pressVirtualKey('5')">5</button>
+          <button type="button" class="key-btn" onclick="pressVirtualKey('6')">6</button>
+          <button type="button" class="key-btn" onclick="pressVirtualKey('7')">7</button>
+          <button type="button" class="key-btn" onclick="pressVirtualKey('8')">8</button>
+          <button type="button" class="key-btn" onclick="pressVirtualKey('9')">9</button>
+          <button type="button" class="key-btn action-cancel" onclick="clearPin()">CLEAR</button>
+          <button type="button" class="key-btn" onclick="pressVirtualKey('0')">0</button>
+          <button type="button" class="key-btn action-enter" onclick="submitPin()">ENTER</button>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="atm-page-footer">
+      CSI3029 Assessment Q38 · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

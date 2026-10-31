@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 500" width="100%" height="100%">
+  <rect width="850" height="500" fill="#090D16"/>
+
+  <!-- Card Container -->
+  <rect x="175" y="30" width="500" height="440" rx="16" fill="#111827" stroke="#1F2937" stroke-width="1.5"/>
+
+  <!-- Badge -->
+  <rect x="315" y="52" width="220" height="24" rx="12" fill="rgba(249,115,22,0.15)" stroke="rgba(249,115,22,0.3)"/>
+  <text x="425" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#FB923C">UNIT VII · JAVASCRIPT MOUSE EVENTS</text>
+
+  <!-- Title -->
+  <text x="425" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">Interactive Color-Changing Box</text>
+  <text x="425" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9CA3AF">Click changes background color · Hover detects mouse</text>
+
+  <!-- Color Box (Emerald active state) -->
+  <rect x="335" y="145" width="180" height="180" rx="16" fill="#10B981" filter="drop-shadow(0 10px 25px rgba(16,185,129,0.5))"/>
+  
+  <rect x="355" y="185" width="140" height="100" rx="10" fill="rgba(0,0,0,0.25)"/>
+  <text x="425" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="24">🎨</text>
+  <text x="425" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF">Click to Shift Color</text>
+  <rect x="385" y="252" width="80" height="20" rx="4" fill="rgba(0,0,0,0.4)"/>
+  <text x="425" y="266" text-anchor="middle" font-family="Courier, monospace" font-size="11" fill="#6EE7B7">#10B981</text>
+
+  <!-- Message Banner (Hover active) -->
+  <rect x="225" y="345" width="400" height="40" rx="8" fill="rgba(16,185,129,0.15)" stroke="#10B981"/>
+  <text x="425" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#34D399">Mouse is over the box</text>
+
+  <!-- Telemetry Bar -->
+  <line x1="225" y1="405" x2="625" y2="405" stroke="#1F2937"/>
+  <text x="270" y="425" font-family="Arial, sans-serif" font-size="11" fill="#9CA3AF">Color Shifts: <tspan fill="#F3F4F6" font-weight="bold">4</tspan></text>
+  <text x="410" y="425" font-family="Arial, sans-serif" font-size="11" fill="#9CA3AF">Mouse State: <tspan fill="#34D399" font-weight="bold">INSIDE</tspan></text>
+  <text x="560" y="425" font-family="Arial, sans-serif" font-size="11" fill="#3B82F6">Reset Box</text>
+
+  <text x="425" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">CSI3029 Assessment Q34 · Shaik Zabiullah (23MIC0007)</text>
+</svg>
+

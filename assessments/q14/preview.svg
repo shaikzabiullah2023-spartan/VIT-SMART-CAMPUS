@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 450" width="100%" height="100%">
+  <rect width="850" height="450" fill="#F8FAFC"/>
+  <!-- Dark Header -->
+  <rect x="0" y="30" width="850" height="70" fill="#0F172A"/>
+
+  <!-- Logo crest -->
+  <circle cx="50" cy="65" r="18" fill="#1E3A8A" stroke="#D97706" stroke-width="2"/>
+  <polygon points="50,55 54,62 62,62 56,67 58,75 50,70 42,75 44,67 38,62 46,62" fill="#FBBF24"/>
+
+  <!-- University Name -->
+  <text x="85" y="71" font-family="Arial, sans-serif" font-weight="bold" font-size="16" fill="#FFFFFF">Any University – Online Admission Portal</text>
+
+  <!-- Nav Links -->
+  <text x="440" y="70" font-family="Arial, sans-serif" font-size="13" fill="#CBD5E1">Home</text>
+  <text x="500" y="70" font-family="Arial, sans-serif" font-size="13" fill="#CBD5E1">Admissions</text>
+  <text x="590" y="70" font-family="Arial, sans-serif" font-size="13" fill="#CBD5E1">Programs</text>
+  <text x="670" y="70" font-family="Arial, sans-serif" font-size="13" fill="#CBD5E1">Scholarships</text>
+
+  <!-- Apply button -->
+  <rect x="760" y="50" width="80" height="32" rx="4" fill="#D97706"/>
+  <text x="800" y="71" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#FFFFFF">Apply Now</text>
+
+  <!-- Card representation -->
+  <rect x="80" y="150" width="690" height="230" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="425" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="22" fill="#0F172A">University Admission Portal Header</text>
+  <text x="425" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#64748B">Single horizontal row alignment with hover effects &amp; CTA button</text>
+  <text x="425" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#D97706">CSI3029 Assessment Q14 · Shaik Zabiullah (23MIC0007)</text>
+</svg>
+

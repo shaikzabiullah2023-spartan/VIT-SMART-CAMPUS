@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 480" width="100%" height="100%">
+  <rect width="850" height="480" fill="#FDFBF7"/>
+  <!-- Newspaper Wrapper -->
+  <rect x="30" y="20" width="790" height="440" fill="#FFFFFF" stroke="#D5D0C7"/>
+
+  <!-- Masthead -->
+  <text x="425" y="65" text-anchor="middle" font-family="Georgia, serif" font-weight="bold" font-size="28" fill="#111111" letter-spacing="1">THE DAILY CHRONICLE</text>
+  <line x1="50" y1="80" x2="800" y2="80" stroke="#111111" stroke-width="1.5"/>
+  <text x="70" y="95" font-family="Arial, sans-serif" font-size="10" fill="#555555">SATURDAY, OCTOBER 31, 2026</text>
+  <text x="780" y="95" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#991B1B">VOL. LXXVI · FINAL EDITION</text>
+  <line x1="50" y1="102" x2="800" y2="102" stroke="#111111" stroke-width="1"/>
+
+  <!-- Headline -->
+  <text x="425" y="130" text-anchor="middle" font-family="Georgia, serif" font-weight="bold" font-size="16" fill="#0F172A">QUANTUM POWER GRID LAUNCHED AT GLOBAL CLIMATE SUMMIT</text>
+  <line x1="50" y1="145" x2="800" y2="145" stroke="#111111"/>
+
+  <!-- 3 Columns Divider Simulation -->
+  <line x1="300" y1="155" x2="300" y2="400" stroke="#D5D0C7"/>
+  <line x1="550" y1="155" x2="550" y2="400" stroke="#D5D0C7"/>
+
+  <!-- Col 1 -->
+  <text x="65" y="175" font-family="Georgia, serif" font-weight="bold" font-size="12" fill="#111111">1. Superconductor Advance</text>
+  <text x="65" y="195" font-family="Georgia, serif" font-size="10" fill="#444444">New polymers validated with near-zero</text>
+  <text x="65" y="210" font-family="Georgia, serif" font-size="10" fill="#444444">electrical resistance across grids.</text>
+  <text x="65" y="245" font-family="Georgia, serif" font-weight="bold" font-size="12" fill="#111111">2. Autonomous Freight</text>
+  <text x="65" y="265" font-family="Georgia, serif" font-size="10" fill="#444444">Hybrid vessels cut carbon by 42%.</text>
+
+  <!-- Col 2 -->
+  <text x="315" y="175" font-family="Georgia, serif" font-weight="bold" font-size="12" fill="#111111">3. Universal Education</text>
+  <text x="315" y="195" font-family="Georgia, serif" font-size="10" fill="#444444">Multilingual AI tutors deployed across</text>
+  <text x="315" y="210" font-family="Georgia, serif" font-size="10" fill="#444444">4,000 public elementary schools.</text>
+  <text x="315" y="245" font-family="Georgia, serif" font-weight="bold" font-size="12" fill="#111111">4. Space Telescope Discovery</text>
+  <text x="315" y="265" font-family="Georgia, serif" font-size="10" fill="#444444">Atmospheric biosignatures detected.</text>
+
+  <!-- Col 3 -->
+  <text x="565" y="175" font-family="Georgia, serif" font-weight="bold" font-size="12" fill="#111111">5. Vertical Hydroponics</text>
+  <text x="565" y="195" font-family="Georgia, serif" font-size="10" fill="#444444">Automated urban farm towers supply</text>
+  <text x="565" y="210" font-family="Georgia, serif" font-size="10" fill="#444444">30% of metropolitan fresh produce.</text>
+  <text x="565" y="245" font-family="Georgia, serif" font-weight="bold" font-size="12" fill="#111111">6. Global Cyber Accord</text>
+  <text x="565" y="265" font-family="Georgia, serif" font-size="10" fill="#444444">64 nations sign digital treaty.</text>
+
+  <!-- Footer -->
+  <line x1="50" y1="410" x2="800" y2="410" stroke="#111111"/>
+  <text x="425" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#777777">CSS column-count: 3 with mobile single-column media query (Q22) · Shaik Zabiullah (23MIC0007)</text>
+</svg>
+

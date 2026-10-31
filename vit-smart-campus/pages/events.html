@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>National Technical Symposium 2026 | VIT Smart Campus</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo">
+        <div class="logo-badge" style="background: linear-gradient(135deg, #d97706, #f59e0b);">🏆</div>
+        <div class="brand-text">
+          <span class="uni-name" style="color: #d97706;">VIT Symposium</span>
+          <span class="portal-name">Events 2026</span>
+        </div>
+      </a>
+
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="./about.html" class="nav-link">About</a></li>
+          <li><a href="./academics.html" class="nav-link">Academics</a></li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#" class="nav-link">
+              <span>Student Services</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="./dashboard.html" class="dropdown-link">📊 Student Dashboard</a></li>
+              <li><a href="./hospital.html" class="dropdown-link">🏥 Campus Hospital</a></li>
+              <li><a href="./store.html" class="dropdown-link">🛍️ Campus Store</a></li>
+              <li><a href="./learning.html" class="dropdown-link">💻 LearnSphere Academy</a></li>
+              <li><a href="./gamezone.html" class="dropdown-link">🎮 GameZone Arena</a></li>
+              <li><a href="./news.html" class="dropdown-link">📰 Campus Times Newspaper</a></li>
+            </ul>
+          </li>
+
+          <li><a href="./events.html" class="nav-link active">Events</a></li>
+          <li><a href="./gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="./javascript-lab.html" class="nav-link" style="color: var(--brand-cyan);">⚡ JS Lab</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#symposiumFormSection" class="btn btn-primary btn-sm">Register for Symposium</a>
+        <button type="button" class="hamburger-btn" aria-label="Toggle Mobile Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Symposium Hero Banner (Q23, Q24, Q25) -->
+  <section style="background: linear-gradient(135deg, #451a03 0%, #78350f 50%, #b45309 100%); color: #fff; padding: 70px 0 50px 0;">
+    <div class="container" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center;">
+      <div>
+        <span class="badge badge-amber" style="background: rgba(255,255,255,0.2); color: #fff; border-color: rgba(255,255,255,0.4); margin-bottom: 14px;">FLAGSHIP ANNUAL SUMMIT</span>
+        <h1 style="font-family: var(--font-heading); font-size: 40px; font-weight: 800; line-height: 1.2; margin-bottom: 16px;">
+          National Technical Symposium 2026
+        </h1>
+        <p style="font-size: 16px; color: #fde68a; line-height: 1.6; margin-bottom: 24px;">
+          Theme: <em>"Autonomous Computing, Quantum Foundations &amp; Modern Web Architecture"</em>. Bringing together 3,000+ student researchers, hackathon contenders, and tech leaders across India.
+        </p>
+
+        <!-- Embedded Welcome Audio Player (Q24 requirement) -->
+        <div class="card" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2); padding: 14px 18px; border-radius: var(--radius-lg); margin-bottom: 24px;">
+          <div style="font-size: 12px; font-weight: 700; color: #fde68a; letter-spacing: 0.05em; margin-bottom: 8px;">
+            🎙️ OFFICIAL WELCOME AUDIO &amp; INSTRUCTIONS
+          </div>
+          <audio controls style="width: 100%; height: 38px;">
+            <source src="https://samplelib.com/lib/preview/mp3/sample-12s.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+
+        <a href="#symposiumFormSection" class="btn btn-secondary btn-lg" style="color: #78350f; font-weight: 700;">
+          <span>Register Now (JS Array &amp; Regex)</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+
+      <!-- Embedded Promotional Video Player (Q23 requirement) -->
+      <div>
+        <div class="card" style="overflow: hidden; box-shadow: var(--shadow-xl); border: 2px solid rgba(255,255,255,0.2); border-radius: var(--radius-xl);">
+          <div style="background: #1e293b; padding: 10px 16px; font-size: 12px; font-weight: 700; color: #cbd5e1; display: flex; justify-content: space-between;">
+            <span>🎥 SYMPOSIUM TRAILER &amp; TEASER</span>
+            <span class="badge badge-rose">1080p HD</span>
+          </div>
+          <video controls width="100%" poster="../assets/images/campus.svg" style="display: block; background: #000; max-height: 280px; object-fit: cover;">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SYMPOSIUM REGISTRATION WITH JS ARRAYS & REGEX (Q25, Q30)
+       ========================================================================== -->
+  <main id="symposiumFormSection" class="section-py">
+    <div class="container" style="max-width: 860px;">
+      
+      <div class="section-header">
+        <span class="section-kicker">Participant Intake</span>
+        <h2 class="section-title">Symposium Delegate Registration Portal</h2>
+        <p class="section-desc">Submit your credentials. Selected technical skills are captured into a JavaScript array and rendered in a dynamic confirmation table.</p>
+      </div>
+
+      <!-- Dynamic Alert Box -->
+      <div id="symposiumAlert" class="alert alert-info" style="display: none;"></div>
+
+      <div class="card" style="box-shadow: var(--shadow-lg); border-radius: var(--radius-xl);">
+        <div class="card-header" style="background: #fffbeb;">
+          <div>
+            <h3 style="font-size: 17px; font-weight: 700; color: #92400e;">Technical Delegate Registration</h3>
+            <span style="font-size: 12px; color: #b45309;">Validated with strict JavaScript regular expressions</span>
+          </div>
+          <span class="badge badge-amber">SYMPOSIUM 2026</span>
+        </div>
+
+        <form id="symposiumForm" class="card-body" onsubmit="validateSymposiumForm(event)">
+          
+          <!-- Participant Name & Register Number (Q30) -->
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="symName">Participant Name <span class="req">*</span></label>
+              <input type="text" id="symName" name="symName" class="form-control" placeholder="Only alphabets and spaces (e.g. Shaik Zabiullah)" required>
+              <span class="form-text">Regex enforced: <code>/^[A-Za-z\s]+$/</code></span>
+              <div id="symNameFeedback" class="field-feedback"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="symReg">Register Number <span class="req">*</span></label>
+              <input type="text" id="symReg" name="symReg" class="form-control" placeholder="REG followed by 6 digits (e.g. REG123456)" maxlength="9" style="text-transform: uppercase;" required>
+              <span class="form-text">Regex enforced: <code>/^REG\d{6}$/</code></span>
+              <div id="symRegFeedback" class="field-feedback"></div>
+            </div>
+          </div>
+
+          <!-- Email & Mobile (Q30) -->
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="symEmail">Email ID <span class="req">*</span></label>
+              <input type="email" id="symEmail" name="symEmail" class="form-control" placeholder="participant@example.com" required>
+              <span class="form-text">Valid RFC email format</span>
+              <div id="symEmailFeedback" class="field-feedback"></div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label" for="symMobile">Mobile Number <span class="req">*</span></label>
+                <input type="tel" id="symMobile" name="symMobile" class="form-control" placeholder="Exactly 10 digits" maxlength="10" required>
+                <span class="form-text">Regex: <code>/^\d{10}$/</code></span>
+                <div id="symMobileFeedback" class="field-feedback"></div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="symDob">Date of Birth</label>
+                <input type="date" id="symDob" name="symDob" class="form-control">
+              </div>
+            </div>
+          </div>
+
+          <!-- College & Department -->
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="symCollege">College / University Name <span class="req">*</span></label>
+              <input type="text" id="symCollege" name="symCollege" class="form-control" value="Vellore Institute of Technology, Vellore" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="symDept">Academic Department <span class="req">*</span></label>
+              <select id="symDept" name="symDept" class="form-select" required>
+                <option value="">-- Choose Department --</option>
+                <option value="Computer Science & Engineering">Computer Science &amp; Engineering</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Computer Applications">Computer Applications</option>
+                <option value="Electronics & Communication">Electronics &amp; Communication</option>
+              </select>
+              <div id="symDeptFeedback" class="field-feedback"></div>
+            </div>
+          </div>
+
+          <!-- Technical Skills Checkboxes (Stored into JS Array) -->
+          <div class="form-group">
+            <label class="form-label">Technical Skills (Stored in JavaScript Array) <span class="req">*</span></label>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+              <label class="selection-card"><input type="checkbox" name="symSkills" value="Full-Stack Web Engineering"> Full-Stack Web</label>
+              <label class="selection-card"><input type="checkbox" name="symSkills" value="Deep Learning & Neural Networks"> Deep Learning</label>
+              <label class="selection-card"><input type="checkbox" name="symSkills" value="Cyber Security & Forensics"> Cyber Security</label>
+              <label class="selection-card"><input type="checkbox" name="symSkills" value="Cloud Native Infrastructure"> Cloud Architecture</label>
+              <label class="selection-card"><input type="checkbox" name="symSkills" value="Competitive Algorithmic Coding"> Competitive Coding</label>
+              <label class="selection-card"><input type="checkbox" name="symSkills" value="IoT Hardware Systems"> IoT Systems</label>
+            </div>
+            <div id="symSkillsGroupFeedback" class="field-feedback"></div>
+          </div>
+
+          <!-- ID Upload & Event Date -->
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="symIdUpload">Student ID Card Upload</label>
+              <input type="file" id="symIdUpload" name="symIdUpload" class="form-control" accept=".pdf,.png,.jpg">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="symEventDate">Symposium Session Date</label>
+              <input type="date" id="symEventDate" name="symEventDate" class="form-control" value="2026-11-20">
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div style="display: flex; gap: 14px; margin-top: 24px;">
+            <button type="submit" class="btn btn-primary btn-lg" style="flex: 1; background: linear-gradient(135deg, #d97706, #b45309);">
+              Validate &amp; Generate Symposium Pass
+            </button>
+            <button type="reset" class="btn btn-secondary btn-lg" onclick="document.getElementById('symposiumAlert').style.display='none'; document.getElementById('symposiumTableOutput').innerHTML=''">
+              Reset
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Output Confirmation Table (Rendered by JavaScript Array) -->
+      <div id="symposiumTableOutput"></div>
+
+    </div>
+  </main>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>Copyright © 2026 VIT Smart Campus. All Rights Reserved.</div>
+        <div>Author: <strong>Shaik Zabiullah</strong> (Reg. No. <strong>23MIC0007</strong>) · VIT Vellore</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/validation.js"></script>
+</body>
+</html>
+

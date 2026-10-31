@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Part C: Cart Summary</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="checkout-wrapper">
+    
+    <!-- Multi-Step Stepper Header -->
+    <header class="stepper-header">
+      <div class="step-indicator completed">
+        <span class="step-num">&#10003;</span>
+        <span class="step-title">Part A: Customer &amp; Delivery</span>
+      </div>
+      <div class="step-connector active"></div>
+      <div class="step-indicator completed">
+        <span class="step-num">&#10003;</span>
+        <span class="step-title">Part B: Payment Details</span>
+      </div>
+      <div class="step-connector active"></div>
+      <div class="step-indicator active">
+        <span class="step-num">3</span>
+        <span class="step-title">Part C: Cart Summary</span>
+      </div>
+    </header>
+
+    <div class="step-card">
+      <div class="card-intro">
+        <h2>Part C – Cart Summary &amp; Final Authorization</h2>
+        <p>Review the items in your order, verify taxes and discounts, and confirm order placement.</p>
+      </div>
+
+      <!-- Part C: Cart Summary Table -->
+      <div class="summary-table-wrapper">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Unit Price</th>
+              <th style="text-align: right;">Total Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>Front-End Engineering Textbook (Lab Edition)</strong>
+                <div style="font-size: 12px; color: #64748b;">Hardcover · ISBN 978-0134</div>
+              </td>
+              <td>1</td>
+              <td>₹1,450.00</td>
+              <td style="text-align: right; font-weight: bold;">₹1,450.00</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Ergonomic Wireless Mechanical Keyboard</strong>
+                <div style="font-size: 12px; color: #64748b;">Hot-swappable switches · RGB</div>
+              </td>
+              <td>1</td>
+              <td>₹3,200.00</td>
+              <td style="text-align: right; font-weight: bold;">₹3,200.00</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Type-C Multi-Port Hub (10-in-1)</strong>
+                <div style="font-size: 12px; color: #64748b;">4K HDMI · 100W PD Pass-through</div>
+              </td>
+              <td>2</td>
+              <td>₹1,100.00</td>
+              <td style="text-align: right; font-weight: bold;">₹2,200.00</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3" style="text-align: right; font-weight: 600;">Subtotal:</td>
+              <td style="text-align: right; font-weight: bold;">₹6,850.00</td>
+            </tr>
+            <tr>
+              <td colspan="3" style="text-align: right; font-weight: 600;">Estimated Shipping &amp; Handling:</td>
+              <td style="text-align: right; color: #059669; font-weight: bold;">FREE</td>
+            </tr>
+            <tr>
+              <td colspan="3" style="text-align: right; font-weight: 600;">GST (18%):</td>
+              <td style="text-align: right; font-weight: bold;">₹1,233.00</td>
+            </tr>
+            <tr class="grand-total-row">
+              <td colspan="3" style="text-align: right; font-size: 18px; font-weight: 800; color: #0f172a;">Total Order Amount:</td>
+              <td style="text-align: right; font-size: 20px; font-weight: 800; color: #1e3a8a;">₹8,083.00</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <!-- Action Buttons: Place Order and Cancel -->
+      <div class="final-actions-row">
+        <a href="index.html" class="btn-cancel" onclick="return confirm('Are you sure you want to cancel this checkout process?');">
+          Cancel Checkout
+        </a>
+        <div style="display: flex; gap: 12px;">
+          <a href="part-b.html" class="btn-step-prev">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <span>Back to Payment</span>
+          </a>
+          <button type="button" class="btn-place-order" onclick="alert('Congratulations!\nOrder Placed Successfully!\nTotal Amount: ₹8,083.00\nConfirmation sent to student email.'); window.location.href='index.html';">
+            Place Order (₹8,083.00)
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="checkout-footer">
+      CSI3029 Assessment Q27 (Part C) · Shaik Zabiullah (23MIC0007) · VIT Vellore
+    </footer>
+
+  </div>
+
+</body>
+</html>
+

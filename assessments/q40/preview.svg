@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 500" width="100%" height="100%">
+  <rect width="850" height="500" fill="#090D16"/>
+
+  <!-- Card Container -->
+  <rect x="150" y="25" width="550" height="450" rx="16" fill="#111827" stroke="#1F2937" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <text x="180" y="55" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#818CF8">CSI3029 · MID-TERM CBT EXAM</text>
+  <text x="180" y="80" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">Question 14 of 40</text>
+
+  <!-- Timer -->
+  <rect x="560" y="50" width="110" height="26" rx="13" fill="rgba(245,158,11,0.15)" stroke="#F59E0B"/>
+  <text x="615" y="67" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#FBBF24">⏱️ 44:18 Left</text>
+
+  <!-- Question Text -->
+  <text x="180" y="118" font-family="Arial, sans-serif" font-size="13" fill="#E2E8F0">Which HTML5 attribute specifies an input field that must be filled out?</text>
+
+  <!-- Option A -->
+  <rect x="180" y="140" width="490" height="40" rx="8" fill="#0A0F1D" stroke="#1F2937"/>
+  <circle cx="205" cy="160" r="10" fill="#1F2937"/>
+  <text x="205" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#94A3B8">A</text>
+  <text x="230" y="164" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8">validate</text>
+
+  <!-- Option B (Selected State) -->
+  <rect x="185" y="190" width="485" height="42" rx="8" fill="rgba(99,102,241,0.15)" stroke="#6366F1" stroke-width="2" filter="drop-shadow(0 0 10px rgba(99,102,241,0.3))"/>
+  <circle cx="210" cy="211" r="11" fill="#6366F1"/>
+  <text x="210" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF">B</text>
+  <text x="235" y="215" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">required</text>
+  <circle cx="645" cy="211" r="7" fill="#6366F1"/>
+  <circle cx="645" cy="211" r="3" fill="#111827"/>
+
+  <!-- Option C -->
+  <rect x="180" y="242" width="490" height="40" rx="8" fill="#0A0F1D" stroke="#1F2937"/>
+  <circle cx="205" cy="262" r="10" fill="#1F2937"/>
+  <text x="205" y="266" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#94A3B8">C</text>
+  <text x="230" y="266" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8">mandatory</text>
+
+  <!-- Option D -->
+  <rect x="180" y="292" width="490" height="40" rx="8" fill="#0A0F1D" stroke="#1F2937"/>
+  <circle cx="205" cy="312" r="10" fill="#1F2937"/>
+  <text x="205" y="316" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#94A3B8">D</text>
+  <text x="230" y="316" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8">placeholder</text>
+
+  <!-- Submit Button (Hovered / Enter state) -->
+  <rect x="180" y="345" width="340" height="44" rx="8" fill="#6366F1" filter="drop-shadow(0 0 15px rgba(99,102,241,0.5))"/>
+  <text x="350" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">Submit Answer [Enter ↵]</text>
+
+  <rect x="535" y="345" width="135" height="44" rx="8" fill="none" stroke="#374151"/>
+  <text x="602" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">Clear Selection</text>
+
+  <!-- Output Alert -->
+  <rect x="180" y="402" width="490" height="34" rx="6" fill="rgba(16,185,129,0.2)" stroke="#10B981"/>
+  <text x="425" y="423" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#6EE7B7">✓ Answer Submitted Successfully: Option [B] "required"</text>
+
+  <text x="425" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748B">CSI3029 Assessment Q40 · Shaik Zabiullah (23MIC0007)</text>
+</svg>
+
